@@ -212,9 +212,37 @@ main {
     justify-content: space-evenly;
 }
 
-figure {
+figure,
+.frets {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.label-notes,
+[class*="fret"] {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.label-notes {
+    margin: 0;
+    padding: 0;
+}
+
+.label-notes li,
+[class*="string"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+[class*="note"],
+[class*="string"] {
+    outline: 1px solid red;
 }

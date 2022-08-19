@@ -23,13 +23,15 @@
     <main>
 
         <!-- Control Area -->
-        <div id="controls" class="control-area">
+        <section id="controls" class="control-area">
             
             <!-- Help Button -->
             <button><i class="fa-solid fa-circle-question"></i>Help</button>
 
             <!-- Key Select -->
-            <div id="keySelect" class="key-select">Key Select</div>
+            <div id="keySelect" class="key-select-container">
+                <div class="key-select-inner">Key Select</div>
+            </div>
 
             <!-- Chord Progression Select -->
             <div class="chord-progression-container">
@@ -41,12 +43,443 @@
 
             <!-- Modal Close Button -->
             <button id="controlAreaClose" class="close-btn"><i class="fa-solid fa-circle-xmark"></i> Close</button>
-        </div>
+        </section>
+        <!-- Control Area End -->
+
+        <!-- Display Area -->
+        <section id="display" class="display-area">
+
+            <!-- Chord Box Diagram 1 - Start -->
+            <figure id="chordBox1" class="chord-box">
+
+                <!-- Chord Info -->
+                <span class="label-degree">I</span>
+                <span class="label-chord">G</span>
+
+                <!-- Fretboard -->
+                <div class="fretboard">
+
+                    <!-- Note Names -->
+                    <span class="label-notes">
+                        <span class="note1">G</span>
+                        <span class="note2">B</span>
+                        <span class="note3">D</span>
+                        <span class="note4">G</span>
+                        <span class="note5">B</span>
+                        <span class="note6">G</span>
+                    </span>
+
+                    <!-- Frets -->
+                    <div class="frets">
+
+                        <!-- Fret 1 Start -->
+                        <div class="fret1">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <!-- Fret 1 End -->
+
+                        <!-- Fret 2 Start -->
+                        <div class="fret2">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <!-- Fret 2 End -->
+
+                        <!-- Fret 3 Start -->
+                        <div class="fret3">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <!-- Fret 3 End -->
+
+                        <!-- Fret 4 Start -->
+                        <div class="fret4">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <!--  Fret 4 End -->
+
+                    </div>
+                    <!-- Frets End - Chord Box Diagram 1 -->
+
+                </div>
+                <!-- Fretboard End - Chord Box Diagram 1 -->
+                
+            </figure>
+            <!-- Chord Box Diagram 1 - End -->
+
+            <!-- Chord Box Diagram 2 - Start -->
+            <figure id="chordBox2" class="chord-box">
+
+                <!-- Chord Info -->
+                <span class="label-degree">V</span>
+                <span class="label-chord">D</span>
+
+                <!-- Fretboard -->
+                <div class="fretboard">
+
+                    <!-- Note Names -->
+                    <span class="label-notes">
+                        <span class="note1">x</span>
+                        <span class="note2">x</span>
+                        <span class="note3">D</span>
+                        <span class="note4">A</span>
+                        <span class="note5">D</span>
+                        <span class="note6">F♯</span>
+                    </span>
+
+                    <!-- Frets -->
+                    <div class="frets">
+
+                        <!-- Fret 1 - Start -->
+                        <div class="fret1">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <!-- Fret 1 - End -->
+
+                        <!-- Fret 2 - Start -->
+                        <div class="fret2">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <!-- Fret 2 - End -->
+
+                        <!-- Fret 3 - Start -->
+                        <div class="fret3">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <!-- Fret 3 - End -->
+
+                        <!-- Fret 4 - Start -->
+                        <div class="fret4">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>- - 
+                        </div>
+                        <!-- Fret 4 - End -->
+
+                    </div>
+                </div>
+            </figure>
+            <!-- Chord Box Diagram 2 - End -->
+
+            <!-- Chord Box Diagram 3 - Start -->
+            <figure id="chordBox3" class="chord-box">
+
+                <!-- Chord Info -->
+                <span class="label-degree">IV</span>
+                <span class="label-chord">C</span>
+
+                <!-- Fretboard -->
+                <div class="fretboard">
+
+                    <!-- Note Names -->
+                    <span class="label-notes">
+                        <span class="note1">G</span>
+                        <span class="note2">B</span>
+                        <span class="note3">D</span>
+                        <span class="note4">G</span>
+                        <span class="note5">B</span>
+                        <span class="note6">G</span>
+                    </span>
+
+                    <!-- Frets -->
+                    <div class="frets">
+
+                        <!-- Fret Start -->
+                        <div class="fret1">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <div class="fret2">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <div class="fret3">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <div class="fret4"></div>
+                    </div>
+                </div>
+            </figure>
+            <!-- Chord Box Diagram 3 - End -->
+
+            <!-- Chord Box Diagram 4 - Start -->
+            <figure id="chordBox4" class="chord-box">
+
+                <!-- Chord Info -->
+                <span class="label-degree">V</span>
+                <span class="label-chord">D</span>
+
+                <!-- Fretboard -->
+                <div class="fretboard">
+
+                    <!-- Note Names -->
+                    <span class="label-notes">
+                        <span class="note1">x</span>
+                        <span class="note2">x</span>
+                        <span class="note3">D</span>
+                        <span class="note4">A</span>
+                        <span class="note5">D</span>
+                        <span class="note6">F♯</span>
+                    </span>
+
+                    <!-- Frets -->
+                    <div class="frets">
+
+                        <!-- Fret Start -->
+                        <div class="fret1">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <div class="fret2">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <div class="fret3">
+                            <span class="string1">
+                                <span class="finger">1</span>
+                            </span>
+                            <span class="string2">
+                                <span class="finger">2</span>
+                            </span>
+                            <span class="string3">
+                                <span class="finger">3</span>
+                            </span>
+                            <span class="string4">
+                                <span class="finger">4</span>
+                            </span>
+                            <span class="string5">
+                                <span class="finger">5</span>
+                            </span>
+                            <span class="string6">
+                                <span class="finger">6</span>
+                            </span>
+                        </div>
+                        <div class="fret4"></div>
+                    </div>
+                </div>
+            </figure>
+            <!-- Chord Box Diagram 4 - End -->
+
+        </section>
+        <!-- Display Area - End -->
 
     </main>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">  
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/7f8e3489c9.js" crossorigin="anonymous"></script>
     <!-- Main Javascript File -->

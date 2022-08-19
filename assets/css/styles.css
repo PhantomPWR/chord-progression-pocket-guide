@@ -1,3 +1,62 @@
+
+/* TABLE OF CONTENTS
+   -----------------
+
+RESET
+
+UTILITIES
+   - General
+   - Fixed Header
+   - Modal
+
+TYPOGRAPHY & COLOURS
+
+DECORATION
+   - Main Navigation
+   - Footer Links
+   - Mobile Navigation
+   - Icons
+   - Headings
+   - Form Elements & Buttons
+   - Cards
+
+SITE STRUCTURE
+    - Control Area
+    - Display Area
+
+MEDIA QUERIES
+    - Desktops
+    - Laptops
+    - Tablet (Landscape)
+    - Tablet (Portrait)
+    - Phone Large (Landscape)
+    - Phone Small (Landscape)
+    - Phone (Portrait)
+    - Phone X-Small (Landscape)
+   -----------------
+ */
+
+/* -- RESET -- */
+html {
+    font-size: 62.5%; /* Sets font size to 10px so 1 rem = 10px */
+    }
+
+body {
+    font-size: 1.6rem; /* Resets the normal font size for everything to 16px so it's readable. */
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box; /* Include element border in dimension calculations */
+}
+
+
+/* -- UTILITIES -- */
+
+
+
+/* -- TYPOGRAPHY & COLOURS -- */
 body,
 .site-title span {
     font-weight: 400;
@@ -25,3 +84,11 @@ strong {
 .site-title span {
     font-size: 1.2rem;
 }
+
+
+/* -- SITE STRUCTURE -- */
+
+/* Control Area */
+
+
+/* Display Area */

@@ -19,8 +19,31 @@
     <title>Chord Progression Pocket Guide</title>
 </head>
 <body>
-    <h1 class="site-title">Chord Progression <span>Pocket Guide</span></h1>
-    <img src="assets/images/circle-of-fifths-key-select.webp" alt="Circle of Fifths" width="298" height="298">
+
+    <main>
+
+        <!-- Control Area -->
+        <div id="controls" class="control-area">
+            
+            <!-- Help Button -->
+            <button><i class="fa-solid fa-circle-question"></i>Help</button>
+
+            <!-- Key Select -->
+            <div id="keySelect" class="key-select">Key Select</div>
+
+            <!-- Chord Progression Select -->
+            <div class="chord-progression-container">
+                <h1 class="site-title">Chord Progression <span>Pocket Guide</span></h1>
+                <div id="chordProgressionSelect" class="chord-progression-select">
+                    Chord Progression Select
+                </div>
+            </div>
+
+            <!-- Modal Close Button -->
+            <button id="controlAreaClose" class="close-btn"><i class="fa-solid fa-circle-xmark"></i> Close</button>
+        </div>
+
+    </main>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">    

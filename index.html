@@ -26,23 +26,46 @@
         <section id="controls" class="control-area">
             
             <!-- Help Button -->
-            <button><i class="fa-solid fa-circle-question"></i>Help</button>
+            <button class="help-btn">
+                <i class="fa-solid fa-circle-question"></i>
+                <span class="uppercase">Help</span>
+            </button>
 
             <!-- Key Select -->
             <div id="keySelect" class="key-select-container">
-                <div class="key-select-inner">Key Select</div>
+                <div class="key-select-inner"></div>
             </div>
 
             <!-- Chord Progression Select -->
             <div class="chord-progression-container">
-                <h1 class="site-title">Chord Progression <span>Pocket Guide</span></h1>
-                <div id="chordProgressionSelect" class="chord-progression-select">
-                    Chord Progression Select
+                <h1 class="site-title uppercase">Chord Progression <span>Pocket Guide</span></h1>
+                <div class="chord-progression-inner">
+                    <div id="chordProgressionSelect" class="chord-progression-select">
+                        <h3 class="uppercase">Select a chord progression</h3>
+                            <div class="btn-row">
+                                <button class="chord-progression">I V IV V</button>
+                                <button class="chord-progression">I V vi V</button>
+                                <button class="chord-progression">I vi IV V</button>
+                        </div>
+                            <div class="btn-row">
+                                <button class="chord-progression">I vi ii V</button>
+                                <button class="chord-progression">I iii vi V</button>
+                                <button class="chord-progression">vi IV I V</button>
+                        </div>
+                            <div class="btn-row">
+                                <button class="chord-progression">I ♭VII IV I</button>
+                                <button class="chord-progression">I ♭VII ♭VI V</button>
+                                <button class="chord-progression">i ♭VII ♭VI ♭VII</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Modal Close Button -->
-            <button id="controlAreaClose" class="close-btn"><i class="fa-solid fa-circle-xmark"></i> Close</button>
+            <button id="controlAreaClose" class="close-btn">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span class="uppercase">Close</span>
+            </button>
         </section>
         <!-- Control Area End -->
 
@@ -59,18 +82,18 @@
                 <!-- Fretboard - Chord Box Diagram 1 - Start -->
                 <div class="fretboard">
 
-                    <!-- Note Names -->
-                    <span class="label-notes">
-                        <span class="note1">G</span>
-                        <span class="note2">B</span>
-                        <span class="note3">D</span>
-                        <span class="note4">G</span>
-                        <span class="note5">B</span>
-                        <span class="note6">G</span>
-                    </span>
-
                     <!-- Frets -->
                     <div class="frets">
+
+                        <!-- Note Names -->
+                        <span class="label-notes">
+                            <span class="note1">G</span>
+                            <span class="note2">B</span>
+                            <span class="note3">D</span>
+                            <span class="note4">G</span>
+                            <span class="note5">B</span>
+                            <span class="note6">G</span>
+                        </span>
 
                         <!-- Fret 1 - Start -->
                         <div class="fret1">
@@ -551,7 +574,7 @@
     </main>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">  
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/7f8e3489c9.js" crossorigin="anonymous"></script>
     <!-- Main Javascript File -->

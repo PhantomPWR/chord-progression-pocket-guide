@@ -101,8 +101,10 @@ button {
 }
 
 .site-title {
+    color: #ecf0f1;
     font-style: italic;
     line-height: 2rem;
+    text-align: center;
 }
 
 .site-title span {
@@ -130,7 +132,7 @@ main,
     background-color: #d9dcdd;
 }
 
-.chord-progression-inner h3 {
+.chord-progression-inner h2 {
     color: #ecf0f1;
     font-size: 1.6rem;
     text-align: center;

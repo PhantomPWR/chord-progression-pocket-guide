@@ -15,7 +15,10 @@ DECORATION
 
 SITE STRUCTURE
     - Control Area
+    - Mobile Header Buttons
     - Display Area
+
+MOBILE-SPECIFIC STYLES
 
 MEDIA QUERIES
     - Desktops
@@ -101,10 +104,8 @@ button {
 }
 
 .site-title {
-    color: #ecf0f1;
     font-style: italic;
     line-height: 2rem;
-    text-align: center;
 }
 
 .site-title span {
@@ -119,12 +120,14 @@ main,
 }
 
 .help-btn,
-.close-btn {
+.close-btn,
+.controls-btn {
     font-size: 0.8rem;
 }
 
 .help-btn i,
-.close-btn i {
+.close-btn i,
+.controls-btn i {
     font-size: 2rem;
 }
 
@@ -202,7 +205,7 @@ ul.fret4 {
 
 main {
     margin: 1em auto;
-    max-width: 840px;
+    width: 960px;
 }
 
 .control-area,
@@ -225,7 +228,8 @@ main {
 }
 
 .help-btn,
-.close-btn {
+.close-btn,
+.controls-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -341,4 +345,30 @@ figure,
     align-content: center;
     margin: 0;
     padding: 0;
+}
+
+
+
+/* -- MOBILE-SPECIFIC STYLES -- */
+#mobileHeader {
+    flex-direction: column;
+    padding: 1em 0;
+}
+
+#mobileHeader .site-title {
+    color: #ecf0f1;
+    text-align: center;
+}
+
+
+/* Mobile Header Buttons */
+#mobileButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#mobileButtons button {
+    margin-top: 1em;
+    position: initial;
+    width: 100px;
 }

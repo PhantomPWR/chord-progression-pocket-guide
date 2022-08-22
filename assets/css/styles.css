@@ -67,6 +67,25 @@ button.active {
     background-color: #e9bc96;
 }
 
+/* Sliding Drawer Containers */
+
+.drawer,
+.drawer.in {
+    transition: 300ms all ease-in-out;
+}
+.drawer {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+#controlDrawer {
+    left: -100%;
+}
+
+#controlDrawer.in {
+    left: 0;
+}
 
 
 /* -- TYPOGRAPHY & COLOURS -- */

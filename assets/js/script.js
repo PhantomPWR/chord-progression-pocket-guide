@@ -11,11 +11,13 @@ const mobileHeader = document.getElementById("mobileHeader");
 const siteTitle = document.getElementById("siteTitle");
 const mobileButtons = document.getElementById("mobileButtons");
 const controlArea = document.getElementById("controls");
-const controlDrawer = document.getElementById("controlDrawer");
-const helpDrawer = document.getElementById("helpDrawer");
-const drawer = document.getElementsByClassName("drawer");
 const mobileControlBtn = document.getElementById("controlAreaBtn");
-const closeDrawerBtns = document.getElementsByTagName("button");
+const helpBtn = document.getElementById("helpBtn");
+const helpContent = document.getElementById("helpContent");
+const drawer = document.getElementById("offCanvas");
+const drawerCloseBtn = document.getElementById("drawerCloseBtn");
+const keySelect = document.getElementById("keySelect");
+
 
 // Detect mobile phone & handle element display
     window.addEventListener('load', function() {
@@ -33,46 +35,44 @@ const closeDrawerBtns = document.getElementsByTagName("button");
             // Display mobile header
             mobileHeader.style.display = 'flex';
 
-            // Move control area into control drawer
-            controlDrawer.appendChild(controlArea);
+        } else {
+
+            keySelect.before(helpBtn);
 
         }
+
     }
 
     });
 
 
-
-// closeDrawerBtns.forEach(closeDrawerBtn => {
-
-//     addEventListener("click", function handleClick(event) {
-//         console.log("Close button clicked", event);
-//         controlDrawer.classList.remove("in");
-//     });
-
-// });
-
-console.log(drawer);
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    for (let closeDrawerBtn of closeDrawerBtns) {
-        closeDrawerBtn.addEventListener("click", function() {
-            if (this.getAttribute("type") === "close") {
-                console.log("Close button clicked");
-                // drawer.classList.remove("in");
-            }
-        });
-    }
-
-});
-
-
-
-
-
-
 // Mobile phone control area button
 mobileControlBtn.addEventListener("click", function() {
-    controlDrawer.classList.add("in");
+    helpContent.style.display = "none"
+    controlArea.style.display = "flex";
+    drawer.classList.add("in");
+    drawerCloseBtn.after(controlArea);
+    
+    
+    drawerCloseBtn.addEventListener("click", function() {
+        drawer.classList.remove("in");
+        drawerCloseBtn.after('');
+    });
+
 });
+
+// Help button
+helpBtn.addEventListener("click", function() {
+    helpContent.style.display = "flex";
+    drawer.classList.add("in");
+    drawerCloseBtn.after(helpContent);
+    
+    
+    drawerCloseBtn.addEventListener("click", function() {
+        drawer.classList.remove("in");
+        drawerCloseBtn.after('');
+    });
+
+});
+
+

@@ -34,15 +34,27 @@
                 </button>
 
                 <!-- Help Button -->
-                <button class="help-btn drawer-btn">
+                <button id="helpBtn" class="help-btn drawer-btn">
                     <i class="fa-solid fa-circle-question"></i>
                     <span class="uppercase">Help</span>
                 </button>
             </div>
 
         </header>
-        <div id="helpDrawer" class="drawer">Contains Help Information</div>
-        <div id="controlDrawer" class="drawer"></div>
+
+        <!-- Off-canvas Drawer -->
+        <div id="offCanvas" class="drawer">
+
+            <!-- Drawer Close Button -->
+            <button id="drawerCloseBtn" class="close-btn">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span class="uppercase">Close</span>
+            </button>
+
+            <!-- Help Content -->
+            <div id="helpContent">Contains Help Information</div>
+
+        </div>
         <!-- Control Area -->
         <section id="controls" class="control-area">
             
@@ -51,6 +63,8 @@
                 <i class="fa-solid fa-circle-question"></i>
                 <span class="uppercase">Help</span>
             </button>
+
+
 
             <!-- Key Select -->
             <div id="keySelect" class="key-select-container">
@@ -82,11 +96,6 @@
                 </div>
             </div>
 
-            <!-- Drawer Close Button -->
-            <button id="controlDrawerClose" class="close-btn" type="close">
-                <i class="fa-solid fa-circle-xmark"></i>
-                <span class="uppercase">Close</span>
-            </button>
         </section>
         <!-- Control Area End -->
 

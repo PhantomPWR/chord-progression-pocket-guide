@@ -74,16 +74,14 @@ button.active {
     transition: 300ms all ease-in-out;
 }
 .drawer {
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-}
-
-#controlDrawer {
+    position: absolute;
     left: -100%;
+    width: 100%;
+    max-width: 960px;
+    z-index: 2;
 }
 
-#controlDrawer.in {
+.drawer.in {
     left: 0;
 }
 
@@ -166,7 +164,8 @@ main,
     font-size: 1rem;
 }
 
-.display-area {
+.display-area,
+.drawer {
     background-color: #ecf0f1;
 }
 
@@ -224,6 +223,8 @@ ul.fret4 {
 
 main {
     margin: 1em auto;
+    overflow: hidden;
+    position: relative;
     width: 960px;
 }
 
@@ -258,6 +259,7 @@ main {
     top: 1em;
     height: 50px;
     width: 50px;
+    z-index: 1;
 }
 
 .help-btn {
@@ -391,4 +393,8 @@ figure,
     margin-top: 1em;
     position: initial;
     width: 100px;
+}
+
+.mobile-phone #controls {
+    display: none;
 }

@@ -2,7 +2,7 @@
 const mediaQueryList = [
     window.matchMedia('(max-width: 414px)'),
     window.matchMedia('(max-width: 915px)')
-]
+];
 
 for (let mediaQuery of mediaQueryList) {
 

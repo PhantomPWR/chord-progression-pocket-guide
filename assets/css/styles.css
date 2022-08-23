@@ -77,6 +77,7 @@ button.active {
 .drawer {
     position: absolute;
     left: -100%;
+    height: 100%;
     width: 100%;
     max-width: 960px;
     z-index: -1;
@@ -150,7 +151,10 @@ main,
     font-size: 2rem;
 }
 
-.help-content,
+.drawer.in {
+    background-color: rgb(44 62 80 / 50%);
+}
+
 .control-area {
     background-color: #d9dcdd;
 }
@@ -167,8 +171,7 @@ main,
     font-size: 1rem;
 }
 
-.display-area,
-.drawer {
+.display-area{
     background-color: #ecf0f1;
 }
 
@@ -275,6 +278,10 @@ main {
 
 .help-content {
     position: absolute;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .site-title {
@@ -406,10 +413,16 @@ figure,
     margin-top: 0;
 }
 
+.mobile-phone #controls,
+.mobile-phone .help-content {
+    top: 60px;
+}
+
 .mobile-phone #controls {
     display: none;
     flex-direction: column;
 }
+
 
 
 /* -- Media Queries -- */

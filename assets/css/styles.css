@@ -416,12 +416,11 @@ figure,
 
 .mobile-phone #controls,
 .mobile-phone .help-content {
-    top: 60px;
+    top: 0;
 }
 
 .mobile-phone #controls {
     display: none;
-    flex-direction: column;
 }
 
 
@@ -441,6 +440,15 @@ figure,
 
     #mobileHeader .site-title span {
         display: block;
+    }
+
+    .mobile-phone #controls,
+    .mobile-phone .help-content {
+        top: 60px;
+    }
+
+    .mobile-phone #controls {
+        flex-direction: column;
     }
     
     .chord-progression-container {

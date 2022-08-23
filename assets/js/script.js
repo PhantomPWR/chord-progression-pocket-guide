@@ -14,7 +14,7 @@ const mobileButtons = document.getElementById("mobileButtons");
 const helpButtons = document.querySelectorAll(".help-btn");
 const closeButtons = document.querySelectorAll(".close-btn");
 const controlArea = document.getElementById("controls");
-const mobileControlBtn = document.getElementById("controlAreaBtn");
+const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn");
 const helpContent = document.getElementById("helpContent");
 const drawer = document.getElementById("offCanvas");
 const keySelect = document.getElementById("keySelect");
@@ -44,8 +44,8 @@ window.addEventListener('load', function() {
 // Button Event Listeners
 
 // Mobile phone control area button
-mobileControlBtn.addEventListener("click", function() {
-    helpBtn.classList.remove("active");
+mobileHeaderControlsBtn.addEventListener("click", function() {
+    mobileHeaderHelpBtn.classList.remove("active");
     helpContent.style.display = "none";
     controlArea.style.display = "flex";
     drawer.classList.add("in");
@@ -54,11 +54,11 @@ mobileControlBtn.addEventListener("click", function() {
 });
 
 // Help button
-helpButtons.forEach(helpBtn => {
+helpButtons.forEach(helpButton => {
 
-    helpBtn.addEventListener("click", function() {
+    helpButton.addEventListener("click", function() {
         console.log("Help button clicked");
-        helpBtn.classList.add("active");
+        mobileHeaderHelpBtn.classList.add("active");
         helpContent.style.cssText = ("display: flex; z-index: 10;");
         drawer.classList.add("in");
         drawerCloseBtn.after(helpContent);
@@ -73,7 +73,7 @@ closeButtons.forEach(closeBtn => {
     closeBtn.addEventListener("click", function() {
         console.log("Close button clicked");
         drawer.classList.remove("in");
-        helpBtn.classList.remove("active");
+        mobileHeaderHelpBtn.classList.remove("active");
     });
 
 });

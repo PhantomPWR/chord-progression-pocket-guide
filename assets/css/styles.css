@@ -175,6 +175,10 @@ main,
     background-color: #ecf0f1;
 }
 
+.selection-display {
+    background-color: rgb(44 62 80 / 10%);
+}
+
 .label-degree {
     font-size: 2rem;
 }
@@ -311,10 +315,18 @@ main {
 
 
 /* Display Area */
-.display-area {
+.display-area,
+.selection-display {
     display: flex;
     justify-content: space-evenly;
+}
 
+.display-area {
+    flex-direction: column;
+}
+
+.selection-display {
+    padding: 1em;
 }
 
 figure,
@@ -324,6 +336,10 @@ figure,
     align-items: center;
     justify-content: space-between;
     margin: 0;
+}
+
+figure {
+    margin-top: 2em;
 }
 
 .label-notes,
@@ -450,16 +466,20 @@ figure,
     .mobile-phone #controls {
         flex-direction: column;
     }
+
+    .selection-display {
+        flex-direction: column;
+    }
     
     .chord-progression-container {
         margin-top: 2em;
     }
 
-    .display-area {
+    .chord-box-container {
         flex-direction: column;
     }
 
-    .display-area figure:not(:first-child) {
+    .chord-box-container figure {
         margin-top: 2em;
     }
     

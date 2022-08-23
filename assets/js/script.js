@@ -47,6 +47,7 @@ const keySelect = document.getElementById("keySelect");
 
 // Mobile phone control area button
 mobileControlBtn.addEventListener("click", function() {
+    helpBtn.classList.remove("active");
     helpContent.style.display = "none";
     controlArea.style.display = "flex";
     drawer.classList.add("in");
@@ -62,7 +63,7 @@ mobileControlBtn.addEventListener("click", function() {
 
 
 
-// Help button
+// Help buttons
 let helpBtnCount = document.getElementsByClassName("help-btn");
 for (let i = 0; i < helpBtnCount.length; i++) {
 
@@ -70,6 +71,7 @@ for (let i = 0; i < helpBtnCount.length; i++) {
     let helpBtn = helpBtnCount[i];
 
     helpBtn.addEventListener("click", function() {
+        this.classList.add("active");
         helpContent.style.cssText = ("display: flex; z-index: 10;");
         drawer.classList.add("in");
         drawerCloseBtn.after(helpContent);

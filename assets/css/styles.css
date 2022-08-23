@@ -274,6 +274,7 @@ main {
 
 .close-btn {
     right: 1em;
+    z-index: 11;
 }
 
 .help-content {

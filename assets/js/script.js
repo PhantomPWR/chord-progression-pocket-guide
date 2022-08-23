@@ -2,7 +2,7 @@
  * Handle header display on mobile phones
  */
 
-// Set global variables
+// Set constant variables
 const mediaQueryList = [
     window.matchMedia('(max-width: 414px)'),
     window.matchMedia('(max-width: 915px)')
@@ -12,7 +12,6 @@ const siteTitle = document.getElementById("siteTitle");
 const mobileButtons = document.getElementById("mobileButtons");
 const controlArea = document.getElementById("controls");
 const mobileControlBtn = document.getElementById("controlAreaBtn");
-const helpBtn = document.getElementById("helpBtn");
 const helpContent = document.getElementById("helpContent");
 const drawer = document.getElementById("offCanvas");
 const drawerCloseBtn = document.getElementById("drawerCloseBtn");
@@ -48,7 +47,7 @@ const keySelect = document.getElementById("keySelect");
 
 // Mobile phone control area button
 mobileControlBtn.addEventListener("click", function() {
-    helpContent.style.display = "none"
+    helpContent.style.display = "none";
     controlArea.style.display = "flex";
     drawer.classList.add("in");
     drawerCloseBtn.after(controlArea);
@@ -61,18 +60,27 @@ mobileControlBtn.addEventListener("click", function() {
 
 });
 
+
+
 // Help button
-helpBtn.addEventListener("click", function() {
-    helpContent.style.display = "flex";
-    drawer.classList.add("in");
-    drawerCloseBtn.after(helpContent);
-    
-    
-    drawerCloseBtn.addEventListener("click", function() {
-        drawer.classList.remove("in");
-        drawerCloseBtn.after('');
+let helpBtnCount = document.getElementsByClassName("help-btn");
+for (let i = 0; i < helpBtnCount.length; i++) {
+
+    console.log(helpBtnCount[i]);
+    let helpBtn = helpBtnCount[i];
+
+    helpBtn.addEventListener("click", function() {
+        helpContent.style.cssText = ("display: flex; z-index: 10;");
+        drawer.classList.add("in");
+        drawerCloseBtn.after(helpContent);
+        
+        
+        drawerCloseBtn.addEventListener("click", function() {
+            drawer.classList.remove("in");
+            drawerCloseBtn.after('');
+        });
+
     });
 
-});
-
+}
 

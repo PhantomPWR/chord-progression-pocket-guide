@@ -6,6 +6,7 @@ RESET
 
 UTILITIES
    - Hover & Active States
+   - Sliding Drawer Container
 
 TYPOGRAPHY & COLOURS
 
@@ -67,7 +68,7 @@ button.active {
     background-color: #e9bc96;
 }
 
-/* Sliding Drawer Containers */
+/* Sliding Drawer Container */
 
 .drawer,
 .drawer.in {
@@ -78,11 +79,12 @@ button.active {
     left: -100%;
     width: 100%;
     max-width: 960px;
-    z-index: 2;
+    z-index: -1;
 }
 
 .drawer.in {
     left: 0;
+    z-index: 2;
 }
 
 
@@ -148,6 +150,7 @@ main,
     font-size: 2rem;
 }
 
+.help-content,
 .control-area {
     background-color: #d9dcdd;
 }
@@ -223,7 +226,7 @@ ul.fret4 {
 
 main {
     margin: 1em auto;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
     width: 960px;
 }
@@ -268,6 +271,10 @@ main {
 
 .close-btn {
     right: 1em;
+}
+
+.help-content {
+    position: absolute;
 }
 
 .site-title {
@@ -395,6 +402,43 @@ figure,
     width: 100px;
 }
 
+.mobile-phone main {
+    margin-top: 0;
+}
+
 .mobile-phone #controls {
     display: none;
+    flex-direction: column;
+}
+
+
+/* -- Media Queries -- */
+
+/* Phone (Portrait) */
+@media (max-width: 414px) {
+
+    main {
+        width: 100%;
+    }
+    
+    #mobileHeader .site-title {
+        font-size: 2.4rem;
+    }
+
+    #mobileHeader .site-title span {
+        display: block;
+    }
+    
+    .chord-progression-container {
+        margin-top: 2em;
+    }
+
+    .display-area {
+        flex-direction: column;
+    }
+
+    .display-area figure:not(:first-child) {
+        margin-top: 2em;
+    }
+    
 }

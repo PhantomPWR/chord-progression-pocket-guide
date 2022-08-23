@@ -34,8 +34,6 @@ window.addEventListener('load', function() {
             // Display mobile header
             mobileHeader.style.display = 'flex';
 
-        } else {
-            keySelect.before(helpBtn);
         }
     }
 });
@@ -59,6 +57,7 @@ helpButtons.forEach(helpButton => {
     helpButton.addEventListener("click", function() {
         console.log("Help button clicked");
         mobileHeaderHelpBtn.classList.add("active");
+        controlArea.style.display = "none";
         helpContent.style.cssText = ("display: flex; z-index: 10;");
         drawer.classList.add("in");
         drawerCloseBtn.after(helpContent);

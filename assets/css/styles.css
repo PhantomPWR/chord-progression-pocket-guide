@@ -252,7 +252,7 @@ main {
 }
 
 .key-select-container {
-    background: url(/assets/images/circle-of-fifths-key-select.webp) no-repeat scroll 0/cover;
+    background: url(../../assets/images/circle-of-fifths-key-select.webp) no-repeat scroll 0/cover;
     height: 300px;
     width: 300px;
 }

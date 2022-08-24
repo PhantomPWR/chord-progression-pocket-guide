@@ -488,8 +488,9 @@ figure {
 
 
 /* Phone X-Small (Landscape) */
-@media (max-width: 568px)
+@media (max-width: 915px)
    and (orientation: landscape) {
+
     main {
         max-width: 100%;
     }

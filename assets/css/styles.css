@@ -68,6 +68,12 @@ button.active {
     background-color: #e9bc96;
 }
 
+.key-select:hover,
+.key-select.active {
+    background-color: rgba(230 126 34/55%);
+    color: transparent;
+}
+
 /* Sliding Drawer Container */
 
 .drawer,
@@ -139,6 +145,11 @@ main,
     border-radius: 3px;
 }
 
+.key-select {
+    background-color: transparent;
+    color: transparent;
+}
+
 .help-btn,
 .close-btn,
 .controls-btn {
@@ -171,7 +182,7 @@ main,
     font-size: 1rem;
 }
 
-.display-area{
+.display-area {
     background-color: #ecf0f1;
 }
 
@@ -210,6 +221,12 @@ button {
     border-radius: 3px;
 }
 
+.key-select,
+.finger {
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+
 /* Chord Boxes */
 ul[class*="fret"] {
     border: 1px solid #D9DCDD;
@@ -221,11 +238,6 @@ ul.fret1 {
 
 ul.fret4 {
     border-bottom-width: 2px;
-}
-
-.finger {
-    border: 2px solid transparent;
-    border-radius: 50%;
 }
 
 
@@ -285,15 +297,47 @@ main {
 }
 
 .major-keys {
-    width: 290px;
-    outline: 2px solid blue;
+    width: 310px;
 }
 
 .minor-keys {
-    width: 200px;
-    outline: 2px solid darkorange;
+    width: 210px;
 }
 
+.button-group:nth-of-type(1) {
+    transform: rotate(0deg);
+}
+
+.button-group:nth-of-type(2) {
+    transform: rotate(-30deg);
+}
+
+.button-group:nth-of-type(3) {
+    transform: rotate(-60deg);
+}
+
+.button-group:nth-of-type(4) {
+    transform: rotate(-90deg);
+}
+
+.button-group:nth-of-type(5) {
+    transform: rotate(-120deg);
+}
+
+.button-group:nth-of-type(6) {
+    transform: rotate(-150deg);
+}
+
+.button-group {
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+}
+
+.key-select {
+    height: 40px;
+    width: 40px;
+}
 
 .help-btn,
 .close-btn,

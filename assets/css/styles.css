@@ -258,11 +258,21 @@ main {
     position: relative;
 }
 
-.key-select-container {
+
+/* Circle of Fifths - Key Selection Buttons */
+.circle-of-fifths-container {
     background: url(../../assets/images/circle-of-fifths-key-select.webp) no-repeat scroll 0/cover;
-    height: 300px;
-    width: 300px;
+    height: 320px;
+    width: 320px;
+    position: relative;
 }
+
+.keys {
+    margin: 0;
+    padding: 0;
+
+}
+
 
 .help-btn,
 .close-btn,

@@ -428,6 +428,7 @@ figure {
 
 .mobile-phone main {
     margin-top: 0;
+    max-width: 100%;
 }
 
 .mobile-phone #controls,
@@ -483,4 +484,13 @@ figure {
         margin-top: 2em;
     }
     
+}
+
+
+/* Phone X-Small (Landscape) */
+@media (max-width: 568px)
+   and (orientation: landscape) {
+    main {
+        max-width: 100%;
+    }
 }

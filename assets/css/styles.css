@@ -260,17 +260,38 @@ main {
 
 
 /* Circle of Fifths - Key Selection Buttons */
-.circle-of-fifths-container {
-    background: url(../../assets/images/circle-of-fifths-key-select.webp) no-repeat scroll 0/cover;
+.circle-of-fifths-container,
+.key-select-inner {
     height: 320px;
     width: 320px;
     position: relative;
 }
 
+.circle-of-fifths-container {
+    background: url(../../assets/images/circle-of-fifths-key-select.webp) no-repeat scroll 0/cover;
+}
+
+.key-select-inner {
+    align-items: center;
+    justify-content: center;
+}
+
 .keys {
     margin: 0;
     padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+}
 
+.major-keys {
+    width: 290px;
+    outline: 2px solid blue;
+}
+
+.minor-keys {
+    width: 200px;
+    outline: 2px solid darkorange;
 }
 
 

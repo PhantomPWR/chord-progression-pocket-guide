@@ -231,6 +231,14 @@ ul.fret4 {
 
 /* -- SITE STRUCTURE -- */
 
+.flex-container {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
 main {
     margin: 1em auto;
     overflow-x: hidden;
@@ -245,7 +253,6 @@ main {
 
 /* Control Area */
 .control-area {
-    display: flex;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
@@ -298,7 +305,6 @@ main {
 }
 
 .chord-progression-select .btn-row {
-    display: flex;
     justify-content: space-evenly;
 }
 
@@ -317,22 +323,20 @@ main {
 /* Display Area */
 .display-area,
 .selection-display {
-    display: flex;
     justify-content: space-evenly;
-}
-
-.display-area {
-    flex-direction: column;
 }
 
 .selection-display {
     padding: 1em;
 }
 
+.chord-box-row {
+    justify-content: space-evenly;
+    width: 100%;
+}
+
 figure,
 .frets {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     margin: 0;
@@ -344,14 +348,12 @@ figure {
 
 .label-notes,
 [class*="fret"] {
-    display: flex;
     margin: 0;
     padding: 0;
 }
 
 .label-notes li,
 [class*="string"] {
-    display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
@@ -392,7 +394,6 @@ figure {
     position: relative;
     width: 26px;
     height: 26px;
-    display: flex;
     justify-content: center;
     align-content: center;
     margin: 0;
@@ -416,7 +417,6 @@ figure {
 
 /* Mobile Header Buttons */
 #mobileButtons {
-    display: flex;
     justify-content: space-around;
 }
 
@@ -459,29 +459,25 @@ figure {
         display: block;
     }
 
-    .mobile-phone #controls,
-    .mobile-phone .help-content {
-        top: 60px;
-    }
-
     .mobile-phone #controls {
         flex-direction: column;
     }
 
-    .selection-display {
-        flex-direction: column;
+    .mobile-phone #controls,
+    .mobile-phone .help-content {
+        top: 60px;
     }
     
     .chord-progression-container {
         margin-top: 2em;
     }
 
-    .chord-box-container {
-        flex-direction: column;
-    }
-
     .chord-box-container figure {
         margin-top: 2em;
+    }
+
+    .chord-box-row {
+        flex-direction: column;
     }
     
 }

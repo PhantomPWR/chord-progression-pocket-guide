@@ -25,16 +25,16 @@
         <!-- Header Placeholder for Small Devices -->
         <header id="mobileHeader">
 
-            <div id="mobileButtons">
+            <div id="mobileButtons" class="flex-container">
 
                 <!-- Control Area Button -->
-                <button id="mobileHeaderControlsBtn" class="controls-btn">
+                <button id="mobileHeaderControlsBtn" class="controls-btn flex-container">
                     <i class="fa-solid fa-sliders"></i>
                     <span class="uppercase">Controls</span>
                 </button>
 
                 <!-- Help Button -->
-                <button id="mobileHeaderHelpBtn" class="help-btn drawer-btn">
+                <button id="mobileHeaderHelpBtn" class="help-btn drawer-btn flex-container">
                     <i class="fa-solid fa-circle-question"></i>
                     <span class="uppercase">Help</span>
                 </button>
@@ -46,7 +46,7 @@
         <div id="offCanvas" class="drawer">
 
             <!-- Drawer Close Button -->
-            <button id="drawerCloseBtn" class="close-btn">
+            <button id="drawerCloseBtn" class="close-btn flex-container">
                 <i class="fa-solid fa-circle-xmark"></i>
                 <span class="uppercase">Close</span>
             </button>
@@ -59,10 +59,10 @@
         </div>
 
         <!-- Control Area -->
-        <section id="controls" class="control-area">
+        <section id="controls" class="control-area flex-container">
             
             <!-- Help Button -->
-            <button class="help-btn">
+            <button class="help-btn flex-container">
                 <i class="fa-solid fa-circle-question"></i>
                 <span class="uppercase">Help</span>
             </button>
@@ -78,17 +78,17 @@
                 <div class="chord-progression-inner">
                     <div id="chordProgressionSelect" class="chord-progression-select">
                         <h2  class="uppercase">Select a chord progression</h2>
-                            <div class="btn-row">
+                            <div class="btn-row flex-container">
                                 <button class="chord-progression active">I V IV V</button>
                                 <button class="chord-progression">I V vi V</button>
                                 <button class="chord-progression">I vi IV V</button>
                         </div>
-                            <div class="btn-row">
+                            <div class="btn-row flex-container">
                                 <button class="chord-progression">I vi ii V</button>
                                 <button class="chord-progression">I iii vi V</button>
                                 <button class="chord-progression">vi IV I V</button>
                         </div>
-                            <div class="btn-row">
+                            <div class="btn-row flex-container">
                                 <button class="chord-progression">I ♭VII IV I</button>
                                 <button class="chord-progression">I ♭VII ♭VI V</button>
                                 <button class="chord-progression">i ♭VII ♭VI ♭VII</button>
@@ -101,10 +101,10 @@
         <!-- Control Area End -->
 
         <!-- Display Area -->
-        <section id="display" class="display-area">
+        <section id="display" class="display-area flex-container flex-column">
 
             <!-- Display Select Key & Chord Progression -->
-            <div id="selectionDisplay" class="selection-display">
+            <div id="selectionDisplay" class="selection-display flex-container flex-column">
                 <div class="selected-key">
                     <span class="selection-key-label">Selected Key: </span>
                     <span id="selectedKeyDisplay">G major</span>
@@ -116,487 +116,497 @@
             </div>
 
             <!-- Chord Box Diagram Container -->
-            <div class="chord-box-container">
+            <div class="chord-box-container flex-container flex-column">
 
-                <!-- Chord Box Diagram 1 - Start -->
-                <figure id="chordBox1" class="chord-box">
+                <!-- Chord Box Diagram Row 1 -->
+                <div class="chord-box-row flex-container">
 
-                    <!-- Chord Info -->
-                    <span class="label-degree">I</span>
-                    <span class="label-chord">G</span>
+                    <!-- Chord Box Diagram 1 - Start -->
+                    <figure id="chordBox1" class="chord-box flex-container flex-column">
 
-                    <!-- Fretboard - Start -->
-                    <div class="fretboard">
+                        <!-- Chord Info -->
+                        <span class="label-degree">I</span>
+                        <span class="label-chord">G</span>
 
-                        <!-- Frets -->
-                        <div class="frets">
+                        <!-- Fretboard - Start -->
+                        <div class="fretboard">
 
-                            <!-- Note Names -->
-                            <ul class="label-notes">
-                                <li class="note1">G</li>
-                                <li class="note2">B</li>
-                                <li class="note3">D</li>
-                                <li class="note4">G</li>
-                                <li class="note5">B</li>
-                                <li class="note6">G</li>
-                            </ul>
+                            <!-- Frets -->
+                            <div class="frets flex-container flex-column">
 
-                            <!-- Fret 1 -->
-                            <ul class="fret1">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
+                                <!-- Note Names -->
+                                <ul class="label-notes flex-container">
+                                    <li class="note1 flex-container">G</li>
+                                    <li class="note2 flex-container">B</li>
+                                    <li class="note3 flex-container">D</li>
+                                    <li class="note4 flex-container">G</li>
+                                    <li class="note5 flex-container">B</li>
+                                    <li class="note6 flex-container">G</li>
+                                </ul>
 
-                            <!-- Fret 2 -->
-                            <ul class="fret2">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger active">2</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
+                                <!-- Fret 1 -->
+                                <ul class="fret1 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 3 -->
-                            <ul class="fret3">
-                                <li class="string1">
-                                    <span class="finger active">1</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger active">4</span>
-                                </li>
-                            </ul>
+                                <!-- Fret 2 -->
+                                <ul class="fret2 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container active">2</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 4 -->
-                            <ul class="fret4">
-                                <li class="string1">
-                                    <span class="finger">1</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">2</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">3</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">4</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">5</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">6</span>
-                                </li>
-                            </ul>
+                                <!-- Fret 3 -->
+                                <ul class="fret3 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container active">1</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container active">4</span>
+                                    </li>
+                                </ul>
 
-                        </div>
-                        <!-- Frets - End -->
+                                <!-- Fret 4 -->
+                                <ul class="fret4 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">1</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">2</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">3</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">4</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">5</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">6</span>
+                                    </li>
+                                </ul>
 
-                    </div>
-                    <!-- Fretboard - End -->
-                    
-                </figure>
-                <!-- Chord Box Diagram 1 - End -->
-
-                <!-- Chord Box Diagram 2 - Start -->
-                <figure id="chordBox2" class="chord-box">
-
-                    <!-- Chord Info -->
-                    <span class="label-degree">V</span>
-                    <span class="label-chord">D</span>
-
-                    <!-- Fretboard -->
-                    <div class="fretboard">
-
-                        <!-- Frets -->
-                        <div class="frets">
-
-                            <!-- Note Names -->
-                            <ul class="label-notes">
-                                <li class="note1">x</li>
-                                <li class="note2">x</li>
-                                <li class="note3">D</li>
-                                <li class="note4">A</li>
-                                <li class="note5">D</li>
-                                <li class="note6">F♯</li>
-                            </ul>
-
-                            <!-- Fret 1 -->
-                            <ul class="fret1">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
-
-                            <!-- Fret 2 -->
-                            <ul class="fret2">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger active">1</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger active">2</span>
-                                </li>
-                            </ul>
-
-                            <!-- Fret 3 -->
-                            <ul class="fret3">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger active">3</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
-
-                            <!-- Fret 4 -->
-                            <ul class="fret4">
-                                <li class="string1">
-                                    <span class="finger">1</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">2</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">3</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">4</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">5</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">6</span>
-                                </li>
-                            </ul>
+                            </div>
+                            <!-- Frets - End -->
 
                         </div>
-                        <!-- Frets - End -->
+                        <!-- Fretboard - End -->
                         
-                    </div>
-                    <!-- Fretboard - End -->
+                    </figure>
+                    <!-- Chord Box Diagram 1 - End -->
 
-                </figure>
-                <!-- Chord Box Diagram 2 - End -->
+                    <!-- Chord Box Diagram 2 - Start -->
+                    <figure id="chordBox2" class="chord-box flex-container flex-column">
 
-                <!-- Chord Box Diagram 3 - Start -->
-                <figure id="chordBox3" class="chord-box">
+                        <!-- Chord Info -->
+                        <span class="label-degree">V</span>
+                        <span class="label-chord">D</span>
 
-                    <!-- Chord Info -->
-                    <span class="label-degree">IV</span>
-                    <span class="label-chord">C</span>
+                        <!-- Fretboard -->
+                        <div class="fretboard">
 
-                    <!-- Fretboard -->
-                    <div class="fretboard">
+                            <!-- Frets -->
+                            <div class="frets flex-container flex-column">
 
-                        <!-- Frets -->
-                        <div class="frets">
+                                <!-- Note Names -->
+                                <ul class="label-notes flex-container">
+                                    <li class="note1 flex-container">x</li>
+                                    <li class="note2 flex-container">x</li>
+                                    <li class="note3 flex-container">D</li>
+                                    <li class="note4 flex-container">A</li>
+                                    <li class="note5 flex-container">D</li>
+                                    <li class="note6 flex-container">F♯</li>
+                                </ul>
 
-                            <!-- Note Names -->
-                            <ul class="label-notes">
-                                <li class="note1">G</li>
-                                <li class="note2">B</li>
-                                <li class="note3">D</li>
-                                <li class="note4">G</li>
-                                <li class="note5">B</li>
-                                <li class="note6">G</li>
-                            </ul>
+                                <!-- Fret 1 -->
+                                <ul class="fret1 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 1 -->
-                            <ul class="fret1">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger active">1</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
+                                <!-- Fret 2 -->
+                                <ul class="fret2 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container active">1</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container active">2</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 2 -->
-                            <ul class="fret2">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger active">2</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
+                                <!-- Fret 3 -->
+                                <ul class="fret3 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container active">3</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 3 -->
-                            <ul class="fret3">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger active">3</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
+                                <!-- Fret 4 -->
+                                <ul class="fret4 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">1</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">2</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">3</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">4</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">5</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">6</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 4 -->
-                            <ul class="fret4">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
+                            </div>
+                            <!-- Frets - End -->
+                            
+                        </div>
+                        <!-- Fretboard - End -->
+
+                    </figure>
+                    <!-- Chord Box Diagram 2 - End -->
+
+                </div>
+
+                <!-- Chord Box Diagram Row 2 -->
+                <div class="chord-box-row flex-container">
+
+                    <!-- Chord Box Diagram 3 - Start -->
+                    <figure id="chordBox3" class="chord-box flex-container flex-column">
+
+                        <!-- Chord Info -->
+                        <span class="label-degree">IV</span>
+                        <span class="label-chord">C</span>
+
+                        <!-- Fretboard -->
+                        <div class="fretboard">
+
+                            <!-- Frets -->
+                            <div class="frets flex-container flex-column">
+
+                                <!-- Note Names -->
+                                <ul class="label-notes flex-container">
+                                    <li class="note1 flex-container">G</li>
+                                    <li class="note2 flex-container">B</li>
+                                    <li class="note3 flex-container">D</li>
+                                    <li class="note4 flex-container">G</li>
+                                    <li class="note5 flex-container">B</li>
+                                    <li class="note6 flex-container">G</li>
+                                </ul>
+
+                                <!-- Fret 1 -->
+                                <ul class="fret1 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container active">1</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
+
+                                <!-- Fret 2 -->
+                                <ul class="fret2 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container active">2</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
+
+                                <!-- Fret 3 -->
+                                <ul class="fret3 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container active">3</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
+
+                                <!-- Fret 4 -->
+                                <ul class="fret4 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- Frets - End -->
 
                         </div>
-                        <!-- Frets - End -->
+                        <!-- Fretboard - End -->
 
-                    </div>
-                    <!-- Fretboard - End -->
+                    </figure>
+                    <!-- Chord Box Diagram 3 - End -->
 
-                </figure>
-                <!-- Chord Box Diagram 3 - End -->
+                    <!-- Chord Box Diagram 4 - Start -->
+                    <figure id="chordBox4" class="chord-box flex-container flex-column">
 
-                <!-- Chord Box Diagram 4 - Start -->
-                <figure id="chordBox4" class="chord-box">
+                        <!-- Chord Info -->
+                        <span class="label-degree">V</span>
+                        <span class="label-chord">D</span>
 
-                    <!-- Chord Info -->
-                    <span class="label-degree">V</span>
-                    <span class="label-chord">D</span>
+                        <!-- Fretboard -->
+                        <div class="fretboard">
 
-                    <!-- Fretboard -->
-                    <div class="fretboard">
+                            <!-- Frets -->
+                            <div class="frets flex-container flex-column">
 
-                        <!-- Frets -->
-                        <div class="frets">
+                                <!-- Note Names -->
+                                <ul class="label-notes flex-container">
+                                    <li class="note1 flex-container">x</li>
+                                    <li class="note2 flex-container">x</li>
+                                    <li class="note3 flex-container">D</li>
+                                    <li class="note4 flex-container">A</li>
+                                    <li class="note5 flex-container">D</li>
+                                    <li class="note6 flex-container">F♯</li>
+                                </ul>
 
-                            <!-- Note Names -->
-                            <ul class="label-notes">
-                                <li class="note1">x</li>
-                                <li class="note2">x</li>
-                                <li class="note3">D</li>
-                                <li class="note4">A</li>
-                                <li class="note5">D</li>
-                                <li class="note6">F♯</li>
-                            </ul>
+                                <!-- Fret 1 -->
+                                <ul class="fret1 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 1 -->
-                            <ul class="fret1">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
+                                <!-- Fret 2 -->
+                                <ul class="fret2 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container active">1</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container active">2</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 2 -->
-                            <ul class="fret2">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger active">1</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger active">2</span>
-                                </li>
-                            </ul>
+                                <!-- Fret 3 -->
+                                <ul class="fret3 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container active">3</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 3 -->
-                            <ul class="fret3">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger active">3</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
+                                <!-- Fret 4 -->
+                                <ul class="fret4 flex-container">
+                                    <li class="string1 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string2 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string3 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string4 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string5 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                    <li class="string6 flex-container">
+                                        <span class="finger flex-container">x</span>
+                                    </li>
+                                </ul>
 
-                            <!-- Fret 4 -->
-                            <ul class="fret4">
-                                <li class="string1">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string2">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string3">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string4">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string5">
-                                    <span class="finger">x</span>
-                                </li>
-                                <li class="string6">
-                                    <span class="finger">x</span>
-                                </li>
-                            </ul>
+                            </div>
+                            <!-- Frets - End -->
 
                         </div>
-                        <!-- Frets - End -->
+                        <!-- Fretboard - End -->
 
-                    </div>
-                    <!-- Fretboard - End -->
+                    </figure>
+                    <!-- Chord Box Diagram 4 - End -->
 
-                </figure>
-                <!-- Chord Box Diagram 4 - End -->
+                </div>
 
             </div>
 

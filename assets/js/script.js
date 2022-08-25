@@ -17,7 +17,7 @@ const controlArea = document.getElementById("controls");
 const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn");
 const helpContent = document.getElementById("helpContent");
 const drawer = document.getElementById("offCanvas");
-const keySelect = document.getElementById("keySelect");
+const keySelectButtons = document.querySelectorAll(".key-select");
 
 
 // Detect mobile phone & handle element display
@@ -65,7 +65,6 @@ helpButtons.forEach(helpButton => {
 
 });
 
-
 // Drawer close button
 closeButtons.forEach(closeBtn => {
 
@@ -76,3 +75,17 @@ closeButtons.forEach(closeBtn => {
     });
 
 });
+
+// Key select button
+keySelectButtons.forEach(keySelectButton => {
+
+    document.addEventListener("click", function(event) {
+
+        for (keySelectButton of keySelectButtons) {
+            keySelectButton.classList.remove("active");
+        }
+        event.target.classList.add("active");
+    });
+
+});
+

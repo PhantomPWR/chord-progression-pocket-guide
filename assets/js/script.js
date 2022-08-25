@@ -18,6 +18,7 @@ const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn
 const helpContent = document.getElementById("helpContent");
 const drawer = document.getElementById("offCanvas");
 const keySelectButtons = document.querySelectorAll(".key-select");
+const selectedKeyDisplay = document.getElementById("selectedKeyDisplay");
 
 
 // Detect mobile phone & handle element display
@@ -82,9 +83,18 @@ keySelectButtons.forEach(keySelectButton => {
     document.addEventListener("click", function(event) {
 
         for (keySelectButton of keySelectButtons) {
+
+            // Remove active css class from non-selected key select buttons
             keySelectButton.classList.remove("active");
         }
+
+        // Add active css class to clicked/tapped key select button
         event.target.classList.add("active");
+        console.log(event.target.innerText);
+
+        // Update selected key display with the clicked/tapped button text
+        let buttonText = event.target.innerText;
+        selectedKeyDisplay.innerText = buttonText;
     });
 
 });

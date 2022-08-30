@@ -37,6 +37,28 @@ window.addEventListener('load', function() {
 });
 
 
+// Wait for the DOM to finish loading
+// Get button elements and add event listeners
+
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+    let displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
+    let displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.hasAttribute("data-key-select")) {
+                console.log(this.innerText);
+                displaySelectedKeyValue.innerText = (this.innerText);
+            } else if (this.hasAttribute("data-chord-progression-select")) {
+                console.log(this.innerText);
+                displaySelectedChordProgressionValue.innerText = (this.innerText);
+            }
+        });
+    }
+});
+
+
 // Button Event Listeners
 
 // Mobile phone control area button
@@ -84,25 +106,25 @@ console.log(buttons);
 //     var keySelectButton;
 // }
 
-for (let button of buttons) {
-    button.addEventListener("click", function() {
-        if (this.getAttribute("data-type") === "controls") {
-            console.log("Controls button clicked");
-            helpContent.style.display = "none";
-        } else if (this.getAttribute("data-type") === "close") {
-            console.log("Close button clicked");
-            drawerOpenClose();
-        } else if (this.getAttribute("data-type") === "help") {
-            console.log("Help button clicked");
-            drawerOpenClose();
-            mobileHeaderHelpBtn.classList.remove("active");
+// for (let button of buttons) {
+//     button.addEventListener("click", function() {
+//         if (this.getAttribute("data-type") === "controls") {
+//             console.log("Controls button clicked");
+//             helpContent.style.display = "none";
+//         } else if (this.getAttribute("data-type") === "close") {
+//             console.log("Close button clicked");
+//             drawerOpenClose();
+//         } else if (this.getAttribute("data-type") === "help") {
+//             console.log("Help button clicked");
+//             drawerOpenClose();
+//             mobileHeaderHelpBtn.classList.remove("active");
 //     helpContent.style.display = "none";
 //     controlArea.style.display = "flex";
 //     drawer.classList.add("in");
 //     drawerCloseBtn.after(controlArea);
-        }
-    });
-}
+//         }
+//     });
+// }
 
     // document.addEventListener("click", function() {
 

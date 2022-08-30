@@ -95,65 +95,6 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 
 // });
 
-// Key select button
-let buttons = document.getElementsByTagName("button");
-console.log(buttons);
-
-
-// var keySelectButtonsList = keySelectButtons.length;
-// for (let i = 0; i < keySelectButtonsList; i++) {
-//     console.log(keySelectButtons[i].value);
-//     var keySelectButton;
-// }
-
-// for (let button of buttons) {
-//     button.addEventListener("click", function() {
-//         if (this.getAttribute("data-type") === "controls") {
-//             console.log("Controls button clicked");
-//             helpContent.style.display = "none";
-//         } else if (this.getAttribute("data-type") === "close") {
-//             console.log("Close button clicked");
-//             drawerOpenClose();
-//         } else if (this.getAttribute("data-type") === "help") {
-//             console.log("Help button clicked");
-//             drawerOpenClose();
-//             mobileHeaderHelpBtn.classList.remove("active");
-//     helpContent.style.display = "none";
-//     controlArea.style.display = "flex";
-//     drawer.classList.add("in");
-//     drawerCloseBtn.after(controlArea);
-//         }
-//     });
-// }
-
-    // document.addEventListener("click", function() {
-
-    //     for (let keySelectButton of keySelectButtons) {
-
-    //         // Remove active css class from non-selected key select buttons
-    //         keySelectButton.classList.remove("active");
-    //     }
-
-    //     // Add active css class to clicked/tapped key select button
-    //     keySelectButton.classList.add("active");
-    //     console.log(this.target.value);
-
-    //     // Update selected key display with the clicked/tapped button text
-    //     let buttonText = keySelectButton.target.value;
-    //     selectedKeyDisplay.classList.remove("ghosted");
-    //     selectedKeyDisplay.innerText = buttonText;
-    // });
-
-
-    /**
-     * Fill the selected key display field with
-     * the value from the selected key button
-     */
-    function displaySelectedKeyValue() {
-        let selectedKeyDisplay = (document.getElementById("selectedKeyDisplay").innerText);
-    }
-
-
     function drawerOpenClose() {
         let drawer = document.getElementById("offCanvas");
         if (drawer.classList.contains("in")) {

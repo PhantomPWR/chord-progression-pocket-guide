@@ -28,13 +28,13 @@
             <div id="mobileButtons" class="flex-container">
 
                 <!-- Control Area Button -->
-                <button id="mobileHeaderControlsBtn" class="controls-btn flex-container">
+                <button type="button" data-type="controls" data-target="drawer" id="mobileHeaderControlsBtn" class="controls-btn flex-container">
                     <i class="fa-solid fa-sliders"></i>
                     <span class="uppercase">Controls</span>
                 </button>
 
                 <!-- Help Button -->
-                <button id="mobileHeaderHelpBtn" class="help-btn drawer-btn flex-container">
+                <button type="button" data-type="help" data-target="drawer" id="mobileHeaderHelpBtn" class="help-btn drawer-btn flex-container">
                     <i class="fa-solid fa-circle-question"></i>
                     <span class="uppercase">Help</span>
                 </button>
@@ -46,13 +46,13 @@
         <div id="offCanvas" class="drawer">
 
             <!-- Drawer Close Button -->
-            <button id="drawerCloseBtn" class="close-btn flex-container">
+            <button type="button" data-type="close" data-target="drawer" id="drawerCloseBtn" class="close-btn flex-container">
                 <i class="fa-solid fa-circle-xmark"></i>
                 <span class="uppercase">Close</span>
             </button>
 
             <!-- Help Content -->
-            <div id="helpContent" class="help-content">
+            <div id="helpContent" class="help-content flex-container">
                 <img src="assets/images/help-content-placeholder.png" width="363" height="568" alt="Help Content Placeholder">
             </div>
 
@@ -62,7 +62,7 @@
         <section id="controls" class="control-area flex-container">
             
             <!-- Help Button -->
-            <button class="help-btn flex-container">
+            <button type="button" data-type="help" data-target="drawer" class="help-btn flex-container">
                 <i class="fa-solid fa-circle-question"></i>
                 <span class="uppercase">Help</span>
             </button>
@@ -78,38 +78,38 @@
 
                         <!-- Button Group 1 -->
                         <div class="button-group major flex-container">    
-                            <button id="eFlatMaj" class="key-select">E♭ Maj</button>
-                            <button id="aMaj" class="key-select">A Maj</button>
+                            <button type="button" data-type="eFlatMaj" class="key-select" value="E♭ Major"></button>
+                            <button type="button" data-type="aMaj" class="key-select" value="A Major"></button>
                         </div>
 
                         <!-- Button Group 2 -->
                         <div class="button-group major flex-container">
-                            <button id="aFlatMaj" class="key-select">A♭ Maj</button>
-                            <button id="dMaj" class="key-select">D Maj</button>
+                            <button type="button" data-type="aFlatMaj" class="key-select" value="A♭ Major"></button>
+                            <button type="button" data-type="dMaj" class="key-select" value="D Major"></button>
                         </div>
 
                         <!-- Button Group 3 -->
                         <div class="button-group major flex-container">
-                            <button id="dFlatCSharpMaj" class="key-select">D♭/C♯ Maj</button>
-                            <button id="gMaj" class="key-select active">G Maj</button>
+                            <button type="button" data-type="dFlatCSharpMaj" class="key-select" value="D♭/C♯ Major"></button>
+                            <button type="button" data-type="gMaj" class="key-select active" value="G Major"></button>
                         </div>
 
                         <!-- Button Group 4 -->
                         <div class="button-group major flex-container">
-                            <button id="gFlatFSharpMaj" class="key-select">G♭/F♯ Maj</button>
-                            <button id="cMaj" class="key-select">C Maj</button>
+                            <button type="button" data-type="gFlatFSharpMaj" class="key-select" value="G♭/F♯ Major"></button>
+                            <button type="button" data-type="cMaj" class="key-select" value="C Major"></button>
                         </div>
 
                         <!-- Button Group 5 -->
                         <div class="button-group major flex-container">
-                            <button id="bMaj" class="key-select">B Maj</button>
-                            <button id="fMaj" class="key-select">F Maj</button>
+                            <button type="button" data-type="bMaj" class="key-select" value="B Major"></button>
+                            <button type="button" data-type="fMaj" class="key-select" value="F Major"></button>
                         </div>
 
                         <!-- Button Group 6 -->
                         <div class="button-group major flex-container">
-                            <button id="eMaj" class="key-select">E Maj</button>
-                            <button id="bFlatMaj" class="key-select">B♭ Maj</button>
+                            <button type="button" data-type="eMaj" class="key-select" value="E Major"></button>
+                            <button type="button" data-type="bFlatMaj" class="key-select" value="B♭ Major"></button>
                         </div>
 
                     </div>
@@ -119,38 +119,38 @@
 
                         <!-- Button Group 1 -->
                         <div class="button-group minor flex-container">
-                            <button id="cMin" class="key-select">C min</button>
-                            <button id="fSharpMin" class="key-select">F♯ min</button>
+                            <button type="button" data-type="cMin" class="key-select" value="C minor"></button>
+                            <button type="button" data-type="fSharpMin" class="key-select" value="F♯ minor"></button>
                         </div>
 
                         <!-- Button Group 2 -->
                         <div class="button-group minor flex-container">
-                            <button id="fMin" class="key-select">F min</button>
-                            <button id="bMin" class="key-select">B min</button>
+                            <button type="button" data-type="fMin" class="key-select" value="F minor"></button>
+                            <button type="button" data-type="bMin" class="key-select" value="B minor"></button>
                         </div>
 
                         <!-- Button Group 3 -->
                         <div class="button-group minor flex-container">
-                            <button id="bFlatMin" class="key-select">B♭ min</button>
-                            <button id="eMin" class="key-select">E min</button>
+                            <button type="button" data-type="bFlatMin" class="key-select" value="B♭ minor"></button>
+                            <button type="button" data-type="eMin" class="key-select" value="E minor"></button>
                         </div>
 
                         <!-- Button Group 4 -->
                         <div class="button-group minor flex-container">
-                            <button id="eFlatMin" class="key-select">E♭ min</button>
-                            <button id="aMin" class="key-select">A min</button>
+                            <button type="button" data-type="eFlatMin" class="key-select" value="E♭ minor"></button>
+                            <button type="button" data-type="aMin" class="key-select" value="A minor"></button>
                         </div>
 
                         <!-- Button Group 5 -->
                         <div class="button-group minor flex-container">
-                            <button id="gSharpMin" class="key-select">G♯ min</button>
-                            <button id="dMin" class="key-select">D min</button>
+                            <button type="button" data-type="gSharpMin" class="key-select" value="G♯ minor"></button>
+                            <button type="button" data-type="dMin" class="key-select" value="D minor"></button>
                         </div>
 
                         <!-- Button Group 6 -->
                         <div class="button-group minor flex-container">
-                            <button id="cSharpMin" class="key-select">C♯ min</button>
-                            <button id="gMin" class="key-select">G min</button>
+                            <button type="button" data-type="cSharpMin" class="key-select" value="C♯ minor"></button>
+                            <button type="button" data-type="gMin" class="key-select" value="G minor"></button>
                         </div>
 
                     </div>
@@ -193,12 +193,12 @@
             <!-- Display Select Key & Chord Progression -->
             <div id="selectionDisplay" class="selection-display flex-container flex-column">
                 <div class="selected-key">
-                    <span class="selection-key-label">Selected Key: </span>
-                    <span id="selectedKeyDisplay">G major</span>
+                    <span class="selection-key-label uppercase">Selected Key: </span>
+                    <span id="selectedKeyDisplay" class="selected-display-text ghosted">Select a key</span>
                 </div>
                 <div class="selected-chord-progression">
-                    <span class="selection-chord-progression-label">Selected Chord Progression: </span>
-                    <span id="selectedChordProgressionDisplay">I V IV V</span>
+                    <span class="selection-chord-progression-label uppercase">Selected Chord Progression: </span>
+                    <span id="selectedChordProgressionDisplay" class="selected-display-text ghosted">I V IV V</span>
                 </div>
             </div>
 

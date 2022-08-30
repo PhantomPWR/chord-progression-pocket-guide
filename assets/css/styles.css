@@ -74,12 +74,17 @@ button.active {
     color: transparent;
 }
 
-/* Sliding Drawer Container */
-
+/* FX */
+#controls,
+#controls.show,
 .drawer,
 .drawer.in {
     transition: 300ms all ease-in-out;
 }
+
+
+/* Sliding Drawer Container */
+
 .drawer {
     position: absolute;
     left: -100%;
@@ -110,7 +115,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.selection-key-label,
+.selection-chord-progression-label {
     font-family: "Orbitron", sans-serif;
 }
 
@@ -123,6 +130,10 @@ h6,
 strong,
 button {
     font-weight: 600;
+}
+
+.ghosted {
+    color: #95a5a6;
 }
 
 .uppercase {
@@ -187,7 +198,13 @@ main,
 }
 
 .selection-display {
-    background-color: rgb(44 62 80 / 10%);
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+.selected-display-text {
+    color: #e67e22;
+    font-weight: bold;
 }
 
 .label-degree {
@@ -506,14 +523,28 @@ figure {
     max-width: 100%;
 }
 
-.mobile-phone #controls,
+.mobile-phone #controls {
+    height: 0;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mobile-phone #controls.show {
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    padding: 1em 0;
+}
+
+/* .mobile-phone #controls, */
 .mobile-phone .help-content {
     top: 0;
 }
 
-.mobile-phone #controls {
-    display: none;
-}
+/* .mobile-phone #controls {
+    height: 0;
+} */
 
 
 
@@ -538,7 +569,7 @@ figure {
         flex-direction: column;
     }
 
-    .mobile-phone #controls,
+    /* .mobile-phone #controls, */
     .mobile-phone .help-content {
         top: 60px;
     }

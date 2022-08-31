@@ -132,10 +132,6 @@ button {
     font-weight: 600;
 }
 
-.ghosted {
-    color: #95a5a6;
-}
-
 .uppercase {
     text-transform: uppercase;
 }
@@ -205,6 +201,10 @@ main,
 .selected-display-text {
     color: #e67e22;
     font-weight: bold;
+}
+
+.ghosted {
+    color: #95a5a6;
 }
 
 .label-degree {

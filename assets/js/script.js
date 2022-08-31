@@ -48,15 +48,17 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.classList.remove("active");
         button.addEventListener("click", function() {
-            this.classList.add("active");
             if (this.hasAttribute("data-key-select")) {
                 console.log(this.innerText);
                 displaySelectedKeyValue.innerText = (this.innerText);
                 displaySelectedKeyValue.classList.remove("ghosted");
+
             } else if (this.hasAttribute("data-chord-progression-select")) {
+
                 console.log(this.innerText);
                 displaySelectedChordProgressionValue.classList.remove("ghosted");
                 displaySelectedChordProgressionValue.innerText = (this.innerText);
+
             }
         });
     }

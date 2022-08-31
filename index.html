@@ -192,13 +192,16 @@
 
             <!-- Display Select Key & Chord Progression -->
             <div id="selectionDisplay" class="selection-display flex-container flex-column">
-                <div class="selected-key">
-                    <span class="selection-key-label uppercase">Selected Key: </span>
-                    <span id="selectedKeyDisplay" class="selected-display-text ghosted">Select a key</span>
-                </div>
-                <div class="selected-chord-progression">
-                    <span class="selection-chord-progression-label uppercase">Selected Chord Progression: </span>
-                    <span id="selectedChordProgressionDisplay" class="selected-display-text ghosted">Select a chord progression</span>
+                <h3 class="selection-heading uppercase">Your Selection</h3>
+                <div class="selection-container flex-container">
+                    <div class="selected-key flex-container">
+                        <span class="selection-key-label uppercase">Key: </span>
+                        <span id="selectedKeyDisplay" class="selected-display-text ghosted">None</span>
+                    </div>
+                    <div class="selected-chord-progression flex-container">
+                        <span class="selection-chord-progression-label uppercase">Chord Progression: </span>
+                        <span id="selectedChordProgressionDisplay" class="selected-display-text ghosted">None</span>
+                    </div>
                 </div>
             </div>
 

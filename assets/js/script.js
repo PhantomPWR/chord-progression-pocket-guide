@@ -101,16 +101,36 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 
 // });
 
-    function drawerOpenClose() {
-        let drawer = document.getElementById("offCanvas");
-        if (drawer.classList.contains("in")) {
-            drawer.classList.remove("in");
-        } else {
-            drawer.classList.add("in");
-        }
-
-    }
 
 
+/**
+ * Is the selected key Major or Minor?
+ */
 
+//  function majorMinor() {
+//     if (selectedKey.attributeValue = "major") {
+//         key = "major";
+//     } else {
+//         key = "minor";
+//     }
+// }
 
+/**
+ * Find the correct notes to
+ * display above chord diagram
+ */
+
+// function stringNotes() {
+//     if (string not in scale) {
+//         note = "x";
+//     } else {
+//         note = scaleNote;
+//     }
+// }
+
+/**
+ * Scale formulas in semitones (13 in total)
+ * Major: R-W-W-H-W-W-W-H = .-2-2-1-2-2-2-1
+ * Minor: R-W-H-W-W-H-W-W = .-2-1-2-2-1-2-2
+ * Distance between frets = 1 semitone
+ */

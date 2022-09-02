@@ -130,21 +130,74 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 
 /**
  * Scale formulas in semitones (13 in total)
- * Major: R-W-W-H-W-W-W-H = .-2-2-1-2-2-2-1
- * Minor: R-W-H-W-W-H-W-W = .-2-1-2-2-1-2-2
+ * R = Root note
+ * Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
+ * Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
  * Distance between frets = 1 semitone
- * Sharps: F C G D A E B
- * Flats:  B E A D G C F
+ * Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
+ * Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
+ * 
+ * 12 Major Keys
+ * 12 Minor Keys
+ * 
+ * 9 Chord Progressions
+ * 
+ * Each key has 4 chord diagrams - according to the scale degrees of
+ * the relevant chord progression
+ * 
  */
 
+/**
+ * Key: E
+ * Tonality: Major
+ * Scale Root: E
+ * Chord Progression - I V IV V
+ */
 
-// Chord Diagram
-let chordDiagram = {
+// Chord Diagram 1 - 
+let chordDiagram1 = {
     scaleDegree: '1',
-    chordName: 'E Major',
+    chordName: 'E',
+    chordTonality: 'Major',
     chordNotes: ['E', 'B', 'E', 'G♯', 'B', 'E'],
     fret1: ['', '', '', '1', '', ''],
     fret2: ['', '2', '3', '', '', ''],
     fret3: ['', '', '', '', '', ''],
     fret4: ['', '', '', '', '', '']
+};
+
+// Chord Diagram 2 - 
+let chordDiagram2 = {
+    scaleDegree: '5',
+    chordName: 'B',
+    chordTonality: 'Major',
+    chordNotes: ['x', 'B', 'F♯', 'B', 'D♯', 'F♯'],
+    fret1: ['', '', '', '', '', ''],
+    fret2: ['', '1', '1', '1', '1', '1'],
+    fret3: ['', '', '', '', '', ''],
+    fret4: ['', '', '2', '3', '4', '']
+};
+
+// Chord Diagram 3 - 
+let chordDiagram3 = {
+    scaleDegree: '4',
+    chordName: 'A',
+    chordTonality: 'Major',
+    chordNotes: ['x', 'A', 'E', 'A', 'C♯', 'E'],
+    fret1: ['', '', '', '', '', ''],
+    fret2: ['', '', '1', '2', '3', ''],
+    fret3: ['', '', '', '', '', ''],
+    fret4: ['', '', '', '', '', '']
+};
+
+// Chord Diagram 4 - 
+let chordDiagram4 = {
+    scaleDegree: '5',
+    chordName: 'B',
+    chordTonality: 'Major',
+    chordNotes: ['x', 'B', 'F♯', 'B', 'D♯', 'F♯'],
+    fret1: ['', '', '', '', '', ''],
+    fret2: ['', '1', '1', '1', '1', '1'],
+    fret3: ['', '', '', '', '', ''],
+    fret4: ['', '', '2', '3', '4', '']
 };

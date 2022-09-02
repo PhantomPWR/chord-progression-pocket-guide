@@ -136,3 +136,15 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
  * Sharps: F C G D A E B
  * Flats:  B E A D G C F
  */
+
+
+// Chord Diagram
+let chordDiagram = {
+    scaleDegree: '1',
+    chordName: 'E Major',
+    chordNotes: ['E', 'B', 'E', 'G♯', 'B', 'E'],
+    fret1: ['', '', '', '1', '', ''],
+    fret2: ['', '2', '3', '', '', ''],
+    fret3: ['', '', '', '', '', ''],
+    fret4: ['', '', '', '', '', '']
+};

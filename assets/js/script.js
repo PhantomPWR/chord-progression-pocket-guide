@@ -133,4 +133,6 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
  * Major: R-W-W-H-W-W-W-H = .-2-2-1-2-2-2-1
  * Minor: R-W-H-W-W-H-W-W = .-2-1-2-2-1-2-2
  * Distance between frets = 1 semitone
+ * Sharps: F C G D A E B
+ * Flats:  B E A D G C F
  */

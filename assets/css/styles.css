@@ -254,6 +254,24 @@ button {
     border-radius: 50%;
 }
 
+.barre {
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0;
+}
+
+.barre-start {
+    border-left-width: 2px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.barre-end {
+    border-right-width: 2px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
 /* Chord Boxes */
 ul[class*="fret"] {
     border: 1px solid #D9DCDD;
@@ -529,6 +547,10 @@ figure {
     align-content: center;
     margin: 0;
     padding: 0;
+}
+
+.barre {
+    width: 30px;
 }
 
 

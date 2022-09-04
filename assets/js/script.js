@@ -164,12 +164,12 @@ let scales = {
     bMaj: ['B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯'],
     fSharpMaj: ['F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯', 'E♯'],
     cSharpMaj: ['C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B♯'],
-    GFlatMaj: [],
-    fMaj: [],
-    bFlatMaj: [],
-    eFlatMaj: [],
-    aFlatMaj: [],
-    dFlatMaj: []
+    fMaj: ['F', 'G', 'A', 'B♭', 'C', 'D', 'E'],
+    bFlatMaj: ['B♭', 'C', 'D', 'E♭', 'F', 'G', 'A'],
+    eFlatMaj: ['E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D'],
+    aFlatMaj: ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G'],
+    dFlatMaj: ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C'],
+    gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F']
 }
 
 

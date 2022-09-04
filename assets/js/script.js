@@ -187,6 +187,15 @@ let minorScales = {
     eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
 };
 
+let chordProgressions = {
+    oneFiveFourOne: {
+
+    },
+    oneFiveMinorSixFive: {
+
+    }
+};
+
 
 
 

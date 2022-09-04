@@ -131,11 +131,19 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 /**
  * Scale formulas in semitones (13 in total)
  * R = Root note
+ * W = Whole step
+ * H = Half step/Semitone
  * Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
  * Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
  * Distance between frets = 1 semitone
  * Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
  * Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
+ * 
+ * Scale notes in semitones
+ * 
+ * semiTonesSharp = [A, A♯, B, B♯, C, C♯, D, D♯, E, E♯, F, F♯, G, G♯]
+ * semiTonesFlat = [G, G♭, F, F♭, E, E♭, D, D♭, C, C♭, B, B♭, A, A♭]
+ * 
  * 
  * 12 Major Keys
  * 12 Minor Keys
@@ -147,6 +155,27 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
  * 
  */
 
+let scales = {
+    cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
+    gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
+    dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
+    aMaj: ['A', 'B', 'C♯', 'D', 'E', 'F♯', 'G♯'],
+    eMaj: ['E', 'F♯', 'G♯', 'A', 'B', 'C♯', 'D♯'],
+    bMaj: ['B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯'],
+    fSharpMaj: ['F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯', 'E♯'],
+    cSharpMaj: ['C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B♯'],
+    GFlatMaj: [],
+    fMaj: [],
+    bFlatMaj: [],
+    eFlatMaj: [],
+    aFlatMaj: [],
+    dFlatMaj: []
+}
+
+
+
+
+
 /**
  * Key: E
  * Tonality: Major
@@ -156,7 +185,7 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 
 // Chord Diagram 1 - 
 let chordDiagram1 = {
-    scaleDegree: '1',
+    scaleDegree: 'I',
     chordName: 'E',
     chordTonality: 'Major',
     chordNotes: ['E', 'B', 'E', 'G♯', 'B', 'E'],
@@ -168,7 +197,7 @@ let chordDiagram1 = {
 
 // Chord Diagram 2 - 
 let chordDiagram2 = {
-    scaleDegree: '5',
+    scaleDegree: 'V',
     chordName: 'B',
     chordTonality: 'Major',
     chordNotes: ['x', 'B', 'F♯', 'B', 'D♯', 'F♯'],
@@ -180,7 +209,7 @@ let chordDiagram2 = {
 
 // Chord Diagram 3 - 
 let chordDiagram3 = {
-    scaleDegree: '4',
+    scaleDegree: 'IV',
     chordName: 'A',
     chordTonality: 'Major',
     chordNotes: ['x', 'A', 'E', 'A', 'C♯', 'E'],
@@ -192,7 +221,7 @@ let chordDiagram3 = {
 
 // Chord Diagram 4 - 
 let chordDiagram4 = {
-    scaleDegree: '5',
+    scaleDegree: 'V',
     chordName: 'B',
     chordTonality: 'Major',
     chordNotes: ['x', 'B', 'F♯', 'B', 'D♯', 'F♯'],

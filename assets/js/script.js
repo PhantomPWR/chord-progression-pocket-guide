@@ -155,7 +155,7 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
  * 
  */
 
-let scales = {
+let majorScales = {
     cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
     gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
     dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
@@ -170,8 +170,22 @@ let scales = {
     aFlatMaj: ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G'],
     dFlatMaj: ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C'],
     gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F']
-}
+};
 
+let minorScales = {
+    aMin: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+    eMin: ['E', 'F♯', 'G', 'A', 'B', 'C', 'D'],
+    bMin: ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A'],
+    fSharpMin: ['F♯', 'G♯', 'A', 'B', 'C♯', 'D', 'E'],
+    cSharpMin: ['C♯', 'D♯', 'E', 'F♯', 'G♯', 'A', 'B'],
+    gSharpMin: ['G♯', 'A♯', 'B', 'C♯', 'D♯', 'E', 'F♯'],
+    dMin: ['D', 'E', 'F', 'G', 'A', 'B♭', 'C'],
+    gMin: ['G', 'A', 'B♭', 'C', 'D', 'E♭', 'F'],
+    cMin: ['C', 'D', 'E♭', 'F', 'G', 'A♭', 'B♭'],
+    fMin: ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭'],
+    bFlatMin: ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭'],
+    eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
+};
 
 
 

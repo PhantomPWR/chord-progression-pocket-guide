@@ -15,6 +15,11 @@ const controlArea = document.getElementById("controls");
 const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn");
 const helpContent = document.getElementById("helpContent");
 
+// Set global variables
+var userSelectedKey;
+var userSelectedChordProgression;
+var chordProgressionLookup;
+
 
 // Detect mobile phone & handle element display
 window.addEventListener('load', function() {
@@ -45,21 +50,48 @@ document.addEventListener("DOMContentLoaded", function() {
     let displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
     let displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
 
-    for (let button of buttons) {
+    for (var button of buttons) {
         button.classList.remove("active");
         button.addEventListener("click", function() {
             if (this.hasAttribute("data-key-select")) {
                 console.log(this.innerText);
                 displaySelectedKeyValue.innerText = (this.innerText);
                 displaySelectedKeyValue.classList.remove("ghosted");
+                userSelectedKey = this.getAttribute("data-key-select");
+                console.log("User-selected Key: " + userSelectedKey);
 
             } else if (this.hasAttribute("data-chord-progression-select")) {
 
                 console.log(this.innerText);
                 displaySelectedChordProgressionValue.classList.remove("ghosted");
                 displaySelectedChordProgressionValue.innerText = (this.innerText);
+                userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
+                console.log("User-selected Chord Progression: " + userSelectedChordProgression);
+                chordProgressionLookup = chordProgressions[userSelectedChordProgression];
+                console.log("var chordProgressionLookup: " + chordProgressionLookup);
 
             }
+
+            // User-selected key and chord progression
+            console.log("User-selected Key: " + userSelectedKey);
+            console.log("User-selected Chord Progression: " + userSelectedChordProgression);
+
+
+            // console.log("var chordProgressionLookup: " + chordProgressionLookup);
+            var scaleDegrees = chordProgressionLookup.degrees;
+            var scale = majorScales[userSelectedKey];
+            var chords = chordProgressionLookup.chords;
+
+            var chordBox1 = document.getElementById("chordBox1");
+            var chordBox2 = document.getElementById("chordBox2");
+            var chordBox3 = document.getElementById("chordBox3");
+            var chordBox4 = document.getElementById("chordBox4");
+
+            var labelDegree = document.getElementsByClassName("label-degree");
+            var labelChord = document.getElementsByClassName("label-chord");
+
+            console.log(chordBox1.labelDegree.innerText);
+
         });
     }
 });
@@ -155,7 +187,8 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
  * 
  */
 
-let majorScales = {
+// Scale for each major key in the Circle of Fifths
+const majorScales = {
     cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
     gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
     dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
@@ -172,7 +205,8 @@ let majorScales = {
     gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F']
 };
 
-let minorScales = {
+// Scale for each minor key in the Circle of Fifths
+const minorScales = {
     aMin: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
     eMin: ['E', 'F♯', 'G', 'A', 'B', 'C', 'D'],
     bMin: ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A'],
@@ -187,13 +221,54 @@ let minorScales = {
     eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
 };
 
-let chordProgressions = {
+
+// Scale degree labels along with corresponding indices for
+// the relevant scale degrees chords are built on
+const chordProgressions = {
     oneFiveFourOne: {
-
+        degrees: ['I', 'V', 'IV', 'I'],
+        chords: [0, 4, 3, 0]
     },
+    
     oneFiveMinorSixFive: {
+        degrees: ['I', 'V', 'vi', 'I'],
+        chords: [0, 4, 5, 0]
+    },
 
-    }
+    oneMinorSixFourFive: {
+        degrees: ['I', 'vi', 'IV', 'V'],
+        chords: [0, 5, 3, 4]
+    },
+
+    oneMinorSixMinorTwoFive: {
+        degrees: ['I', 'vi', 'ii', 'V'],
+        chords: [0, 5, 1, 4]
+    },
+
+    oneMinorThreeMinorSixFive: {
+        degrees: ['I', 'iii', 'vi', 'V'],
+        chords: [0, 2, 5, 4]
+    },
+
+    minorSixFourOneFive: {
+        degrees: ['vi', 'IV', 'I', 'V'],
+        chords: [5, 3, 0, 4]
+    },
+
+    oneFlatSevenFourOne: {
+        degrees: ['I', '♭VII', 'IV', 'I'],
+        chords: [0, 6, 3, 0]
+    },
+
+    oneFlatSevenFlatSixFive: {
+        degrees: ['I', '♭VII', '♭VI', 'V'],
+        chords: [0, 6, 5, 4]
+    },
+
+    minorOneFlatSevenFlatSixFlatSeven: {
+        degrees: ['i', '♭VII', '♭VI', '♭VII'],
+        chords: [0, 6, 5, 6]
+    },
 };
 
 

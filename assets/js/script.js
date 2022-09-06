@@ -1,165 +1,3 @@
-/*
- * Handle header display on mobile phones
- */
-
-// Set constant variables
-const mediaQueryList = [
-    window.matchMedia('(max-width: 414px)'),
-    window.matchMedia('(max-width: 915px)')
-    ];
-
-const mobileHeader = document.getElementById("mobileHeader");
-const siteTitle = document.getElementById("siteTitle");
-const helpButtons = document.querySelectorAll(".help-btn");
-const controlArea = document.getElementById("controls");
-const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn");
-const helpContent = document.getElementById("helpContent");
-
-// Set global variables
-var userSelectedKey;
-var userSelectedChordProgression;
-var chordProgressionLookup;
-
-
-// Detect mobile phone & handle element display
-window.addEventListener('load', function() {
-    for (let mediaQuery of mediaQueryList) {
-        if (mediaQuery.matches) {
-
-            let mobileButtons = document.getElementById("mobileButtons");
-
-            // add mobile-phone CSS body class
-            document.body.classList.add('mobile-phone');
-
-            // Move site title into mobile header, above buttons
-            mobileButtons.before(siteTitle);
-
-            // Display mobile header
-            mobileHeader.style.display = 'flex';
-
-        }
-    }
-});
-
-
-// Wait for the DOM to finish loading
-// Get button elements and add event listeners
-
-document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
-    let displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
-    let displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
-
-    for (var button of buttons) {
-        button.classList.remove("active");
-        button.addEventListener("click", function() {
-            if (this.hasAttribute("data-key-select")) {
-                console.log(this.innerText);
-                displaySelectedKeyValue.innerText = (this.innerText);
-                displaySelectedKeyValue.classList.remove("ghosted");
-                userSelectedKey = this.getAttribute("data-key-select");
-                console.log("User-selected Key: " + userSelectedKey);
-
-            } else if (this.hasAttribute("data-chord-progression-select")) {
-
-                console.log(this.innerText);
-                displaySelectedChordProgressionValue.classList.remove("ghosted");
-                displaySelectedChordProgressionValue.innerText = (this.innerText);
-                userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
-                console.log("User-selected Chord Progression: " + userSelectedChordProgression);
-                chordProgressionLookup = chordProgressions[userSelectedChordProgression];
-                console.log("var chordProgressionLookup: " + chordProgressionLookup);
-
-            }
-
-            // User-selected key and chord progression
-            console.log("User-selected Key: " + userSelectedKey);
-            console.log("User-selected Chord Progression: " + userSelectedChordProgression);
-
-
-            // console.log("var chordProgressionLookup: " + chordProgressionLookup);
-            var scaleDegrees = chordProgressionLookup.degrees;
-            var scale = majorScales[userSelectedKey];
-            var chords = chordProgressionLookup.chords;
-
-            var chordBox1 = document.getElementById("chordBox1");
-            var chordBox2 = document.getElementById("chordBox2");
-            var chordBox3 = document.getElementById("chordBox3");
-            var chordBox4 = document.getElementById("chordBox4");
-
-            var labelDegree = document.getElementsByClassName("label-degree");
-            var labelChord = document.getElementsByClassName("label-chord");
-
-            console.log(chordBox1.labelDegree.innerText);
-
-        });
-    }
-});
-
-
-// Button Event Listeners
-
-// Mobile phone control area button
-mobileHeaderControlsBtn.addEventListener("click", function() {
-    mobileHeaderHelpBtn.classList.remove("active");
-    controlArea.style.display = "flex";
-    controlArea.classList.add("show");
-
-});
-
-// Help button
-// helpButtons.forEach(helpButton => {
-
-//     helpButton.addEventListener("click", function() {
-//         console.log("Help button clicked");
-//         mobileHeaderHelpBtn.classList.add("active");
-//         controlArea.style.display = "none";
-//         helpContent.style.cssText = ("display: flex; z-index: 10;");
-//         drawer.classList.add("in");
-//         drawerCloseBtn.after(helpContent);
-//     });
-
-// });
-
-// Drawer close button
-// let closeButtons = document.querySelectorAll(".close-btn");
-// closeButtons.forEach(closeBtn => {
-
-//     closeBtn.addEventListener("click", function() {
-//         console.log("Close button clicked");
-//         drawer.classList.remove("in");
-//         mobileHeaderHelpBtn.classList.remove("active");
-//     });
-
-// });
-
-
-
-/**
- * Is the selected key Major or Minor?
- */
-
-//  function majorMinor() {
-//     if (selectedKey.attributeValue = "major") {
-//         key = "major";
-//     } else {
-//         key = "minor";
-//     }
-// }
-
-/**
- * Find the correct notes to
- * display above chord diagram
- */
-
-// function stringNotes() {
-//     if (string not in scale) {
-//         note = "x";
-//     } else {
-//         note = scaleNote;
-//     }
-// }
-
 /**
  * Scale formulas in semitones (13 in total)
  * R = Root note
@@ -270,6 +108,178 @@ const chordProgressions = {
         chords: [0, 6, 5, 6]
     },
 };
+
+
+// Set global variables
+// var userSelectedKey = "cMaj";
+// var userSelectedChordProgression = "oneFiveFourOne";
+var userSelectedKey;
+var userSelectedChordProgression;
+// var degrees = ['I', 'V', 'IV', 'I'];
+var chordProgressionLookup;
+
+// User-selected key and chord progression
+console.log("User-selected Key: " + userSelectedKey);
+console.log("User-selected Chord Progression: " + userSelectedChordProgression);
+
+
+console.log("var chordProgressionLookup outside loop: " + chordProgressionLookup);
+// var scaleDegrees = chordProgressionLookup.degrees;
+var scale = majorScales[userSelectedKey];
+// var chords = chordProgressionLookup.chords;
+
+var chordBox1 = document.getElementById("chordBox1");
+var chordBox2 = document.getElementById("chordBox2");
+var chordBox3 = document.getElementById("chordBox3");
+var chordBox4 = document.getElementById("chordBox4");
+
+var labelDegree = document.getElementsByClassName("label-degree");
+var labelChord = document.getElementsByClassName("label-chord");
+
+// console.log(chordBox1.labelDegree.innerText);
+
+
+
+
+
+
+/*
+ * Handle header display on mobile phones
+ */
+
+// Set constant variables
+const mediaQueryList = [
+    window.matchMedia('(max-width: 414px)'),
+    window.matchMedia('(max-width: 915px)')
+    ];
+
+const mobileHeader = document.getElementById("mobileHeader");
+const siteTitle = document.getElementById("siteTitle");
+const helpButtons = document.querySelectorAll(".help-btn");
+const controlArea = document.getElementById("controls");
+const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn");
+const helpContent = document.getElementById("helpContent");
+
+// Detect mobile phone & handle element display
+window.addEventListener('load', function() {
+    for (let mediaQuery of mediaQueryList) {
+        if (mediaQuery.matches) {
+
+            let mobileButtons = document.getElementById("mobileButtons");
+
+            // add mobile-phone CSS body class
+            document.body.classList.add('mobile-phone');
+
+            // Move site title into mobile header, above buttons
+            mobileButtons.before(siteTitle);
+
+            // Display mobile header
+            mobileHeader.style.display = 'flex';
+
+        }
+    }
+});
+
+
+// Wait for the DOM to finish loading
+// Get button elements and add event listeners
+
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+    let displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
+    let displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
+
+    for (var button of buttons) {
+        button.classList.remove("active");
+        button.addEventListener("click", function() {
+            if (this.hasAttribute("data-key-select")) {
+                console.log(this.innerText);
+                displaySelectedKeyValue.innerText = (this.innerText);
+                displaySelectedKeyValue.classList.remove("ghosted");
+                userSelectedKey = this.getAttribute("data-key-select");
+                console.log("User-selected Key: " + userSelectedKey);
+
+            } else if (this.hasAttribute("data-chord-progression-select")) {
+
+                console.log(this.innerText);
+                displaySelectedChordProgressionValue.classList.remove("ghosted");
+                displaySelectedChordProgressionValue.innerText = (this.innerText);
+                var userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
+                console.log("User-selected Chord Progression: " + userSelectedChordProgression);
+                var chordProgressionLookup = chordProgressions[userSelectedChordProgression];
+                // chordProgressions[userSelectedChordProgression].degrees
+                console.log("var chordProgressionLookup inside loop: " + chordProgressionLookup);
+
+            }
+
+        });
+    }
+});
+
+
+// Button Event Listeners
+
+// Mobile phone control area button
+mobileHeaderControlsBtn.addEventListener("click", function() {
+    mobileHeaderHelpBtn.classList.remove("active");
+    controlArea.style.display = "flex";
+    controlArea.classList.add("show");
+
+});
+
+// Help button
+// helpButtons.forEach(helpButton => {
+
+//     helpButton.addEventListener("click", function() {
+//         console.log("Help button clicked");
+//         mobileHeaderHelpBtn.classList.add("active");
+//         controlArea.style.display = "none";
+//         helpContent.style.cssText = ("display: flex; z-index: 10;");
+//         drawer.classList.add("in");
+//         drawerCloseBtn.after(helpContent);
+//     });
+
+// });
+
+// Drawer close button
+// let closeButtons = document.querySelectorAll(".close-btn");
+// closeButtons.forEach(closeBtn => {
+
+//     closeBtn.addEventListener("click", function() {
+//         console.log("Close button clicked");
+//         drawer.classList.remove("in");
+//         mobileHeaderHelpBtn.classList.remove("active");
+//     });
+
+// });
+
+
+
+/**
+ * Is the selected key Major or Minor?
+ */
+
+//  function majorMinor() {
+//     if (selectedKey.attributeValue = "major") {
+//         key = "major";
+//     } else {
+//         key = "minor";
+//     }
+// }
+
+/**
+ * Find the correct notes to
+ * display above chord diagram
+ */
+
+// function stringNotes() {
+//     if (string not in scale) {
+//         note = "x";
+//     } else {
+//         note = scaleNote;
+//     }
+// }
+
 
 
 

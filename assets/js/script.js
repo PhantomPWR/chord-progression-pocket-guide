@@ -1,3 +1,40 @@
+/*
+ * Handle header display on mobile phones
+ */
+
+// Set constant variables
+const mediaQueryList = [
+    window.matchMedia('(max-width: 414px)'),
+    window.matchMedia('(max-width: 915px)')
+    ];
+
+const mobileHeader = document.getElementById("mobileHeader");
+const siteTitle = document.getElementById("siteTitle");
+const helpButtons = document.querySelectorAll(".help-btn");
+const controlArea = document.getElementById("controls");
+const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn");
+const helpContent = document.getElementById("helpContent");
+
+// Detect mobile phone & handle element display
+window.addEventListener('load', function() {
+    for (let mediaQuery of mediaQueryList) {
+        if (mediaQuery.matches) {
+
+            let mobileButtons = document.getElementById("mobileButtons");
+
+            // add mobile-phone CSS body class
+            document.body.classList.add('mobile-phone');
+
+            // Move site title into mobile header, above buttons
+            mobileButtons.before(siteTitle);
+
+            // Display mobile header
+            mobileHeader.style.display = 'flex';
+
+        }
+    }
+});
+
 /**
  * Scale formulas in semitones (13 in total)
  * R = Root note
@@ -114,71 +151,28 @@ const chordProgressions = {
 // var userSelectedKey = "cMaj";
 // var userSelectedChordProgression = "oneFiveFourOne";
 var userSelectedKey;
-var userSelectedChordProgression;
+
+
 // var degrees = ['I', 'V', 'IV', 'I'];
-var chordProgressionLookup;
+
+
 
 // User-selected key and chord progression
 console.log("User-selected Key: " + userSelectedKey);
-console.log("User-selected Chord Progression: " + userSelectedChordProgression);
 
 
-console.log("var chordProgressionLookup outside loop: " + chordProgressionLookup);
 // var scaleDegrees = chordProgressionLookup.degrees;
 var scale = majorScales[userSelectedKey];
-// var chords = chordProgressionLookup.chords;
+var chords = chordProgressions[chords];
+for (let chord in chords) {
+    console.log("Chord: " + chord);
+}
+var displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
+var userSelectedChordProgression = displaySelectedChordProgressionValue.getAttribute("data-selected-chord-display");
 
-var chordBox1 = document.getElementById("chordBox1");
-var chordBox2 = document.getElementById("chordBox2");
-var chordBox3 = document.getElementById("chordBox3");
-var chordBox4 = document.getElementById("chordBox4");
+// Look up selected chord progression values
+let chordProgressionLookup = chordProgressions[userSelectedChordProgression];
 
-var labelDegree = document.getElementsByClassName("label-degree");
-var labelChord = document.getElementsByClassName("label-chord");
-
-// console.log(chordBox1.labelDegree.innerText);
-
-
-
-
-
-
-/*
- * Handle header display on mobile phones
- */
-
-// Set constant variables
-const mediaQueryList = [
-    window.matchMedia('(max-width: 414px)'),
-    window.matchMedia('(max-width: 915px)')
-    ];
-
-const mobileHeader = document.getElementById("mobileHeader");
-const siteTitle = document.getElementById("siteTitle");
-const helpButtons = document.querySelectorAll(".help-btn");
-const controlArea = document.getElementById("controls");
-const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn");
-const helpContent = document.getElementById("helpContent");
-
-// Detect mobile phone & handle element display
-window.addEventListener('load', function() {
-    for (let mediaQuery of mediaQueryList) {
-        if (mediaQuery.matches) {
-
-            let mobileButtons = document.getElementById("mobileButtons");
-
-            // add mobile-phone CSS body class
-            document.body.classList.add('mobile-phone');
-
-            // Move site title into mobile header, above buttons
-            mobileButtons.before(siteTitle);
-
-            // Display mobile header
-            mobileHeader.style.display = 'flex';
-
-        }
-    }
-});
 
 
 // Wait for the DOM to finish loading
@@ -187,7 +181,7 @@ window.addEventListener('load', function() {
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
     let displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
-    let displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
+    console.log("userSelectedChordProgression BEFORE loop: " + userSelectedChordProgression);
 
     for (var button of buttons) {
         button.classList.remove("active");
@@ -196,24 +190,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(this.innerText);
                 displaySelectedKeyValue.innerText = (this.innerText);
                 displaySelectedKeyValue.classList.remove("ghosted");
-                userSelectedKey = this.getAttribute("data-key-select");
+                var userSelectedKey = this.getAttribute("data-key-select");
                 console.log("User-selected Key: " + userSelectedKey);
 
             } else if (this.hasAttribute("data-chord-progression-select")) {
 
-                console.log(this.innerText);
                 displaySelectedChordProgressionValue.classList.remove("ghosted");
                 displaySelectedChordProgressionValue.innerText = (this.innerText);
-                var userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
-                console.log("User-selected Chord Progression: " + userSelectedChordProgression);
-                var chordProgressionLookup = chordProgressions[userSelectedChordProgression];
-                // chordProgressions[userSelectedChordProgression].degrees
-                console.log("var chordProgressionLookup inside loop: " + chordProgressionLookup);
+                userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
+                displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
 
             }
 
         });
+
     }
+
 });
 
 

@@ -161,9 +161,8 @@ var userSelectedKey;
 console.log("User-selected Key: " + userSelectedKey);
 
 
-// var scaleDegrees = chordProgressionLookup.degrees;
-var scale = majorScales[userSelectedKey];
-var chords = chordProgressions[chords];
+let scale = majorScales[userSelectedKey];
+let chords = chordProgressions[chords];
 for (let chord in chords) {
     console.log("Chord: ");
     console.log(chord);
@@ -193,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 displaySelectedKeyValue.classList.remove("ghosted");
                 let userSelectedKey = this.getAttribute("data-key-select");
                 console.log("User-selected Key: " + userSelectedKey);
+                displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
 
             } else if (this.hasAttribute("data-chord-progression-select")) {
 
@@ -219,20 +219,19 @@ function populateChordInfoLabels() {
 
     let labelDegreeList = document.querySelectorAll("[data-label-degree]");
     let numberOfDegreeLabels = labelDegreeList.length;
-    let labelChordList = [];
-    let numberOfChordLabels = labelChordList.length;
     let chordProgressionDegrees = chordProgressions[userSelectedChordProgression].degrees;
 
-    console.log("function run: populateChordInfoLabels()");
-    console.log("labelDegreeList: ");
-    console.log(labelDegreeList[0].innerText);
-    console.log(chordProgressionDegrees[0]);
-    labelDegreeList[0].textContent = chordProgressionDegrees[0];
-    labelDegreeList[1].textContent = chordProgressionDegrees[1];
-    labelDegreeList[2].textContent = chordProgressionDegrees[2];
-    labelDegreeList[3].textContent = chordProgressionDegrees[3];
+    let labelChordList = document.querySelectorAll("[data-label-chord]");
+    let numberOfChordLabels = labelChordList.length;
+    let chordProgressionChords = chordProgressions[userSelectedChordProgression].chords;
 
-    
+    for (let i = 0; i < numberOfDegreeLabels; i++) {
+        labelDegreeList[i].textContent = chordProgressionDegrees[i];
+    }
+
+    for (let i = 0; i < numberOfChordLabels; i++) {
+        labelChordList[i].textContent = chordProgressionChords[i];
+    }
 
 }
 

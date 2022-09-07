@@ -147,6 +147,48 @@ const chordProgressions = {
 };
 
 
+// Wait for the DOM to finish loading
+// Get button elements and add event listeners
+
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+    let displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
+
+    console.log("userSelectedChordProgression BEFORE loop: " + userSelectedChordProgression);
+
+    for (let button of buttons) {
+        button.classList.remove("active");
+
+        button.addEventListener("click", function() {
+
+            if (this.hasAttribute("data-key-select")) {
+                console.log(this.innerText);
+                displaySelectedKeyValue.innerText = (this.innerText);
+                displaySelectedKeyValue.classList.remove("ghosted");
+                let userSelectedKey = this.getAttribute("data-key-select");
+                console.log("User-selected Key: " + userSelectedKey);
+                displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
+
+                selectedKeyTonality();
+
+            } else if (this.hasAttribute("data-chord-progression-select")) {
+
+                displaySelectedChordProgressionValue.classList.remove("ghosted");
+                displaySelectedChordProgressionValue.innerText = (this.innerText);
+                userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
+                displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
+
+            }
+            
+            populateChordInfoLabels();
+
+        });
+
+    }
+
+});
+
+
 // Set global variables
 // var userSelectedKey = "cMaj";
 // var userSelectedChordProgression = "oneFiveFourOne";
@@ -162,75 +204,57 @@ console.log("User-selected Key: " + userSelectedKey);
 
 
 let scale = majorScales[userSelectedKey];
-let chords = chordProgressions[chords];
-for (let chord in chords) {
-    console.log("Chord: ");
-    console.log(chord);
-}
+// let chords = chordProgressions[chords];
+// for (let chord in chords) {
+//     console.log("Chord: ");
+//     console.log(chord);
+// }
 let displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
 let userSelectedChordProgression = displaySelectedChordProgressionValue.getAttribute("data-selected-chord-display");
 
 // Look up selected chord progression values
 let chordProgressionLookup = chordProgressions[userSelectedChordProgression];
 
+/**
+ * Determnine selected key tonality
+ */
 
+function selectedKeyTonality() {
 
-// Wait for the DOM to finish loading
-// Get button elements and add event listeners
+    let keyTonalityList = document.querySelectorAll("[data-tonality]");
 
-document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
-    let displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
-    console.log("userSelectedChordProgression BEFORE loop: " + userSelectedChordProgression);
+    console.log("Selected key tonality:");
+    console.log(keyTonalityList);
 
-    for (let button of buttons) {
-        button.classList.remove("active");
-        button.addEventListener("click", function() {
-            if (this.hasAttribute("data-key-select")) {
-                console.log(this.innerText);
-                displaySelectedKeyValue.innerText = (this.innerText);
-                displaySelectedKeyValue.classList.remove("ghosted");
-                let userSelectedKey = this.getAttribute("data-key-select");
-                console.log("User-selected Key: " + userSelectedKey);
-                displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
-
-            } else if (this.hasAttribute("data-chord-progression-select")) {
-
-                displaySelectedChordProgressionValue.classList.remove("ghosted");
-                displaySelectedChordProgressionValue.innerText = (this.innerText);
-                userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
-                displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
-
-            }
-
-            populateChordInfoLabels();
-
-        });
-
-    }
-
-});
+}
 
 
 /**
  * Populate chord info labels
  */
+
 function populateChordInfoLabels() {
 
-    let labelDegreeList = document.querySelectorAll("[data-label-degree]");
-    let numberOfDegreeLabels = labelDegreeList.length;
-    let chordProgressionDegrees = chordProgressions[userSelectedChordProgression].degrees;
+    if (userSelectedChordProgression) {
 
-    let labelChordList = document.querySelectorAll("[data-label-chord]");
-    let numberOfChordLabels = labelChordList.length;
-    let chordProgressionChords = chordProgressions[userSelectedChordProgression].chords;
+        // Degree Labels
+        let labelDegreeList = document.querySelectorAll("[data-label-degree]");
+        let numberOfDegreeLabels = labelDegreeList.length;
+        let chordProgressionDegrees = chordProgressions[userSelectedChordProgression].degrees;
 
-    for (let i = 0; i < numberOfDegreeLabels; i++) {
-        labelDegreeList[i].textContent = chordProgressionDegrees[i];
-    }
+        for (let i = 0; i < numberOfDegreeLabels; i++) {
+            labelDegreeList[i].textContent = chordProgressionDegrees[i];
+        }        
+        
+        // Chord Labels
+        let labelChordList = document.querySelectorAll("[data-label-chord]");
+        let numberOfChordLabels = labelChordList.length;
+        let chordProgressionChordIndices = chordProgressions[userSelectedChordProgression].chords;
 
-    for (let i = 0; i < numberOfChordLabels; i++) {
-        labelChordList[i].textContent = chordProgressionChords[i];
+        for (let i = 0; i < numberOfChordLabels; i++) {
+            labelChordList[i].textContent = chordProgressionChordIndices[i];
+        }
+
     }
 
 }

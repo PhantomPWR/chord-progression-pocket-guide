@@ -63,7 +63,40 @@ window.addEventListener('load', function() {
  */
 
 // Scale for each major key in the Circle of Fifths
-const majorScales = {
+// const majorScales = {
+//     cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
+//     gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
+//     dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
+//     aMaj: ['A', 'B', 'C♯', 'D', 'E', 'F♯', 'G♯'],
+//     eMaj: ['E', 'F♯', 'G♯', 'A', 'B', 'C♯', 'D♯'],
+//     bMaj: ['B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯'],
+//     fSharpMaj: ['F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯', 'E♯'],
+//     cSharpMaj: ['C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B♯'],
+//     fMaj: ['F', 'G', 'A', 'B♭', 'C', 'D', 'E'],
+//     bFlatMaj: ['B♭', 'C', 'D', 'E♭', 'F', 'G', 'A'],
+//     eFlatMaj: ['E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D'],
+//     aFlatMaj: ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G'],
+//     dFlatMaj: ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C'],
+//     gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F']
+// };
+
+// // Scale for each minor key in the Circle of Fifths
+// const minorScales = {
+//     aMin: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+//     eMin: ['E', 'F♯', 'G', 'A', 'B', 'C', 'D'],
+//     bMin: ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A'],
+//     fSharpMin: ['F♯', 'G♯', 'A', 'B', 'C♯', 'D', 'E'],
+//     cSharpMin: ['C♯', 'D♯', 'E', 'F♯', 'G♯', 'A', 'B'],
+//     gSharpMin: ['G♯', 'A♯', 'B', 'C♯', 'D♯', 'E', 'F♯'],
+//     dMin: ['D', 'E', 'F', 'G', 'A', 'B♭', 'C'],
+//     gMin: ['G', 'A', 'B♭', 'C', 'D', 'E♭', 'F'],
+//     cMin: ['C', 'D', 'E♭', 'F', 'G', 'A♭', 'B♭'],
+//     fMin: ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭'],
+//     bFlatMin: ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭'],
+//     eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
+// };
+
+const scales = {
     cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
     gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
     dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
@@ -77,11 +110,7 @@ const majorScales = {
     eFlatMaj: ['E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D'],
     aFlatMaj: ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G'],
     dFlatMaj: ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C'],
-    gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F']
-};
-
-// Scale for each minor key in the Circle of Fifths
-const minorScales = {
+    gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F'],
     aMin: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
     eMin: ['E', 'F♯', 'G', 'A', 'B', 'C', 'D'],
     bMin: ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A'],
@@ -94,6 +123,11 @@ const minorScales = {
     fMin: ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭'],
     bFlatMin: ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭'],
     eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
+};
+
+// Scale for each minor key in the Circle of Fifths
+const minorScales = {
+
 };
 
 
@@ -165,11 +199,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(this.innerText);
                 displaySelectedKeyValue.innerText = (this.innerText);
                 displaySelectedKeyValue.classList.remove("ghosted");
-                let userSelectedKey = this.getAttribute("data-key-select");
+                userSelectedKey = this.getAttribute("data-key-select");
                 console.log("User-selected Key: " + userSelectedKey);
                 displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
 
-                selectedKeyTonality();
+                chordTonality = this.getAttribute("data-tonality");
+
+                getRelevantScale();
 
             } else if (this.hasAttribute("data-chord-progression-select")) {
 
@@ -202,8 +238,17 @@ var userSelectedKey;
 // User-selected key and chord progression
 console.log("User-selected Key: " + userSelectedKey);
 
+/**
+ * Get the relevant scale to the user's selected key
+ */
+function getRelevantScale() {
 
-let scale = majorScales[userSelectedKey];
+    let scale = scales[userSelectedKey];
+    console.log(scale);
+
+}
+
+
 // let chords = chordProgressions[chords];
 // for (let chord in chords) {
 //     console.log("Chord: ");
@@ -215,18 +260,6 @@ let userSelectedChordProgression = displaySelectedChordProgressionValue.getAttri
 // Look up selected chord progression values
 let chordProgressionLookup = chordProgressions[userSelectedChordProgression];
 
-/**
- * Determnine selected key tonality
- */
-
-function selectedKeyTonality() {
-
-    let keyTonalityList = document.querySelectorAll("[data-tonality]");
-
-    console.log("Selected key tonality:");
-    console.log(keyTonalityList);
-
-}
 
 
 /**
@@ -252,7 +285,7 @@ function populateChordInfoLabels() {
         let chordProgressionChordIndices = chordProgressions[userSelectedChordProgression].chords;
 
         for (let i = 0; i < numberOfChordLabels; i++) {
-            labelChordList[i].textContent = chordProgressionChordIndices[i];
+            labelChordList[i].textContent = chordProgressionChordIndices[i] + " " + chordTonality;
         }
 
     }

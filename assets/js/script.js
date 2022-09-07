@@ -202,10 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 userSelectedKey = this.getAttribute("data-key-select");
                 console.log("User-selected Key: " + userSelectedKey);
                 displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
-
                 chordTonality = this.getAttribute("data-tonality");
-
-                getRelevantScale();
 
             } else if (this.hasAttribute("data-chord-progression-select")) {
 
@@ -228,7 +225,8 @@ document.addEventListener("DOMContentLoaded", function() {
 // Set global variables
 // var userSelectedKey = "cMaj";
 // var userSelectedChordProgression = "oneFiveFourOne";
-var userSelectedKey;
+let userSelectedKey;
+let chordTonality = "";
 
 
 // var degrees = ['I', 'V', 'IV', 'I'];
@@ -238,22 +236,6 @@ var userSelectedKey;
 // User-selected key and chord progression
 console.log("User-selected Key: " + userSelectedKey);
 
-/**
- * Get the relevant scale to the user's selected key
- */
-function getRelevantScale() {
-
-    let scale = scales[userSelectedKey];
-    console.log(scale);
-
-}
-
-
-// let chords = chordProgressions[chords];
-// for (let chord in chords) {
-//     console.log("Chord: ");
-//     console.log(chord);
-// }
 let displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
 let userSelectedChordProgression = displaySelectedChordProgressionValue.getAttribute("data-selected-chord-display");
 
@@ -270,10 +252,17 @@ function populateChordInfoLabels() {
 
     if (userSelectedChordProgression) {
 
+        // Get relevant scale
+        let scale = scales[userSelectedKey];
+        console.log(scale);
+
+        let chordProgressionLookup = chordProgressions [userSelectedChordProgression];
+        console.log(chordProgressionLookup);
+
         // Degree Labels
         let labelDegreeList = document.querySelectorAll("[data-label-degree]");
         let numberOfDegreeLabels = labelDegreeList.length;
-        let chordProgressionDegrees = chordProgressions[userSelectedChordProgression].degrees;
+        let chordProgressionDegrees = chordProgressionLookup.degrees;
 
         for (let i = 0; i < numberOfDegreeLabels; i++) {
             labelDegreeList[i].textContent = chordProgressionDegrees[i];
@@ -282,10 +271,11 @@ function populateChordInfoLabels() {
         // Chord Labels
         let labelChordList = document.querySelectorAll("[data-label-chord]");
         let numberOfChordLabels = labelChordList.length;
-        let chordProgressionChordIndices = chordProgressions[userSelectedChordProgression].chords;
+        let chordProgressionChordIndices = chordProgressionLookup.chords;
 
         for (let i = 0; i < numberOfChordLabels; i++) {
-            labelChordList[i].textContent = chordProgressionChordIndices[i] + " " + chordTonality;
+            labelChordList[i].textContent = scale[chordProgressionChordIndices[i]] + " " + chordTonality;
+            console.log(scale[chordProgressionChordIndices[i]]);
         }
 
     }
@@ -329,19 +319,6 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 
 // });
 
-
-
-/**
- * Is the selected key Major or Minor?
- */
-
-//  function majorMinor() {
-//     if (selectedKey.attributeValue = "major") {
-//         key = "major";
-//     } else {
-//         key = "minor";
-//     }
-// }
 
 /**
  * Find the correct notes to

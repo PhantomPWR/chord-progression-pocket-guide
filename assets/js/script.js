@@ -62,41 +62,8 @@ window.addEventListener('load', function() {
  * 
  */
 
-// Scale for each major key in the Circle of Fifths
-// const majorScales = {
-//     cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
-//     gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
-//     dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
-//     aMaj: ['A', 'B', 'C♯', 'D', 'E', 'F♯', 'G♯'],
-//     eMaj: ['E', 'F♯', 'G♯', 'A', 'B', 'C♯', 'D♯'],
-//     bMaj: ['B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯'],
-//     fSharpMaj: ['F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯', 'E♯'],
-//     cSharpMaj: ['C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B♯'],
-//     fMaj: ['F', 'G', 'A', 'B♭', 'C', 'D', 'E'],
-//     bFlatMaj: ['B♭', 'C', 'D', 'E♭', 'F', 'G', 'A'],
-//     eFlatMaj: ['E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D'],
-//     aFlatMaj: ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G'],
-//     dFlatMaj: ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C'],
-//     gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F']
-// };
 
-// // Scale for each minor key in the Circle of Fifths
-// const minorScales = {
-//     aMin: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-//     eMin: ['E', 'F♯', 'G', 'A', 'B', 'C', 'D'],
-//     bMin: ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A'],
-//     fSharpMin: ['F♯', 'G♯', 'A', 'B', 'C♯', 'D', 'E'],
-//     cSharpMin: ['C♯', 'D♯', 'E', 'F♯', 'G♯', 'A', 'B'],
-//     gSharpMin: ['G♯', 'A♯', 'B', 'C♯', 'D♯', 'E', 'F♯'],
-//     dMin: ['D', 'E', 'F', 'G', 'A', 'B♭', 'C'],
-//     gMin: ['G', 'A', 'B♭', 'C', 'D', 'E♭', 'F'],
-//     cMin: ['C', 'D', 'E♭', 'F', 'G', 'A♭', 'B♭'],
-//     fMin: ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭'],
-//     bFlatMin: ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭'],
-//     eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
-// };
-
-const scales = {
+const majorScales = {
     cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
     gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
     dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
@@ -111,6 +78,10 @@ const scales = {
     aFlatMaj: ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G'],
     dFlatMaj: ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C'],
     gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F'],
+};
+
+// Scale for each minor key in the Circle of Fifths
+const minorScales = {
     aMin: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
     eMin: ['E', 'F♯', 'G', 'A', 'B', 'C', 'D'],
     bMin: ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A'],
@@ -123,11 +94,6 @@ const scales = {
     fMin: ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭'],
     bFlatMin: ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭'],
     eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
-};
-
-// Scale for each minor key in the Circle of Fifths
-const minorScales = {
-
 };
 
 
@@ -202,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 userSelectedKey = this.getAttribute("data-key-select");
                 console.log("User-selected Key: " + userSelectedKey);
                 displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
-                chordTonality = this.getAttribute("data-tonality");
+                keyTonality = this.getAttribute("data-key-tonality");
 
             } else if (this.hasAttribute("data-chord-progression-select")) {
 
@@ -226,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // var userSelectedKey = "cMaj";
 // var userSelectedChordProgression = "oneFiveFourOne";
 let userSelectedKey;
-let chordTonality = "";
+let chordTonality;
 
 
 // var degrees = ['I', 'V', 'IV', 'I'];
@@ -252,8 +218,19 @@ function populateChordInfoLabels() {
 
     if (userSelectedChordProgression) {
 
+        let scale;
         // Get relevant scale
-        let scale = scales[userSelectedKey];
+        if (keyTonality == "maj") {
+
+            scale = majorScales[userSelectedKey];
+
+        } else if (keyTonality == "min") {
+            scale = minorScales[userSelectedKey];
+        }
+
+        console.log("Key Tonality: ");
+        console.log(keyTonality);
+        console.log("Scale: ");
         console.log(scale);
 
         let chordProgressionLookup = chordProgressions [userSelectedChordProgression];
@@ -266,7 +243,7 @@ function populateChordInfoLabels() {
 
         for (let i = 0; i < numberOfDegreeLabels; i++) {
             labelDegreeList[i].textContent = chordProgressionDegrees[i];
-        }        
+        } 
         
         // Chord Labels
         let labelChordList = document.querySelectorAll("[data-label-chord]");
@@ -274,8 +251,34 @@ function populateChordInfoLabels() {
         let chordProgressionChordIndices = chordProgressionLookup.chords;
 
         for (let i = 0; i < numberOfChordLabels; i++) {
+
+            // Is chord progression degree minor in a major key?
+            if ((chordProgressionDegrees[i] == "ii") || (chordProgressionDegrees[i] == "iii") || (chordProgressionDegrees[i] == "vi") &&  (keyTonality == "maj")) {
+
+                chordTonality = "min";
+                console.log("Chord progression degree is " + chordProgressionDegrees[i]);
+                console.log("Key tonality is " + keyTonality);
+                console.log("Chord tonality is " + chordTonality);
+
+              // Is chord progression degree minor in a minor key?
+            } else if ((chordProgressionChordIndices == "0") || (chordProgressionDegrees[i] == "iv") || (chordProgressionDegrees[i] == "v") &&  (keyTonality == "min")) {
+
+                chordTonality = "min";
+                console.log("Chord progression degree is " + chordProgressionDegrees[i]);
+                console.log("Key tonality is " + keyTonality);
+                console.log("Chord tonality is " + chordTonality);
+
+              // None of the above? - Chord progression degree is major?  
+            } else {
+
+                chordTonality = "maj";
+                console.log("Chord progression degree is " + chordProgressionDegrees[i]);
+                console.log("Key tonality is " + keyTonality);
+                console.log("Chord tonality is " + chordTonality);
+            }
+
             labelChordList[i].textContent = scale[chordProgressionChordIndices[i]] + " " + chordTonality;
-            console.log(scale[chordProgressionChordIndices[i]]);
+            console.log("Chord root: " + scale[chordProgressionChordIndices[i]]);
         }
 
     }

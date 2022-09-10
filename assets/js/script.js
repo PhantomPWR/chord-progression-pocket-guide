@@ -159,6 +159,7 @@ const chordProgressions = {
 
 // Barres:
 // Represent placing the index finger on the same fret across multiple strings
+// Open chords consist of chords containing one or more strings that aren't fingered
 
 // Fingers (Right Hand):
 // 1 - Index finger
@@ -178,6 +179,18 @@ const chordProgressions = {
 // The topmost fret is the first fret after the nut unless
 // a number next to the first fret indicates the "starting" fret
 
+// Basic chord shapes (see circle of fifths)
+
+// Major Chord  |   Shape   |   Type    |   Barre Fret  |   Muted Strings
+//      C       |     C     |   Open    |      n/a      |       1
+//      G       |     G     |   Open    |      n/a      |       n/a
+//      D       |     D     |   Open    |      n/a      |       1,2
+//      A       |     A     |   Open    |      n/a      |       1
+//      E       |     E     |   Open    |      n/a      |       n/a
+//      B       |     A     |   Barre   |      2        |       1
+//      C       |     C     |   Open    |      n/a      |       1
+//      F♯      |     E     |   Barre   |      2        |       n/a
+//      C♯      |     D     |   Barre   |      1        |       1,2
 
 const chordShapes = {
     aShape: {

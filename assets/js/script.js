@@ -153,6 +153,44 @@ const chordProgressions = {
     },
 };
 
+// CHORD DIAGRAM NOTES
+// Chord shapes:
+// Basic patterns for finger positions when playing chords
+
+// Barres:
+// Represent placing the index finger on the same fret across multiple strings
+
+// Fingers (Right Hand):
+// 1 - Index finger
+// 2 - Middle finger
+// 3 - Ring finger
+// 4 - Little finger
+
+// Strings (left to right):
+// 1 - Low E
+// 2 - A
+// 3 - D
+// 4 - G
+// 5 - B
+// 6 - High E
+
+// Frets (top to bottom)
+// The topmost fret is the first fret after the nut unless
+// a number next to the first fret indicates the "starting" fret
+
+
+const chordShapes = {
+    aShape: {
+        startingFret: 0,
+        barre: ['0', '0', '0', '0', '0', '0'],
+        fret1: ['', '', '', '', '', ''],
+        fret2: ['', '1', '1', '1', '1', '1'],
+        fret3: ['', '', '', '', '', ''],
+        fret4: ['', '', '2', '3', '4', '']
+    },
+
+};
+
 
 // Wait for the DOM to finish loading
 // Get button elements and add event listeners

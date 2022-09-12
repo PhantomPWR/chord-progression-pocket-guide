@@ -182,15 +182,79 @@ const chordProgressions = {
 // Basic chord shapes (see circle of fifths)
 
 // Major Chord  |   Shape   |   Type    |   Barre Fret  |   Muted Strings
-//      C       |     C     |   Open    |      n/a      |       1
-//      G       |     G     |   Open    |      n/a      |       n/a
-//      D       |     D     |   Open    |      n/a      |       1,2
-//      A       |     A     |   Open    |      n/a      |       1
-//      E       |     E     |   Open    |      n/a      |       n/a
+//      C       |     C     |   Open    |      0        |       1
+//      G       |     G     |   Open    |      0        |       0
+//      D       |     D     |   Open    |      0        |       1,2
+//      A       |     A     |   Open    |      0        |       1
+//      E       |     E     |   Open    |      0        |       0
 //      B       |     A     |   Barre   |      2        |       1
-//      C       |     C     |   Open    |      n/a      |       1
-//      F♯      |     E     |   Barre   |      2        |       n/a
-//      C♯      |     D     |   Barre   |      1        |       1,2
+//    F♯/G♭     |     E     |   Barre   |      2        |       0
+//    C♯/D♭     |     D     |   Barre   |      1        |       1,2
+//      A♭      |     E     |   Barre   |      4        |       0
+//      E♭      |     D     |   Barre   |      3        |       1,2
+//      B♭      |     A     |   Barre   |      1        |       1
+//      F       |     E     |   Barre   |      1        |       0
+
+// Minor Chord  |   Shape   |   Type    |   Barre Fret  |   Muted Strings
+//      A       |     Am    |   Open    |      0        |       1
+//      E       |     Em    |   Open    |      0        |       0
+//      B       |     Am    |   Barre   |      2        |       1
+//      F♯      |     Em    |   Barre   |      2        |       0
+//      C♯      |     Am    |   Barre   |      4        |       1
+//      G♯      |     Em    |   Barre   |      4        |       0
+//      E♭      |     E♭m   |   Open    |      0        |       1,2
+//      B♭      |     Am    |   Barre   |      1        |       1
+//      F       |     Em    |   Barre   |      1        |       0
+//      C       |     Am    |   Barre   |      3        |       1
+//      G       |     Em    |   Barre   |      3        |       0
+//      D       |     Dm    |   Open    |      0        |       1,2
+
+
+// Chord Notes
+// Major Chord  |   Notes
+//      C       |     x, C, E, G, C, E  
+//      G       |     G, B, D, G, B, G
+//      D       |     x, x, D, A, D, F♯
+//      A       |     x, A, E, A, C♯, E  
+//      E       |     E, B, E, G♯, B, E
+//      B       |     x, B, F♯, B, D♯, F♯
+//    F♯/G♭     |     
+//    C♯/D♭     |     D  
+//      A♭      |     E  
+//      E♭      |     D  
+//      B♭      |     A  
+//      F       |     E  
+
+// Minor Chord  |   Notes
+//      A       |     Am 
+//      E       |     Em 
+//      B       |     Am 
+//      F♯      |     Em 
+//      C♯      |     Am 
+//      G♯      |     Em 
+//      E♭      |     E♭m
+//      B♭      |     Am 
+//      F       |     Em 
+//      C       |     Am 
+//      G       |     Em 
+//      D       |     Dm 
+
+
+// Chord shape count
+
+// Major
+// C - 1
+// G - 1
+// D - 3
+// A - 3
+// E - 4
+
+// Minor
+// A  - 5
+// E  - 5
+// D  - 1
+// E♭ - 1
+
 
 const chordShapes = {
     aShape: {

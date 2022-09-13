@@ -219,25 +219,25 @@ const chordProgressions = {
 //      E       |     E, B, E, G♯, B, E
 //      B       |     x, B, F♯, B, D♯, F♯
 //    F♯/G♭     |     
-//    C♯/D♭     |     D  
-//      A♭      |     E  
-//      E♭      |     D  
-//      B♭      |     A  
-//      F       |     E  
+//    C♯/D♭     |      
+//      A♭      |       
+//      E♭      |       
+//      B♭      |       
+//      F       |      
 
 // Minor Chord  |   Notes
-//      A       |     Am 
-//      E       |     Em 
-//      B       |     Am 
-//      F♯      |     Em 
-//      C♯      |     Am 
-//      G♯      |     Em 
-//      E♭      |     E♭m
-//      B♭      |     Am 
-//      F       |     Em 
-//      C       |     Am 
-//      G       |     Em 
-//      D       |     Dm 
+//      A       |      
+//      E       |      
+//      B       |      
+//      F♯      |     
+//      C♯      |     
+//      G♯      |     
+//      E♭      |    
+//      B♭      |     
+//      F       |      
+//      C       |      
+//      G       |      
+//      D       |      
 
 
 // Chord shape count
@@ -257,13 +257,14 @@ const chordProgressions = {
 
 
 const chordShapes = {
-    aShape: {
+    aShapeOpen: {
         startingFret: 0,
+        notes: ['x', 'A', 'E', 'A', 'C♯', 'E'],
         barre: ['0', '0', '0', '0', '0', '0'],
         fret1: ['', '', '', '', '', ''],
-        fret2: ['', '1', '1', '1', '1', '1'],
+        fret2: ['', '', '1', '2', '3', ''],
         fret3: ['', '', '', '', '', ''],
-        fret4: ['', '', '2', '3', '4', '']
+        fret4: ['', '', '', '', '', '']
     },
 
 };

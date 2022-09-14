@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             }
             
-            populateChordInfoLabels();
+            populateChords();
 
         });
 
@@ -328,7 +328,7 @@ let chordProgressionLookup = chordProgressions[userSelectedChordProgression];
  * Populate chord info labels
  */
 
-function populateChordInfoLabels() {
+function populateChords() {
 
     if (userSelectedChordProgression) {
 
@@ -337,6 +337,7 @@ function populateChordInfoLabels() {
         let scale;
         let chordTonalitiesLookup;
         let chordTonalityIndex;
+        let chordTonality;
 
         let chordProgressionLookup = chordProgressions [userSelectedChordProgression];
         console.log(chordProgressionLookup);
@@ -354,6 +355,7 @@ function populateChordInfoLabels() {
         let labelChordList = document.querySelectorAll("[data-label-chord]");
         let numberOfChordLabels = labelChordList.length;
         chordProgressionChordIndices = chordProgressionLookup.chords;
+
 
         for (let i = 0; i < numberOfChordLabels; i++) {
 
@@ -388,17 +390,44 @@ function populateChordInfoLabels() {
                 console.log("Chord tonality is " + chordTonality);
             }
 
-        console.log("Chord tonalities: ");
-        console.log(chordTonalitiesLookup);
+            console.log("Chord tonalities: ");
+            console.log(chordTonalitiesLookup);
 
-        console.log("Key Tonality: ");
-        console.log(keyTonality);
-        console.log("Scale: ");
-        console.log(scale);            
+            console.log("Key Tonality: ");
+            console.log(keyTonality);
+            console.log("Scale: ");
+            console.log(scale);            
 
             labelChordList[i].textContent = scale[chordProgressionChordIndices[i]] + " " + chordTonality;
             console.log("Chord root: " + scale[chordProgressionChordIndices[i]]);
+
         }
+
+        // Chord Diagrams
+        const chordDiagramList = document.querySelectorAll("[data-chord-diagram]");
+        let numberOfChordDiagrams = chordDiagramList.length;
+        let urlBase = "./assets/images/chord-diagrams/";
+        let chordDiagram;
+        let chordDiagramUrl;
+
+        console.log("chordDiagramList: ");
+        console.log(chordDiagramList);
+
+        chordDiagramList.forEach((chordDiagram, i) => {
+
+            let chordLabel = labelChordList[i].textContent.toLowerCase().replace(" ", "").replace("♯", "sharp").replace("♭", "flat");
+            let chordDiagramFileName = chordLabel + ".png";
+
+            // chordDiagramUrl = urlBase + scale[chordProgressionChordIndices[i]].toLowerCase() + chordTonality + ".png";
+            chordDiagramUrl = urlBase + chordDiagramFileName;
+
+            console.log("chordDiagramFileName: " + chordDiagramFileName);
+
+            console.log("Chord diagram URL is " + chordDiagramUrl);
+            console.log("Chord tonality is " + chordTonality);
+
+            chordDiagram.setAttribute("src", chordDiagramUrl);
+        });
 
     }
 
@@ -440,76 +469,3 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 //     });
 
 // });
-
-
-/**
- * Find the correct notes to
- * display above chord diagram
- */
-
-// function stringNotes() {
-//     if (string not in scale) {
-//         note = "x";
-//     } else {
-//         note = scaleNote;
-//     }
-// }
-
-
-
-
-
-/**
- * Key: E
- * Tonality: Major
- * Scale Root: E
- * Chord Progression - I V IV V
- */
-
-// Chord Diagram 1 - 
-let chordDiagram1 = {
-    scaleDegree: 'I',
-    chordName: 'E',
-    chordTonality: 'Major',
-    chordNotes: ['E', 'B', 'E', 'G♯', 'B', 'E'],
-    fret1: ['', '', '', '1', '', ''],
-    fret2: ['', '2', '3', '', '', ''],
-    fret3: ['', '', '', '', '', ''],
-    fret4: ['', '', '', '', '', '']
-};
-
-// Chord Diagram 2 - 
-let chordDiagram2 = {
-    scaleDegree: 'V',
-    chordName: 'B',
-    chordTonality: 'Major',
-    chordNotes: ['x', 'B', 'F♯', 'B', 'D♯', 'F♯'],
-    fret1: ['', '', '', '', '', ''],
-    fret2: ['', '1', '1', '1', '1', '1'],
-    fret3: ['', '', '', '', '', ''],
-    fret4: ['', '', '2', '3', '4', '']
-};
-
-// Chord Diagram 3 - 
-let chordDiagram3 = {
-    scaleDegree: 'IV',
-    chordName: 'A',
-    chordTonality: 'Major',
-    chordNotes: ['x', 'A', 'E', 'A', 'C♯', 'E'],
-    fret1: ['', '', '', '', '', ''],
-    fret2: ['', '', '1', '2', '3', ''],
-    fret3: ['', '', '', '', '', ''],
-    fret4: ['', '', '', '', '', '']
-};
-
-// Chord Diagram 4 - 
-let chordDiagram4 = {
-    scaleDegree: 'V',
-    chordName: 'B',
-    chordTonality: 'Major',
-    chordNotes: ['x', 'B', 'F♯', 'B', 'D♯', 'F♯'],
-    fret1: ['', '', '', '', '', ''],
-    fret2: ['', '1', '1', '1', '1', '1'],
-    fret3: ['', '', '', '', '', ''],
-    fret4: ['', '', '2', '3', '4', '']
-};

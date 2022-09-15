@@ -210,51 +210,6 @@ const chordProgressions = {
 //      D       |     Dm    |   Open    |      0        |       1,2
 
 
-// Chord Notes
-// Major Chord  |   Notes
-//      C       |     x, C, E, G, C, E  
-//      G       |     G, B, D, G, B, G
-//      D       |     x, x, D, A, D, F♯
-//      A       |     x, A, E, A, C♯, E  
-//      E       |     E, B, E, G♯, B, E
-//      B       |     x, B, F♯, B, D♯, F♯
-//    F♯/G♭     |     
-//    C♯/D♭     |      
-//      A♭      |       
-//      E♭      |       
-//      B♭      |       
-//      F       |      
-
-// Minor Chord  |   Notes
-//      A       |      
-//      E       |      
-//      B       |      
-//      F♯      |     
-//      C♯      |     
-//      G♯      |     
-//      E♭      |    
-//      B♭      |     
-//      F       |      
-//      C       |      
-//      G       |      
-//      D       |      
-
-
-// Chord shape count
-
-// Major
-// C - 1
-// G - 1
-// D - 3
-// A - 3
-// E - 4
-
-// Minor
-// A  - 5
-// E  - 5
-// D  - 1
-// E♭ - 1
-
 
 const chordShapes = {
     aShapeOpen: {
@@ -417,12 +372,9 @@ function populateChords() {
 
             let chordLabel = labelChordList[i].textContent.toLowerCase().replace(" ", "").replace("♯", "sharp").replace("♭", "flat");
             let chordDiagramFileName = chordLabel + ".png";
-
-            // chordDiagramUrl = urlBase + scale[chordProgressionChordIndices[i]].toLowerCase() + chordTonality + ".png";
             chordDiagramUrl = urlBase + chordDiagramFileName;
 
             console.log("chordDiagramFileName: " + chordDiagramFileName);
-
             console.log("Chord diagram URL is " + chordDiagramUrl);
             console.log("Chord tonality is " + chordTonality);
 

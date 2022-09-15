@@ -211,20 +211,6 @@ const chordProgressions = {
 
 
 
-const chordShapes = {
-    aShapeOpen: {
-        startingFret: 0,
-        notes: ['x', 'A', 'E', 'A', 'C♯', 'E'],
-        barre: ['0', '0', '0', '0', '0', '0'],
-        fret1: ['', '', '', '', '', ''],
-        fret2: ['', '', '1', '2', '3', ''],
-        fret3: ['', '', '', '', '', ''],
-        fret4: ['', '', '', '', '', '']
-    },
-
-};
-
-
 // Wait for the DOM to finish loading
 // Get button elements and add event listeners
 
@@ -353,7 +339,7 @@ function populateChords() {
             console.log("Scale: ");
             console.log(scale);            
 
-            labelChordList[i].textContent = scale[chordProgressionChordIndices[i]] + " " + chordTonality;
+            labelChordList[i].textContent = scale[chordProgressionChordIndices[i]].replace("/", "\/") + " " + chordTonality;
             console.log("Chord root: " + scale[chordProgressionChordIndices[i]]);
 
         }
@@ -370,7 +356,7 @@ function populateChords() {
 
         chordDiagramList.forEach((chordDiagram, i) => {
 
-            let chordLabel = labelChordList[i].textContent.toLowerCase().replace(" ", "").replace("♯", "sharp").replace("♭", "flat");
+            let chordLabel = labelChordList[i].textContent.toLowerCase().replace(" ", "").replace("♯", "sharp").replace("♭", "flat").replace("/", "");
             let chordDiagramFileName = chordLabel + ".png";
             chordDiagramUrl = urlBase + chordDiagramFileName;
 

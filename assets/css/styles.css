@@ -388,6 +388,33 @@ main {
     width: 40px;
 }
 
+.double-btn {
+    position: relative;
+    height: 60px;
+    width: 40px;
+}
+
+.double-btn .key-select {
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    z-index: 1;
+}
+
+.double-btn .key-select:first-child {
+    top: 0;
+    right: 0;
+}
+
+.double-btn .key-select:last-child {
+    bottom: 0;
+}
+
+.adjust-alignment {
+    position: relative;
+    top: 10px;
+}
+
 .help-btn,
 .close-btn,
 .controls-btn {

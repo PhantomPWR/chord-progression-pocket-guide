@@ -35,34 +35,6 @@ window.addEventListener('load', function() {
     }
 });
 
-/**
- * Scale formulas in semitones (13 in total)
- * R = Root note
- * W = Whole step
- * H = Half step/Semitone
- * Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
- * Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
- * Distance between frets = 1 semitone
- * Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
- * Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
- * 
- * Scale notes in semitones
- * 
- * semiTonesSharp = [A, A♯, B, B♯, C, C♯, D, D♯, E, E♯, F, F♯, G, G♯]
- * semiTonesFlat = [G, G♭, F, F♭, E, E♭, D, D♭, C, C♭, B, B♭, A, A♭]
- * 
- * 
- * 12 Major Keys
- * 12 Minor Keys
- * 
- * 9 Chord Progressions
- * 
- * Each key has 4 chord diagrams - according to the scale degrees of
- * the relevant chord progression
- * 
- */
-
-
 // Scale for each major key in the Circle of Fifths
 const majorScales = {
     cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
@@ -153,61 +125,7 @@ const chordProgressions = {
     },
 };
 
-// CHORD DIAGRAM NOTES
-// Chord shapes:
-// Basic patterns for finger positions when playing chords
 
-// Barres:
-// Represent placing the index finger on the same fret across multiple strings
-// Open chords consist of chords containing one or more strings that aren't fingered
-
-// Fingers (Right Hand):
-// 1 - Index finger
-// 2 - Middle finger
-// 3 - Ring finger
-// 4 - Little finger
-
-// Strings (left to right):
-// 1 - Low E
-// 2 - A
-// 3 - D
-// 4 - G
-// 5 - B
-// 6 - High E
-
-// Frets (top to bottom)
-// The topmost fret is the first fret after the nut unless
-// a number next to the first fret indicates the "starting" fret
-
-// Basic chord shapes (see circle of fifths)
-
-// Major Chord  |   Shape   |   Type    |   Barre Fret  |   Muted Strings
-//      C       |     C     |   Open    |      0        |       1
-//      G       |     G     |   Open    |      0        |       0
-//      D       |     D     |   Open    |      0        |       1,2
-//      A       |     A     |   Open    |      0        |       1
-//      E       |     E     |   Open    |      0        |       0
-//      B       |     A     |   Barre   |      2        |       1
-//    F♯/G♭     |     E     |   Barre   |      2        |       0
-//    C♯/D♭     |     D     |   Barre   |      1        |       1,2
-//      A♭      |     E     |   Barre   |      4        |       0
-//      E♭      |     D     |   Barre   |      3        |       1,2
-//      B♭      |     A     |   Barre   |      1        |       1
-//      F       |     E     |   Barre   |      1        |       0
-
-// Minor Chord  |   Shape   |   Type    |   Barre Fret  |   Muted Strings
-//      A       |     Am    |   Open    |      0        |       1
-//      E       |     Em    |   Open    |      0        |       0
-//      B       |     Am    |   Barre   |      2        |       1
-//      F♯      |     Em    |   Barre   |      2        |       0
-//      C♯      |     Am    |   Barre   |      4        |       1
-//      G♯      |     Em    |   Barre   |      4        |       0
-//      E♭      |     E♭m   |   Open    |      0        |       1,2
-//      B♭      |     Am    |   Barre   |      1        |       1
-//      F       |     Em    |   Barre   |      1        |       0
-//      C       |     Am    |   Barre   |      3        |       1
-//      G       |     Em    |   Barre   |      3        |       0
-//      D       |     Dm    |   Open    |      0        |       1,2
 
 
 
@@ -215,26 +133,31 @@ const chordProgressions = {
 // Get button elements and add event listeners
 
 document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
-    let displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
+    const buttons = document.querySelectorAll("button");
+    const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
 
-    console.log("userSelectedChordProgression BEFORE loop: " + userSelectedChordProgression);
 
     for (let button of buttons) {
         button.classList.remove("active");
+        const keySelectButton = button.hasAttribute("data-key-select");
+        const chordProgressionSelectButton = button.hasAttribute("data-chord-progression-select");
 
         button.addEventListener("click", function() {
 
-            if (this.hasAttribute("data-key-select")) {
-                console.log(this.innerText);
+            if (keySelectButton) {
+
                 displaySelectedKeyValue.innerText = (this.innerText);
                 displaySelectedKeyValue.classList.remove("ghosted");
                 userSelectedKey = this.getAttribute("data-key-select");
-                console.log("User-selected Key: " + userSelectedKey);
                 displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
                 keyTonality = this.getAttribute("data-key-tonality");
+                this.classList.add("active");
 
-            } else if (this.hasAttribute("data-chord-progression-select")) {
+                // console checks
+                console.log("User-selected Key: " + userSelectedKey);
+                console.log(this.innerText);
+
+            } else if (chordProgressionSelectButton) {
 
                 displaySelectedChordProgressionValue.classList.remove("ghosted");
                 displaySelectedChordProgressionValue.innerText = (this.innerText);
@@ -252,24 +175,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let userSelectedKey;
-let chordTonality;
 
-// User-selected key and chord progression
-console.log("User-selected Key: " + userSelectedKey);
+
 
 let displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
 let userSelectedChordProgression = displaySelectedChordProgressionValue.getAttribute("data-selected-chord-display");
-
-// Look up selected chord progression values
-let chordProgressionLookup = chordProgressions[userSelectedChordProgression];
-
-
 
 /**
  * Populate chord info labels
  */
 
 function populateChords() {
+
+    console.log("User-selected Key: " + userSelectedKey);
 
     if (userSelectedChordProgression) {
 
@@ -346,9 +264,7 @@ function populateChords() {
 
         // Chord Diagrams
         const chordDiagramList = document.querySelectorAll("[data-chord-diagram]");
-        let numberOfChordDiagrams = chordDiagramList.length;
         let urlBase = "./assets/images/chord-diagrams/";
-        let chordDiagram;
         let chordDiagramUrl;
 
         console.log("chordDiagramList: ");
@@ -407,3 +323,58 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 //     });
 
 // });
+
+
+// ============= CHORD & SCALE NOTES ===============
+// 
+// ============= SCALES
+// Scale formulas in semitones (13 in total)
+// R = Root note
+// W = Whole step
+// H = Half step/Semitone
+// Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
+// Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
+// Distance between frets = 1 semitone
+// Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
+// Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
+
+// Scale notes in semitones
+
+// semiTonesSharp = [A, A♯, B, B♯, C, C♯, D, D♯, E, E♯, F, F♯, G, G♯]
+// semiTonesFlat = [G, G♭, F, F♭, E, E♭, D, D♭, C, C♭, B, B♭, A, A♭]
+
+
+// 12 Major Keys
+// 12 Minor Keys
+
+// 9 Chord Progressions
+
+// Each key has 4 chord diagrams - according to the scale degrees of
+// the relevant chord progression
+// 
+// ============= CHORD DIAGRAMS
+// Chord shapes:
+// Basic patterns for finger positions when playing chords
+
+// Barres:
+// Represent placing the index finger on the same fret across multiple strings
+// Open chords consist of chords containing one or more strings that aren't fingered
+
+// Fingers (Right Hand):
+// 1 - Index finger
+// 2 - Middle finger
+// 3 - Ring finger
+// 4 - Little finger
+
+// Strings (left to right):
+// 1 - Low E
+// 2 - A
+// 3 - D
+// 4 - G
+// 5 - B
+// 6 - High E
+
+// Frets (top to bottom)
+// The topmost fret is the first fret after the nut unless
+// a number next to the first fret indicates the "starting" fret
+

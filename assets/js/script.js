@@ -132,6 +132,10 @@ const chordProgressions = {
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll("button");
     const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
+    const helpContent = document.getElementById("helpContent");
+    const displayArea = document.getElementById("chordBoxContainer");
+    const displayAreaDefault = displayArea.innerHTML;
+    displayArea.innerHTML=(helpContent.innerHTML);
 
 
     for (let button of buttons) {
@@ -140,6 +144,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const chordProgressionSelectButton = button.hasAttribute("data-chord-progression-select");
 
         button.addEventListener("click", function() {
+
+            displayArea.innerHTML=(displayAreaDefault);
 
             if (keySelectButton) {
 

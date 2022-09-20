@@ -126,9 +126,6 @@ const chordProgressions = {
 };
 
 
-
-
-
 // Wait for the DOM to finish loading
 // Get button elements and add event listeners
 
@@ -138,13 +135,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     for (let button of buttons) {
-        button.classList.remove("active");
+
         const keySelectButton = button.hasAttribute("data-key-select");
         const chordProgressionSelectButton = button.hasAttribute("data-chord-progression-select");
 
         button.addEventListener("click", function() {
 
             if (keySelectButton) {
+
+                let activeKeys = document.getElementsByClassName("key-select active");
+                Array.from(activeKeys).forEach(activeKey => {
+                    activeKey.classList.remove("active");
+                });
 
                 displaySelectedKeyValue.innerText = (this.innerText);
                 displaySelectedKeyValue.classList.remove("ghosted");
@@ -157,12 +159,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log("User-selected Key: " + userSelectedKey);
                 console.log(this.innerText);
 
+                console.log("keySelectButton: " + this.getAttribute("data-key-select"));
+                console.log("userSelectedKey: " + userSelectedKey);
+
+
             } else if (chordProgressionSelectButton) {
+
+                let activeChordProgressions = document.getElementsByClassName("chord-progression active");
+                Array.from(activeChordProgressions).forEach(activeChordProgression => {
+                    activeChordProgression.classList.remove("active");
+                });
 
                 displaySelectedChordProgressionValue.classList.remove("ghosted");
                 displaySelectedChordProgressionValue.innerText = (this.innerText);
                 userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
                 displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
+                this.classList.add("active");
 
             }
             
@@ -175,9 +187,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let userSelectedKey;
-
-
-
 let displaySelectedChordProgressionValue = document.getElementById("selectedChordProgressionDisplay");
 let userSelectedChordProgression = displaySelectedChordProgressionValue.getAttribute("data-selected-chord-display");
 

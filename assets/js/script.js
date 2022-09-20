@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const helpContent = document.getElementById("helpContent");
     const displayArea = document.getElementById("chordBoxContainer");
     const displayAreaDefault = displayArea.innerHTML;
-    displayArea.innerHTML=(helpContent.innerHTML);
+    displayArea.innerHTML = helpContent.innerHTML;
 
 
     for (let button of buttons) {

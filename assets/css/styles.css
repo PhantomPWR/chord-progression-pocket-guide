@@ -213,6 +213,12 @@ main,
     color: #95a5a6;
 }
 
+.label-degree,
+.label-chord,
+.fretboard {
+    font-size: 2rem;
+}
+
 .label-degree {
     font-size: 2rem;
 }
@@ -221,17 +227,12 @@ main,
     font-size: 3rem;
 }
 
-.label-notes {
-    font-size: 1.2rem;
-}
-
-[class*="string"]::before {
-    background-color: #BEC4C9;
-}
-
-.finger {
-    font-size: 1.6rem;
-    color: transparent;
+.label-degree::before,
+.label-chord::before,
+.fretboard::before,
+.fret-number {
+    color: #34495e;
+    font-size: 10px;
 }
 
 
@@ -248,41 +249,16 @@ button {
     border-radius: 3px;
 }
 
-.key-select,
-.finger {
+.key-select {
     border: 2px solid transparent;
     border-radius: 50%;
 }
 
-.barre {
-    border-left-width: 0;
-    border-right-width: 0;
-    border-radius: 0;
-}
-
-.barre-start {
-    border-left-width: 2px;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-}
-
-.barre-end {
-    border-right-width: 2px;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-}
-
-/* Chord Boxes */
-ul[class*="fret"] {
-    border: 1px solid #D9DCDD;
-}
-
-ul.fret1 {
-    border-top-width: 10px;
-}
-
-ul.fret4 {
-    border-bottom-width: 2px;
+.label-degree::before,
+.label-chord::before,
+.fretboard::before,
+.fret-number {
+    border-bottom: 1px solid #D9DCDD;
 }
 
 
@@ -506,80 +482,66 @@ main {
     margin-left: 1rem;
 }
 
+.label-degree,
+.label-chord,
+.fretboard {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.label-chord {
+    margin: 0.5em 0;
+    position: relative;
+}
+
+.label-degree::before,
+.label-chord::before,
+.fretboard::before,
+.fret-number {
+    content: "";
+    position: absolute;
+    text-align: left;
+    width: 100%;
+}
+
+.label-degree::before,
+.label-chord::before {
+    bottom: 0;
+}
+
+.label-degree::before {
+    content: "DEGREE";
+}
+
+.label-chord::before {
+    content: "CHORD";
+}
+
+.fretboard::before {
+    content: "STRINGS";
+    top: 8px;
+}
+
+.fret-number {
+    top: 44px;
+    width: 100px;
+    left: 0;
+}
+
 .chord-box-row {
     justify-content: space-evenly;
     width: 100%;
 }
 
-figure,
-.frets {
+figure {
     align-items: center;
     justify-content: space-between;
-    margin: 0;
-}
-
-figure {
     margin-top: 2em;
+    width: 40%;
 }
-
-.label-notes,
-[class*="fret"] {
-    margin: 0;
-    padding: 0;
-}
-
-.label-notes li,
-[class*="string"] {
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    height: 30px;
-    width: 30px;
-}
-
-.label-notes li {
-    align-items: flex-end;
-}
-
-[class*="string"] {
-    position: relative;
-}
-
-[class*="string"]::before {
-    content: " ";
-    width: 1px;
-    position: absolute;
-    height: 100%;
-    margin: auto;
-    padding: 0;
-}
-
-.string1::before,
-.string2::before {
-    width: 3px;
-}
-
-.string3::before,
-.string4::before {
-    width: 2px;
-}
-
-.finger {
-    position: relative;
-    width: 26px;
-    height: 26px;
-    justify-content: center;
-    align-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-.barre {
-    width: 30px;
-}
-
 
 
 /* -- MOBILE-SPECIFIC STYLES -- */

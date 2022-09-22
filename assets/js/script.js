@@ -296,6 +296,7 @@ function populateChords() {
             console.log("Chord tonality is " + chordTonality);
 
             chordDiagram.setAttribute("src", chordDiagramUrl);
+            chordDiagram.setAttribute("alt", labelChordList[i].textContent.replace(" ", "") + " Guitar Chord Diagram");
         });
 
     }

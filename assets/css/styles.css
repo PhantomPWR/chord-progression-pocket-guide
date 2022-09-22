@@ -633,10 +633,16 @@ figure {
 
     .chord-box-container figure {
         margin-top: 2em;
+        width: 90%;
     }
 
     .chord-box-row {
+        align-items: center;
         flex-direction: column;
+    }
+
+    .fret-number {
+        width: 80px;
     }
     
 }

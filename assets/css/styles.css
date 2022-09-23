@@ -372,18 +372,34 @@ main {
 
 .double-btn .key-select {
     position: absolute;
-    height: 26px;
-    width: 26px;
+    height: 27px;
+    width: 40px;
     z-index: 1;
+    border-radius: 0 0 50px 50px;
 }
 
-.double-btn .key-select:first-child {
+.double-btn.d-flat-c-sharp .key-select:first-child {
+    top: -1px;
+    right: -4px;
+    transform: rotate(195deg);
+}
+
+.double-btn.d-flat-c-sharp .key-select:last-child {
+    bottom: -2px;
+    right: 3px;
+    transform: rotate(15deg);
+}
+
+.double-btn.g-flat-f-sharp .key-select:first-child {
     top: 0;
-    right: 0;
+    right: -10px;
+    transform: rotate(225deg);
 }
 
-.double-btn .key-select:last-child {
-    bottom: 0;
+.double-btn.g-flat-f-sharp .key-select:last-child {
+    bottom: 1px;
+    transform: rotate(45deg);
+    right: 6px;
 }
 
 .adjust-alignment {

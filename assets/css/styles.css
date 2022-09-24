@@ -139,10 +139,13 @@ button {
 .site-title {
     font-style: italic;
     line-height: 2rem;
+    letter-spacing: 0.1em;
+    word-spacing: 0.1em;
 }
 
 .site-title span {
     font-size: 1.2rem;
+    word-spacing: 0;
 }
 
 main,
@@ -150,6 +153,20 @@ main,
     background-color: #2c3e50;
     border: 2px solid #2c3e50;
     border-radius: 3px;
+}
+
+.start-button {
+    text-align: center;
+    background-color: #e67e22;
+    font-size: 1.1em;
+    font-family: 'Orbitron';
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.start-button:hover {
+    color: #e67e22;
+    background-color: #ecf0f1;
 }
 
 .key-select {
@@ -186,7 +203,8 @@ main,
 .chord-progression-select button {
     letter-spacing: 0;
     word-spacing: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
 }
 
 .display-area {
@@ -243,10 +261,19 @@ main,
 }
 
 /* Buttons */
+button, button:hover {
+    transition: 300ms all ease-in-out;
+}
+
 button {
     appearance: none;
     border: 2px solid;
     border-radius: 3px;
+}
+
+.start-button {
+    border: 2px solid #e67e22;
+    border-radius: 50%;
 }
 
 .key-select {
@@ -311,6 +338,16 @@ main {
 .key-select-inner {
     align-items: center;
     justify-content: center;
+}
+
+.start-button {
+    content: "START HERE";
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 
 .keys {
@@ -443,8 +480,13 @@ main {
     margin: 0 0 0.5rem;
 }
 
+.site-title span {
+    display: block;
+    margin-top: 0.3em;
+}
+
 .chord-progression-container {
-    max-width: 400px;
+    width: 450px;
 }
 
 .chord-progression-select .btn-row {
@@ -456,7 +498,7 @@ main {
 }
 
 .chord-progression-select button {
-    padding: 1em;
+    padding: 1em 0.5em;
     height: 50px;
     width: 30%;
 }

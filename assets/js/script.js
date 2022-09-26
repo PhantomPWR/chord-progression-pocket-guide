@@ -125,68 +125,127 @@ const chordProgressions = {
     },
 };
 
-
+const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
 // Wait for the DOM to finish loading
 // Get button elements and add event listeners
 
+function handleKeySelection() {
+
+    const keySelectButtons = document.querySelectorAll("[data-key-select]");
+    console.log(keySelectButtons);
+    for (let keySelectButton of keySelectButtons) {
+        keySelectButton.addEventListener("click", function() {
+
+            let activeKeys = document.getElementsByClassName("key-select active");
+            Array.from(activeKeys).forEach(activeKey => {
+                activeKey.classList.remove("active");
+            });
+
+            displaySelectedKeyValue.innerText = (this.innerText);
+            displaySelectedKeyValue.classList.remove("ghosted");
+            userSelectedKey = this.getAttribute("data-key-select");
+            displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
+            keyTonality = this.getAttribute("data-key-tonality");
+            this.classList.add("active");
+
+            // console checks
+            console.log("User-selected Key: " + userSelectedKey);
+            console.log(this.innerText);
+
+            console.log("keySelectButton: " + this.getAttribute("data-key-select"));
+            console.log("userSelectedKey: " + userSelectedKey);
+
+        });
+    }
+
+}
+
+function handleChordProgressionSelection() {
+
+    const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
+    for (let chordProgressionSelectButton of chordProgressionSelectButtons) {
+        chordProgressionSelectButton.addEventListener("click", function() {
+
+            let activeChordProgressions = document.getElementsByClassName("chord-progression active");
+            Array.from(activeChordProgressions).forEach(activeChordProgression => {
+                activeChordProgression.classList.remove("active");
+            });
+
+            displaySelectedChordProgressionValue.classList.remove("ghosted");
+            displaySelectedChordProgressionValue.innerText = (this.innerText);
+            userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
+            displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
+            this.classList.add("active");
+
+        });
+    }
+
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll("button");
-    const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
+    // const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
     const helpContent = document.getElementById("helpContent");
     const displayArea = document.getElementById("chordBoxContainer");
     const displayAreaDefault = displayArea.innerHTML;
     displayArea.innerHTML = helpContent.innerHTML;
 
+    handleKeySelection();
+    handleChordProgressionSelection();
+
 
     for (let button of buttons) {
 
-        const keySelectButton = button.hasAttribute("data-key-select");
-        const chordProgressionSelectButton = button.hasAttribute("data-chord-progression-select");
+        // const keySelectButton = button.hasAttribute("data-key-select");
+        // const chordProgressionSelectButton = button.hasAttribute("data-chord-progression-select");
 
-        button.addEventListener("click", function() {
+        // button.addEventListener("click", function() {
 
             displayArea.innerHTML=(displayAreaDefault);
 
-            if (keySelectButton) {
+            // if (keySelectButton) {
 
-                let activeKeys = document.getElementsByClassName("key-select active");
-                Array.from(activeKeys).forEach(activeKey => {
-                    activeKey.classList.remove("active");
-                });
+                
 
-                displaySelectedKeyValue.innerText = (this.innerText);
-                displaySelectedKeyValue.classList.remove("ghosted");
-                userSelectedKey = this.getAttribute("data-key-select");
-                displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
-                keyTonality = this.getAttribute("data-key-tonality");
-                this.classList.add("active");
+                // let activeKeys = document.getElementsByClassName("key-select active");
+                // Array.from(activeKeys).forEach(activeKey => {
+                //     activeKey.classList.remove("active");
+                // });
 
-                // console checks
-                console.log("User-selected Key: " + userSelectedKey);
-                console.log(this.innerText);
+                // displaySelectedKeyValue.innerText = (this.innerText);
+                // displaySelectedKeyValue.classList.remove("ghosted");
+                // userSelectedKey = this.getAttribute("data-key-select");
+                // displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
+                // keyTonality = this.getAttribute("data-key-tonality");
+                // this.classList.add("active");
 
-                console.log("keySelectButton: " + this.getAttribute("data-key-select"));
-                console.log("userSelectedKey: " + userSelectedKey);
+                // // console checks
+                // console.log("User-selected Key: " + userSelectedKey);
+                // console.log(this.innerText);
+
+                // console.log("keySelectButton: " + this.getAttribute("data-key-select"));
+                // console.log("userSelectedKey: " + userSelectedKey);
 
 
-            } else if (chordProgressionSelectButton) {
+            // } else if (chordProgressionSelectButton) {
+                // if (chordProgressionSelectButton) {
 
-                let activeChordProgressions = document.getElementsByClassName("chord-progression active");
-                Array.from(activeChordProgressions).forEach(activeChordProgression => {
-                    activeChordProgression.classList.remove("active");
-                });
+                // let activeChordProgressions = document.getElementsByClassName("chord-progression active");
+                // Array.from(activeChordProgressions).forEach(activeChordProgression => {
+                //     activeChordProgression.classList.remove("active");
+                // });
 
-                displaySelectedChordProgressionValue.classList.remove("ghosted");
-                displaySelectedChordProgressionValue.innerText = (this.innerText);
-                userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
-                displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
-                this.classList.add("active");
+                // displaySelectedChordProgressionValue.classList.remove("ghosted");
+                // displaySelectedChordProgressionValue.innerText = (this.innerText);
+                // userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
+                // displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
+                // this.classList.add("active");
 
-            }
+            // }
             
             populateChords();
 
-        });
+        // });
 
     }
 

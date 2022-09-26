@@ -104,11 +104,14 @@ button.active {
 body,
 button,
 .site-title span {
+    color: #2c3e50;
     font-weight: 400;
     letter-spacing: 2px;
 }
 
-body {font-family: "Lato", sans-serif;}
+body {
+    font-family: "Lato", sans-serif;
+}
 
 h1,
 h2,
@@ -204,7 +207,7 @@ main,
     letter-spacing: 0;
     word-spacing: 0.5rem;
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .display-area {

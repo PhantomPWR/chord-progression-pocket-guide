@@ -35,106 +35,18 @@ window.addEventListener('load', function() {
     }
 });
 
-// Scale for each major key in the Circle of Fifths
-const majorScales = {
-    cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
-    gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
-    dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
-    aMaj: ['A', 'B', 'C♯', 'D', 'E', 'F♯', 'G♯'],
-    eMaj: ['E', 'F♯', 'G♯', 'A', 'B', 'C♯', 'D♯'],
-    bMaj: ['B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯'],
-    fSharpMaj: ['F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯', 'E♯'],
-    cSharpMaj: ['C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B♯'],
-    fMaj: ['F', 'G', 'A', 'B♭', 'C', 'D', 'E'],
-    bFlatMaj: ['B♭', 'C', 'D', 'E♭', 'F', 'G', 'A'],
-    eFlatMaj: ['E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D'],
-    aFlatMaj: ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G'],
-    dFlatMaj: ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C'],
-    gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F'],
-};
-
-// Scale for each minor key in the Circle of Fifths
-const minorScales = {
-    aMin: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-    eMin: ['E', 'F♯', 'G', 'A', 'B', 'C', 'D'],
-    bMin: ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A'],
-    fSharpMin: ['F♯', 'G♯', 'A', 'B', 'C♯', 'D', 'E'],
-    cSharpMin: ['C♯', 'D♯', 'E', 'F♯', 'G♯', 'A', 'B'],
-    gSharpMin: ['G♯', 'A♯', 'B', 'C♯', 'D♯', 'E', 'F♯'],
-    dMin: ['D', 'E', 'F', 'G', 'A', 'B♭', 'C'],
-    gMin: ['G', 'A', 'B♭', 'C', 'D', 'E♭', 'F'],
-    cMin: ['C', 'D', 'E♭', 'F', 'G', 'A♭', 'B♭'],
-    fMin: ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭'],
-    bFlatMin: ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭'],
-    eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
-};
-
-// Tonality for Maj/Min Chords
-const chordTonalities = {
-    majorTonalities: ['maj', 'min', 'min', 'maj', 'maj', 'min', 'dim'],
-    minorTonalities: ['min', 'dim', 'maj', 'min', 'min', 'maj', 'maj']
-};
-
-
-// Scale degree labels along with corresponding indices for
-// the relevant scale degrees chords are built on
-const chordProgressions = {
-    oneFiveFourOne: {
-        degrees: ['I', 'V', 'IV', 'I'],
-        chords: [0, 4, 3, 0]
-    },
-    
-    oneFiveMinorSixFive: {
-        degrees: ['I', 'V', 'vi', 'I'],
-        chords: [0, 4, 5, 0]
-    },
-
-    oneMinorSixFourFive: {
-        degrees: ['I', 'vi', 'IV', 'V'],
-        chords: [0, 5, 3, 4]
-    },
-
-    oneMinorSixMinorTwoFive: {
-        degrees: ['I', 'vi', 'ii', 'V'],
-        chords: [0, 5, 1, 4]
-    },
-
-    oneMinorThreeMinorSixFive: {
-        degrees: ['I', 'iii', 'vi', 'V'],
-        chords: [0, 2, 5, 4]
-    },
-
-    minorSixFourOneFive: {
-        degrees: ['vi', 'IV', 'I', 'V'],
-        chords: [5, 3, 0, 4]
-    },
-
-    oneFlatSevenFourOne: {
-        degrees: ['I', '♭VII', 'IV', 'I'],
-        chords: [0, 6, 3, 0]
-    },
-
-    oneFlatSevenFlatSixFive: {
-        degrees: ['I', '♭VII', '♭VI', 'V'],
-        chords: [0, 6, 5, 4]
-    },
-
-    minorOneFlatSevenFlatSixFlatSeven: {
-        degrees: ['i', '♭VII', '♭VI', '♭VII'],
-        chords: [0, 6, 5, 6]
-    },
-};
 
 const keySelectButtons = document.querySelectorAll("[data-key-select]");
 const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
 const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
+const displayArea = document.getElementById("chordBoxContainer");
+const displayAreaDefault = displayArea.innerHTML;
 
 // Wait for the DOM to finish loading
 // Get button elements and add event listeners
 
 function handleKeySelection() {
-
-    
+ 
     console.log(keySelectButtons);
     for (let keySelectButton of keySelectButtons) {
         keySelectButton.addEventListener("click", function() {
@@ -151,7 +63,12 @@ function handleKeySelection() {
             keyTonality = this.getAttribute("data-key-tonality");
             this.classList.add("active");
 
-            checkSelectedKeyDisplay(false);
+            // Enable chord progression buttons
+            disableChordProgressionButtons(false);
+
+            if (displaySelectedChordProgressionValue !== "") {
+                populateChords();
+            }
 
             // console checks
             console.log("User-selected Key: " + userSelectedKey);
@@ -181,15 +98,30 @@ function handleChordProgressionSelection() {
             displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
             this.classList.add("active");
 
+            displayArea.innerHTML=(displayAreaDefault);
+            populateChords();
+
         });
     }
 
 }
 
-function checkSelectedKeyDisplay(status) {
+
+/**
+ * Disable/enable chord progression selection buttons, using the status parameter
+ * 
+ * true == disabled
+ * false == enabled
+ * 
+ * @param {*} status 
+ */
+
+function disableChordProgressionButtons(status) {
 
     chordProgressionSelectButtons.forEach((chordProgressionSelectButton, i) => {
         chordProgressionSelectButton.disabled = status;
+
+        // console check
         console.log("status: " + status);
         return status;
     });
@@ -197,85 +129,18 @@ function checkSelectedKeyDisplay(status) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.querySelectorAll("button");
-    // const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
-    const helpContent = document.getElementById("helpContent");
-    const displayArea = document.getElementById("chordBoxContainer");
-    const displayAreaDefault = displayArea.innerHTML;
+
     displayArea.innerHTML = helpContent.innerHTML;
 
+    // console check
     console.log("displaySelectedKeyValue: ");
     console.log(displaySelectedKeyValue.innerHTML);
     
-    checkSelectedKeyDisplay(true);
+    // Disable chord progression buttons
+    disableChordProgressionButtons(true);
 
     handleKeySelection();
-    // handleChordProgressionSelection();
-
-    // const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
-    // for (let chordProgressionSelectButton of chordProgressionSelectButtons) {
-    //     if ((displaySelectedKeyValue.innerHTML) == "None") {
-    //         chordProgressionSelectButton.disabled = true;
-    //     } else {
-    //         handleChordProgressionSelection();
-    //     }
-    // }
-
-
-    for (let button of buttons) {
-
-        // const keySelectButton = button.hasAttribute("data-key-select");
-        // const chordProgressionSelectButton = button.hasAttribute("data-chord-progression-select");
-
-        // button.addEventListener("click", function() {
-
-            displayArea.innerHTML=(displayAreaDefault);
-
-            // if (keySelectButton) {
-
-                
-
-                // let activeKeys = document.getElementsByClassName("key-select active");
-                // Array.from(activeKeys).forEach(activeKey => {
-                //     activeKey.classList.remove("active");
-                // });
-
-                // displaySelectedKeyValue.innerText = (this.innerText);
-                // displaySelectedKeyValue.classList.remove("ghosted");
-                // userSelectedKey = this.getAttribute("data-key-select");
-                // displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
-                // keyTonality = this.getAttribute("data-key-tonality");
-                // this.classList.add("active");
-
-                // // console checks
-                // console.log("User-selected Key: " + userSelectedKey);
-                // console.log(this.innerText);
-
-                // console.log("keySelectButton: " + this.getAttribute("data-key-select"));
-                // console.log("userSelectedKey: " + userSelectedKey);
-
-
-            // } else if (chordProgressionSelectButton) {
-                // if (chordProgressionSelectButton) {
-
-                // let activeChordProgressions = document.getElementsByClassName("chord-progression active");
-                // Array.from(activeChordProgressions).forEach(activeChordProgression => {
-                //     activeChordProgression.classList.remove("active");
-                // });
-
-                // displaySelectedChordProgressionValue.classList.remove("ghosted");
-                // displaySelectedChordProgressionValue.innerText = (this.innerText);
-                // userSelectedChordProgression = this.getAttribute("data-chord-progression-select");
-                // displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
-                // this.classList.add("active");
-
-            // }
-            
-            populateChords();
-
-        // });
-
-    }
+    handleChordProgressionSelection();
 
 });
 
@@ -378,6 +243,7 @@ function populateChords() {
             let chordDiagramFileName = chordLabel + ".png";
             chordDiagramUrl = urlBase + chordDiagramFileName;
 
+            // console checks
             console.log("chordDiagramFileName: " + chordDiagramFileName);
             console.log("Chord diagram URL is " + chordDiagramUrl);
             console.log("Chord tonality is " + chordTonality);
@@ -402,18 +268,21 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 });
 
 // Help button
-// helpButtons.forEach(helpButton => {
+helpButtons.forEach(helpButton => {
 
-//     helpButton.addEventListener("click", function() {
-//         console.log("Help button clicked");
-//         mobileHeaderHelpBtn.classList.add("active");
-//         controlArea.style.display = "none";
-//         helpContent.style.cssText = ("display: flex; z-index: 10;");
-//         drawer.classList.add("in");
-//         drawerCloseBtn.after(helpContent);
-//     });
+    helpButton.addEventListener("click", function() {
 
-// });
+        // displayArea.innerHTML = helpContent.innerHTML;
+        // console check
+        console.log("Help button clicked");
+        mobileHeaderHelpBtn.classList.add("active");
+        // controlArea.style.display = "none";
+        helpContent.style.cssText = ("display: flex; z-index: 10;");
+        // drawer.classList.add("in");
+        // drawerCloseBtn.after(helpContent);
+    });
+
+});
 
 // Drawer close button
 // let closeButtons = document.querySelectorAll(".close-btn");
@@ -481,3 +350,93 @@ mobileHeaderControlsBtn.addEventListener("click", function() {
 // The topmost fret is the first fret after the nut unless
 // a number next to the first fret indicates the "starting" fret
 
+
+// Scale for each major key in the Circle of Fifths
+const majorScales = {
+    cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
+    gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
+    dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
+    aMaj: ['A', 'B', 'C♯', 'D', 'E', 'F♯', 'G♯'],
+    eMaj: ['E', 'F♯', 'G♯', 'A', 'B', 'C♯', 'D♯'],
+    bMaj: ['B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯'],
+    fSharpMaj: ['F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯', 'E♯'],
+    cSharpMaj: ['C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B♯'],
+    fMaj: ['F', 'G', 'A', 'B♭', 'C', 'D', 'E'],
+    bFlatMaj: ['B♭', 'C', 'D', 'E♭', 'F', 'G', 'A'],
+    eFlatMaj: ['E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D'],
+    aFlatMaj: ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G'],
+    dFlatMaj: ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C'],
+    gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F'],
+};
+
+// Scale for each minor key in the Circle of Fifths
+const minorScales = {
+    aMin: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+    eMin: ['E', 'F♯', 'G', 'A', 'B', 'C', 'D'],
+    bMin: ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A'],
+    fSharpMin: ['F♯', 'G♯', 'A', 'B', 'C♯', 'D', 'E'],
+    cSharpMin: ['C♯', 'D♯', 'E', 'F♯', 'G♯', 'A', 'B'],
+    gSharpMin: ['G♯', 'A♯', 'B', 'C♯', 'D♯', 'E', 'F♯'],
+    dMin: ['D', 'E', 'F', 'G', 'A', 'B♭', 'C'],
+    gMin: ['G', 'A', 'B♭', 'C', 'D', 'E♭', 'F'],
+    cMin: ['C', 'D', 'E♭', 'F', 'G', 'A♭', 'B♭'],
+    fMin: ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭'],
+    bFlatMin: ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭'],
+    eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
+};
+
+// Tonality for Maj/Min Chords
+const chordTonalities = {
+    majorTonalities: ['maj', 'min', 'min', 'maj', 'maj', 'min', 'dim'],
+    minorTonalities: ['min', 'dim', 'maj', 'min', 'min', 'maj', 'maj']
+};
+
+
+// Scale degree labels along with corresponding indices for
+// the relevant scale degrees chords are built on
+const chordProgressions = {
+    oneFiveFourOne: {
+        degrees: ['I', 'V', 'IV', 'I'],
+        chords: [0, 4, 3, 0]
+    },
+    
+    oneFiveMinorSixFive: {
+        degrees: ['I', 'V', 'vi', 'I'],
+        chords: [0, 4, 5, 0]
+    },
+
+    oneMinorSixFourFive: {
+        degrees: ['I', 'vi', 'IV', 'V'],
+        chords: [0, 5, 3, 4]
+    },
+
+    oneMinorSixMinorTwoFive: {
+        degrees: ['I', 'vi', 'ii', 'V'],
+        chords: [0, 5, 1, 4]
+    },
+
+    oneMinorThreeMinorSixFive: {
+        degrees: ['I', 'iii', 'vi', 'V'],
+        chords: [0, 2, 5, 4]
+    },
+
+    minorSixFourOneFive: {
+        degrees: ['vi', 'IV', 'I', 'V'],
+        chords: [5, 3, 0, 4]
+    },
+
+    oneFlatSevenFourOne: {
+        degrees: ['I', '♭VII', 'IV', 'I'],
+        chords: [0, 6, 3, 0]
+    },
+
+    oneFlatSevenFlatSixFive: {
+        degrees: ['I', '♭VII', '♭VI', 'V'],
+        chords: [0, 6, 5, 4]
+    },
+
+    minorOneFlatSevenFlatSixFlatSeven: {
+        degrees: ['i', '♭VII', '♭VI', '♭VII'],
+        chords: [0, 6, 5, 6]
+    },
+};

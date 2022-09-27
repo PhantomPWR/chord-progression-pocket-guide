@@ -68,6 +68,13 @@ button.active {
     background-color: #e9bc96;
 }
 
+button:disabled,
+button:disabled:hover {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: initial;
+}
+
 .key-select:hover,
 .key-select.active {
     background-color: rgba(230 126 34/55%);

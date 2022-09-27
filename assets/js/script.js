@@ -125,13 +125,16 @@ const chordProgressions = {
     },
 };
 
+const keySelectButtons = document.querySelectorAll("[data-key-select]");
+const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
 const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
+
 // Wait for the DOM to finish loading
 // Get button elements and add event listeners
 
 function handleKeySelection() {
 
-    const keySelectButtons = document.querySelectorAll("[data-key-select]");
+    
     console.log(keySelectButtons);
     for (let keySelectButton of keySelectButtons) {
         keySelectButton.addEventListener("click", function() {
@@ -148,6 +151,8 @@ function handleKeySelection() {
             keyTonality = this.getAttribute("data-key-tonality");
             this.classList.add("active");
 
+            checkSelectedKeyDisplay(false);
+
             // console checks
             console.log("User-selected Key: " + userSelectedKey);
             console.log(this.innerText);
@@ -162,7 +167,6 @@ function handleKeySelection() {
 
 function handleChordProgressionSelection() {
 
-    const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
     for (let chordProgressionSelectButton of chordProgressionSelectButtons) {
         chordProgressionSelectButton.addEventListener("click", function() {
 
@@ -182,6 +186,16 @@ function handleChordProgressionSelection() {
 
 }
 
+function checkSelectedKeyDisplay(status) {
+
+    chordProgressionSelectButtons.forEach((chordProgressionSelectButton, i) => {
+        chordProgressionSelectButton.disabled = status;
+        console.log("status: " + status);
+        return status;
+    });
+    
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll("button");
     // const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
@@ -190,8 +204,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const displayAreaDefault = displayArea.innerHTML;
     displayArea.innerHTML = helpContent.innerHTML;
 
+    console.log("displaySelectedKeyValue: ");
+    console.log(displaySelectedKeyValue.innerHTML);
+    
+    checkSelectedKeyDisplay(true);
+
     handleKeySelection();
-    handleChordProgressionSelection();
+    // handleChordProgressionSelection();
+
+    // const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
+    // for (let chordProgressionSelectButton of chordProgressionSelectButtons) {
+    //     if ((displaySelectedKeyValue.innerHTML) == "None") {
+    //         chordProgressionSelectButton.disabled = true;
+    //     } else {
+    //         handleChordProgressionSelection();
+    //     }
+    // }
 
 
     for (let button of buttons) {

@@ -58,122 +58,145 @@
 
         </div>
 
+        <!-- Modals -->
+        <div id="startContent" class="modal-container">
+            <div class="modal-content">
+                <button type="button" data-type="close" id="modalCloseBtn" class="close-btn flex-container">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <span class="uppercase">Close</span>
+                </button>
+                Start Here
+            </div>
+        </div>
+
+        <h1 id="siteTitle" class="site-title uppercase">Chord Progressions <span>Pocket Guide For Guitar</span></h1>
+        <div class="site-description">
+            <p>1. Select a key from the Circle of Fifths</p>
+            <p>2. Select a Chord Progression</p>
+            <p>3. Play!</p>
+        </div>
+
         <!-- Control Area -->
         <section id="controls" class="control-area flex-container">
             
             <!-- Help Button -->
-            <button type="button" data-type="help" data-target="drawer" class="help-btn flex-container">
+            <!-- <button type="button" data-type="help" data-target="drawer" class="help-btn flex-container">
                 <i class="fa-solid fa-circle-question"></i>
                 <span class="uppercase">Help</span>
-            </button>
+            </button> -->
 
-            <!-- Key Selection Background (Circle of Fifths) -->
-            <div id="circleOfFifthsContainer" class="circle-of-fifths-container flex-container">
+            <!-- Key Select Outer Container -->
+            <div class="key-select-outer-container flex-container flex-column">
+                <h2  class="uppercase section-heading"><span class="step">1</span> Select a key</h2>
 
-                <!-- Key Selection Buttons -->
-                <div id="keySelectContainer" class="key-select-inner flex-container">
+                <!-- Key Selection Background (Circle of Fifths) -->
+                <div id="circleOfFifthsContainer" class="circle-of-fifths-container flex-container">
 
-                    <!-- Start Button -->
-                    <button type="button" class="start-button">Start Here</button>
+                    <!-- Key Selection Buttons -->
+                    <div id="keySelectContainer" class="key-select-inner flex-container">
 
-                    <!-- Major Keys Select -->
-                    <div class="major-keys keys flex-container">
+                        <!-- Start Button -->
+                        <button id="startButton" type="button" class="start-button modal-button">Start Here</button>
 
-                        <!-- Button Group 1 -->
-                        <div class="button-group major flex-container">    
-                            <button type="button" data-key-select="eFlatMaj" data-key-tonality="maj" class="key-select">E♭ Major</button>
-                            <button type="button" data-key-select="aMaj" data-key-tonality="maj" class="key-select">A Major</button>
-                        </div>
+                        <!-- Major Keys Select -->
+                        <div class="major-keys keys flex-container">
 
-                        <!-- Button Group 2 -->
-                        <div class="button-group major flex-container">
-                            <button type="button" data-key-select="aFlatMaj" data-key-tonality="maj" class="key-select">A♭ Major</button>
-                            <button type="button" data-key-select="dMaj" data-key-tonality="maj" class="key-select">D Major</button>
-                        </div>
-
-                        <!-- Button Group 3 -->
-                        <div class="button-group major flex-container">
-                            <div class="double-btn d-flat-c-sharp">
-                                <button type="button" data-key-select="dFlatMaj" data-key-tonality="maj" class="key-select">D♭ Major</button>
-                                <button type="button" data-key-select="cSharpMaj" data-key-tonality="maj" class="key-select">C♯ Major</button>
+                            <!-- Button Group 1 -->
+                            <div class="button-group major flex-container">    
+                                <button type="button" data-key-select="eFlatMaj" data-key-tonality="maj" class="key-select">E♭ Major</button>
+                                <button type="button" data-key-select="aMaj" data-key-tonality="maj" class="key-select">A Major</button>
                             </div>
-                            <button type="button" data-key-select="gMaj" data-key-tonality="maj" class="key-select adjust-alignment">G Major</button>
-                        </div>
 
-                        <!-- Button Group 4 -->
-                        <div class="button-group major flex-container">
-                            <div class="double-btn g-flat-f-sharp">
-                                <button type="button" data-key-select="gFlatMaj" data-key-tonality="maj" class="key-select">G♭ Major</button>
-                                <button type="button" data-key-select="fSharpMaj" data-key-tonality="maj" class="key-select">F♯ Major</button>
+                            <!-- Button Group 2 -->
+                            <div class="button-group major flex-container">
+                                <button type="button" data-key-select="aFlatMaj" data-key-tonality="maj" class="key-select">A♭ Major</button>
+                                <button type="button" data-key-select="dMaj" data-key-tonality="maj" class="key-select">D Major</button>
                             </div>
-                            <button type="button" data-key-select="cMaj" data-key-tonality="maj" class="key-select adjust-alignment">C Major</button>
+
+                            <!-- Button Group 3 -->
+                            <div class="button-group major flex-container">
+                                <div class="double-btn d-flat-c-sharp">
+                                    <button type="button" data-key-select="dFlatMaj" data-key-tonality="maj" class="key-select">D♭ Major</button>
+                                    <button type="button" data-key-select="cSharpMaj" data-key-tonality="maj" class="key-select">C♯ Major</button>
+                                </div>
+                                <button type="button" data-key-select="gMaj" data-key-tonality="maj" class="key-select adjust-alignment">G Major</button>
+                            </div>
+
+                            <!-- Button Group 4 -->
+                            <div class="button-group major flex-container">
+                                <div class="double-btn g-flat-f-sharp">
+                                    <button type="button" data-key-select="gFlatMaj" data-key-tonality="maj" class="key-select">G♭ Major</button>
+                                    <button type="button" data-key-select="fSharpMaj" data-key-tonality="maj" class="key-select">F♯ Major</button>
+                                </div>
+                                <button type="button" data-key-select="cMaj" data-key-tonality="maj" class="key-select adjust-alignment">C Major</button>
+                            </div>
+
+                            <!-- Button Group 5 -->
+                            <div class="button-group major flex-container">
+                                <button type="button" data-key-select="bMaj" data-key-tonality="maj" class="key-select">B Major</button>
+                                <button type="button" data-key-select="fMaj" data-key-tonality="maj" class="key-select">F Major</button>
+                            </div>
+
+                            <!-- Button Group 6 -->
+                            <div class="button-group major flex-container">
+                                <button type="button" data-key-select="eMaj" data-key-tonality="maj" class="key-select">E Major</button>
+                                <button type="button" data-key-select="bFlatMaj" data-key-tonality="maj" class="key-select">B♭ Major</button>
+                            </div>
+
                         </div>
 
-                        <!-- Button Group 5 -->
-                        <div class="button-group major flex-container">
-                            <button type="button" data-key-select="bMaj" data-key-tonality="maj" class="key-select">B Major</button>
-                            <button type="button" data-key-select="fMaj" data-key-tonality="maj" class="key-select">F Major</button>
-                        </div>
+                        <!-- Minor Keys Select -->
+                        <div class="minor-keys keys flex-container">
 
-                        <!-- Button Group 6 -->
-                        <div class="button-group major flex-container">
-                            <button type="button" data-key-select="eMaj" data-key-tonality="maj" class="key-select">E Major</button>
-                            <button type="button" data-key-select="bFlatMaj" data-key-tonality="maj" class="key-select">B♭ Major</button>
-                        </div>
+                            <!-- Button Group 1 -->
+                            <div class="button-group minor flex-container">
+                                <button type="button" data-key-select="cMin" data-key-tonality="min" class="key-select">C minor</button>
+                                <button type="button" data-key-select="fSharpMin" data-key-tonality="min" class="key-select">F♯ minor</button>
+                            </div>
 
-                    </div>
+                            <!-- Button Group 2 -->
+                            <div class="button-group minor flex-container">
+                                <button type="button" data-key-select="fMin" data-key-tonality="min" class="key-select">F minor</button>
+                                <button type="button" data-key-select="bMin" data-key-tonality="min" class="key-select">B minor</button>
+                            </div>
 
-                    <!-- Minor Keys Select -->
-                    <div class="minor-keys keys flex-container">
+                            <!-- Button Group 3 -->
+                            <div class="button-group minor flex-container">
+                                <button type="button" data-key-select="bFlatMin" data-key-tonality="min" class="key-select">B♭ minor</button>
+                                <button type="button" data-key-select="eMin" data-key-tonality="min" class="key-select">E minor</button>
+                            </div>
 
-                        <!-- Button Group 1 -->
-                        <div class="button-group minor flex-container">
-                            <button type="button" data-key-select="cMin" data-key-tonality="min" class="key-select">C minor</button>
-                            <button type="button" data-key-select="fSharpMin" data-key-tonality="min" class="key-select">F♯ minor</button>
-                        </div>
+                            <!-- Button Group 4 -->
+                            <div class="button-group minor flex-container">
+                                <button type="button" data-key-select="eFlatMin" data-key-tonality="min" class="key-select">E♭ minor</button>
+                                <button type="button" data-key-select="aMin" data-key-tonality="min" class="key-select">A minor</button>
+                            </div>
 
-                        <!-- Button Group 2 -->
-                        <div class="button-group minor flex-container">
-                            <button type="button" data-key-select="fMin" data-key-tonality="min" class="key-select">F minor</button>
-                            <button type="button" data-key-select="bMin" data-key-tonality="min" class="key-select">B minor</button>
-                        </div>
+                            <!-- Button Group 5 -->
+                            <div class="button-group minor flex-container">
+                                <button type="button" data-key-select="gSharpMin" data-key-tonality="min" class="key-select">G♯ minor</button>
+                                <button type="button" data-key-select="dMin" data-key-tonality="min" class="key-select">D minor</button>
+                            </div>
 
-                        <!-- Button Group 3 -->
-                        <div class="button-group minor flex-container">
-                            <button type="button" data-key-select="bFlatMin" data-key-tonality="min" class="key-select">B♭ minor</button>
-                            <button type="button" data-key-select="eMin" data-key-tonality="min" class="key-select">E minor</button>
-                        </div>
+                            <!-- Button Group 6 -->
+                            <div class="button-group minor flex-container">
+                                <button type="button" data-key-select="cSharpMin" data-key-tonality="min" class="key-select">C♯ minor</button>
+                                <button type="button" data-key-select="gMin" data-key-tonality="min" class="key-select">G minor</button>
+                            </div>
 
-                        <!-- Button Group 4 -->
-                        <div class="button-group minor flex-container">
-                            <button type="button" data-key-select="eFlatMin" data-key-tonality="min" class="key-select">E♭ minor</button>
-                            <button type="button" data-key-select="aMin" data-key-tonality="min" class="key-select">A minor</button>
-                        </div>
-
-                        <!-- Button Group 5 -->
-                        <div class="button-group minor flex-container">
-                            <button type="button" data-key-select="gSharpMin" data-key-tonality="min" class="key-select">G♯ minor</button>
-                            <button type="button" data-key-select="dMin" data-key-tonality="min" class="key-select">D minor</button>
-                        </div>
-
-                        <!-- Button Group 6 -->
-                        <div class="button-group minor flex-container">
-                            <button type="button" data-key-select="cSharpMin" data-key-tonality="min" class="key-select">C♯ minor</button>
-                            <button type="button" data-key-select="gMin" data-key-tonality="min" class="key-select">G minor</button>
                         </div>
 
                     </div>
 
                 </div>
-
             </div>
 
             <!-- Chord Progression Select -->
             <div class="chord-progression-container">
-                <h1 id="siteTitle" class="site-title uppercase">Chord Progression <span>Pocket Guide</span></h1>
+                <!-- <h1 id="siteTitle" class="site-title uppercase">Chord Progression <span>Pocket Guide</span></h1> -->
                 <div class="chord-progression-inner">
                     <div id="chordProgressionSelect" class="chord-progression-select">
-                        <h2  class="uppercase">Select a chord progression</h2>
+                        <h2  class="uppercase section-heading"><span class="step">2</span> Select a chord progression</h2>
                             <div class="btn-row flex-container">
                                 <button data-chord-progression-select="oneFiveFourOne" class="chord-progression">I V IV I</button>
                                 <button data-chord-progression-select="oneFiveMinorSixFive" class="chord-progression">I V vi V</button>

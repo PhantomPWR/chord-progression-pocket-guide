@@ -185,15 +185,15 @@ function populateChords() {
 
         for (let i = 0; i < numberOfChordLabels; i++) {
 
-            //Is chord progression degree minor in a major key?
+            // Is chord progression degree minor in a major key?
             if (keyTonality == "maj") {
 
-                //Get relevant scale
+                // Get relevant scale
                 scale = majorScales[userSelectedKey];
                 console.log("Scale: ");
                 console.log(scale);
 
-                //Get relevant chord tonalities
+                // Get relevant chord tonalities
                 chordTonalitiesLookup = chordTonalities.majorTonalities;
                 chordTonalityIndex = chordProgressionChordIndices[i];
                 chordTonality = chordTonalitiesLookup[chordTonalityIndex];
@@ -204,10 +204,10 @@ function populateChords() {
               // Is chord progression degree minor in a minor key?
             } else if (keyTonality == "min") {
 
-                //Get relevant scale
+                // Get relevant scale
                 scale = minorScales[userSelectedKey];
 
-                //Get relevant chord tonalities
+                // Get relevant chord tonalities (major or minor)
                 chordTonalitiesLookup = chordTonalities.minorTonalities;
                 chordTonalityIndex = chordProgressionChordIndices[i];
                 chordTonality = chordTonalitiesLookup[chordTonalityIndex];
@@ -259,6 +259,32 @@ function populateChords() {
 
 // Button Event Listeners
 
+// Modal buttons
+const startButton = document.getElementById("startButton");
+const startContent = document.getElementById("startContent");
+const modal = document.querySelectorAll(".modal-container");
+const modalButtons = document.querySelectorAll(".modal-button");
+
+modalButtons.forEach(modalButton => {
+    modalButton.addEventListener("click", function() {
+        startContent.classList.add("modal-show");
+     });
+});
+
+
+ // Modal close buttons
+const closeButtons = document.querySelectorAll(".close-btn");
+closeButtons.forEach(closeBtn => {
+
+    closeBtn.addEventListener("click", function() {
+        console.log("Close button clicked");
+        console.log(modal);
+        modal.classList.remove("modal-show");
+        mobileHeaderHelpBtn.classList.remove("active");
+    });
+
+});
+
 // Mobile phone control area button
 mobileHeaderControlsBtn.addEventListener("click", function() {
     mobileHeaderHelpBtn.classList.remove("active");
@@ -284,17 +310,6 @@ helpButtons.forEach(helpButton => {
 
 });
 
-// Drawer close button
-// let closeButtons = document.querySelectorAll(".close-btn");
-// closeButtons.forEach(closeBtn => {
-
-//     closeBtn.addEventListener("click", function() {
-//         console.log("Close button clicked");
-//         drawer.classList.remove("in");
-//         mobileHeaderHelpBtn.classList.remove("active");
-//     });
-
-// });
 
 
 // ============= CHORD & SCALE NOTES ===============

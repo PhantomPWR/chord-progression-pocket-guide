@@ -639,6 +639,16 @@ main {
     left: 0;
 }
 
+.chord-box-container {
+    height: 0;
+    overflow: hidden;
+}
+
+.chord-box-container.expanded {
+    height: auto;
+    overflow: auto;
+}
+
 .chord-box-row {
     justify-content: space-evenly;
     width: 100%;

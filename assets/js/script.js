@@ -40,7 +40,6 @@ const keySelectButtons = document.querySelectorAll("[data-key-select]");
 const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
 const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
 const displayArea = document.getElementById("chordBoxContainer");
-const displayAreaDefault = displayArea.innerHTML;
 
 // Wait for the DOM to finish loading
 // Get button elements and add event listeners
@@ -98,7 +97,6 @@ function handleChordProgressionSelection() {
             displaySelectedChordProgressionValue.setAttribute("data-selected-chord-display", userSelectedChordProgression);
             this.classList.add("active");
 
-            displayArea.innerHTML=(displayAreaDefault);
             populateChords();
 
         });
@@ -130,8 +128,6 @@ function disableChordProgressionButtons(status) {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    displayArea.innerHTML = helpContent.innerHTML;
-
     // console check
     console.log("displaySelectedKeyValue: ");
     console.log(displaySelectedKeyValue.innerHTML);
@@ -155,6 +151,9 @@ let userSelectedChordProgression = displaySelectedChordProgressionValue.getAttri
 function populateChords() {
 
     console.log("User-selected Key: " + userSelectedKey);
+
+    const chordBoxContainer = document.getElementById("chordBoxContainer");
+    chordBoxContainer.classList.add("expanded");
 
     if (userSelectedChordProgression) {
 

@@ -209,20 +209,6 @@ main {
     background-color: #D9DCDD;
 }
 
-.start-button {
-    text-align: center;
-    background-color: #e67e22;
-    font-size: 1.1em;
-    font-family: 'Orbitron';
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.start-button:hover {
-    color: #e67e22;
-    background-color: #ecf0f1;
-}
-
 .key-select {
     background-color: transparent;
     color: transparent;
@@ -337,11 +323,6 @@ button {
     border-radius: 3px;
 }
 
-.start-button {
-    border: 2px solid #e67e22;
-    border-radius: 50%;
-}
-
 .key-select {
     border: 2px solid transparent;
     border-radius: 50%;
@@ -408,16 +389,6 @@ main {
 .key-select-inner {
     align-items: center;
     justify-content: center;
-}
-
-.start-button {
-    content: "START HERE";
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
 }
 
 .keys {

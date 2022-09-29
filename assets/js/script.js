@@ -260,14 +260,12 @@ function populateChords() {
 // Button Event Listeners
 
 // Modal buttons
-const startButton = document.getElementById("startButton");
-const startContent = document.getElementById("startContent");
 const modal = document.querySelectorAll(".modal-container");
 const modalButtons = document.querySelectorAll(".modal-button");
 
 modalButtons.forEach(modalButton => {
     modalButton.addEventListener("click", function() {
-        startContent.classList.add("modal-show");
+        // startContent.classList.add("modal-show");
      });
 });
 

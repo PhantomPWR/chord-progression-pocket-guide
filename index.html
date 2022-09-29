@@ -70,11 +70,6 @@
         </div>
 
         <h1 id="siteTitle" class="site-title uppercase">Chord Progressions <span>Pocket Guide For Guitar</span></h1>
-        <div class="site-description">
-            <p>1. Select a key from the Circle of Fifths</p>
-            <p>2. Select a Chord Progression</p>
-            <p>3. Play!</p>
-        </div>
 
         <!-- Control Area -->
         <section id="controls" class="control-area flex-container">
@@ -87,7 +82,7 @@
 
             <!-- Key Select Outer Container -->
             <div class="key-select-outer-container flex-container flex-column">
-                <h2  class="uppercase section-heading"><span class="step">1</span> Select a key</h2>
+                <h2  class="uppercase section-heading"><span class="step">Step 1:</span><span>Select a key</span></h2>
 
                 <!-- Key Selection Background (Circle of Fifths) -->
                 <div id="circleOfFifthsContainer" class="circle-of-fifths-container flex-container">
@@ -190,24 +185,26 @@
 
             <!-- Chord Progression Select -->
             <div class="chord-progression-container">
-                <!-- <h1 id="siteTitle" class="site-title uppercase">Chord Progression <span>Pocket Guide</span></h1> -->
                 <div class="chord-progression-inner">
                     <div id="chordProgressionSelect" class="chord-progression-select">
-                        <h2  class="uppercase section-heading"><span class="step">2</span> Select a chord progression</h2>
-                            <div class="btn-row flex-container">
+                        <h2  class="uppercase section-heading"><span class="step">Step 2:</span><span>Select a chord progression</span></h2>
+
+                        <div class="button-container flex-container flex-column">
+                            <div class="button-row flex-container">
                                 <button data-chord-progression-select="oneFiveFourOne" class="chord-progression">I V IV I</button>
                                 <button data-chord-progression-select="oneFiveMinorSixFive" class="chord-progression">I V vi V</button>
                                 <button data-chord-progression-select="oneMinorSixFourFive" class="chord-progression">I vi IV V</button>
-                        </div>
-                            <div class="btn-row flex-container">
+                            </div>
+                            <div class="button-row flex-container">
                                 <button data-chord-progression-select="oneMinorSixMinorTwoFive" class="chord-progression">I vi ii V</button>
                                 <button data-chord-progression-select="oneMinorThreeMinorSixFive" class="chord-progression">I iii vi V</button>
                                 <button data-chord-progression-select="minorSixFourOneFive" class="chord-progression">vi IV I V</button>
-                        </div>
-                            <div class="btn-row flex-container">
+                            </div>
+                            <div class="button-row flex-container">
                                 <button data-chord-progression-select="oneFlatSevenFourOne" class="chord-progression">I ♭VII IV I</button>
                                 <button data-chord-progression-select="oneFlatSevenFlatSixFive" class="chord-progression">I ♭VII ♭VI V</button>
                                 <button data-chord-progression-select="minorOneFlatSevenFlatSixFlatSeven" class="chord-progression">i ♭VII ♭VI ♭VII</button>
+                            </div>
                         </div>
                     </div>
                 </div>

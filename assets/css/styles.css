@@ -141,8 +141,7 @@ button:disabled:hover {
 
 /* -- TYPOGRAPHY & COLOURS -- */
 body,
-button,
-.site-title span {
+button {
     color: #2c3e50;
     font-weight: 400;
     letter-spacing: 2px;
@@ -179,8 +178,9 @@ button {
 }
 
 .site-title {
-    background-color: #d9dcdd;
+    background-color: #2c3e50;
     border-bottom: 2px solid #2c3e50;
+    color: #ecf0f1;
     font-style: italic;
     line-height: 2rem;
     letter-spacing: 0.1em;
@@ -253,6 +253,11 @@ main {
     background-color: #2c3e50;
     color: #ecf0f1;
     font-weight: normal;
+}
+
+.selected-key,
+.selected-chord-progression {
+    line-height: 1;
 }
 
 .selection-heading {
@@ -370,6 +375,10 @@ main {
 
 .section-heading span {
     display: block;
+}
+
+.section-heading span:nth-child(2) {
+    margin-top: 0.5em;
 }
 
 

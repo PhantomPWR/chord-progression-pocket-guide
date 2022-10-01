@@ -1,41 +1,10 @@
-/*
- * Handle header display on mobile phones
- */
-
 // Set constant variables
-const mediaQueryList = [
-    window.matchMedia('(max-width: 414px)'),
-    window.matchMedia('(max-width: 915px)')
-    ];
-
 const mobileHeader = document.getElementById("mobileHeader");
 const siteTitle = document.getElementById("siteTitle");
 const helpButtons = document.querySelectorAll(".help-btn");
 const controlArea = document.getElementById("controls");
 const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn");
 const helpContent = document.getElementById("helpContent");
-
-// Detect mobile phone & handle element display
-// window.addEventListener('load', function() {
-//     for (let mediaQuery of mediaQueryList) {
-//         if (mediaQuery.matches) {
-
-//             let mobileButtons = document.getElementById("mobileButtons");
-
-//             // add mobile-phone CSS body class
-//             document.body.classList.add('mobile-phone');
-
-//             // Move site title into mobile header, above buttons
-//             mobileButtons.before(siteTitle);
-
-//             // Display mobile header
-//             mobileHeader.style.display = 'flex';
-
-//         }
-//     }
-// });
-
-
 const keySelectButtons = document.querySelectorAll("[data-key-select]");
 const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
 const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");

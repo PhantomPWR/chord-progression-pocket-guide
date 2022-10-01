@@ -22,53 +22,6 @@
 
     <main>
 
-        <!-- Header Placeholder for Small Devices -->
-        <header id="mobileHeader">
-
-            <div id="mobileButtons" class="flex-container">
-
-                <!-- Control Area Button -->
-                <button type="button" data-type="controls" data-target="drawer" id="mobileHeaderControlsBtn" class="controls-btn flex-container">
-                    <i class="fa-solid fa-sliders"></i>
-                    <span class="uppercase">Controls</span>
-                </button>
-
-                <!-- Help Button -->
-                <button type="button" data-type="help" data-target="drawer" id="mobileHeaderHelpBtn" class="help-btn drawer-btn flex-container">
-                    <i class="fa-solid fa-circle-question"></i>
-                    <span class="uppercase">Help</span>
-                </button>
-            </div>
-
-        </header>
-
-        <!-- Off-canvas Drawer -->
-        <div id="offCanvas" class="drawer">
-
-            <!-- Drawer Close Button -->
-            <button type="button" data-type="close" data-target="drawer" id="drawerCloseBtn" class="close-btn flex-container">
-                <i class="fa-solid fa-circle-xmark"></i>
-                <span class="uppercase">Close</span>
-            </button>
-
-            <!-- Help Content -->
-            <div id="helpContent" class="help-content flex-container">
-                <img src="assets/images/help-content-placeholder.png" width="363" height="568" alt="Help Content Placeholder">
-            </div>
-
-        </div>
-
-        <!-- Modals -->
-        <div id="startContent" class="modal-container">
-            <div class="modal-content">
-                <button type="button" data-type="close" id="modalCloseBtn" class="close-btn flex-container">
-                    <i class="fa-solid fa-circle-xmark"></i>
-                    <span class="uppercase">Close</span>
-                </button>
-                Start Here
-            </div>
-        </div>
-
         <h1 id="siteTitle" class="site-title uppercase">Chord Progressions <span>Pocket Guide For Guitar</span></h1>
 
         <!-- Control Area -->
@@ -318,6 +271,17 @@
         <!-- Display Area - End -->
 
     </main>
+
+    <!-- Modal Window -->
+    <div id="startContent" class="modal-container">
+        <div class="modal-content">
+            <button type="button" data-type="close" id="modalCloseBtn" class="close-btn flex-container">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span class="uppercase">Close</span>
+            </button>
+            Start Here
+        </div>
+    </div>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">  

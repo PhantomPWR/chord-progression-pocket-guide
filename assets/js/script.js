@@ -1,10 +1,6 @@
 // Set constant variables
-const mobileHeader = document.getElementById("mobileHeader");
 const siteTitle = document.getElementById("siteTitle");
-const helpButtons = document.querySelectorAll(".help-btn");
 const controlArea = document.getElementById("controls");
-const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn");
-const helpContent = document.getElementById("helpContent");
 const keySelectButtons = document.querySelectorAll("[data-key-select]");
 const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
 const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
@@ -227,7 +223,7 @@ function populateChords() {
 
 // Button Event Listeners
 
-// Modal buttons
+// Modal button
 const modal = document.querySelectorAll(".modal-container");
 const modalButtons = document.querySelectorAll(".modal-button");
 
@@ -238,7 +234,7 @@ modalButtons.forEach(modalButton => {
 });
 
 
- // Modal close buttons
+ // Modal close button
 const closeButtons = document.querySelectorAll(".close-btn");
 closeButtons.forEach(closeBtn => {
 
@@ -246,90 +242,9 @@ closeButtons.forEach(closeBtn => {
         console.log("Close button clicked");
         console.log(modal);
         modal.classList.remove("modal-show");
-        mobileHeaderHelpBtn.classList.remove("active");
     });
 
 });
-
-// Mobile phone control area button
-mobileHeaderControlsBtn.addEventListener("click", function() {
-    mobileHeaderHelpBtn.classList.remove("active");
-    controlArea.style.display = "flex";
-    controlArea.classList.add("show");
-
-});
-
-// Help button
-helpButtons.forEach(helpButton => {
-
-    helpButton.addEventListener("click", function() {
-
-        // displayArea.innerHTML = helpContent.innerHTML;
-        // console check
-        console.log("Help button clicked");
-        mobileHeaderHelpBtn.classList.add("active");
-        // controlArea.style.display = "none";
-        helpContent.style.cssText = ("display: flex; z-index: 10;");
-        // drawer.classList.add("in");
-        // drawerCloseBtn.after(helpContent);
-    });
-
-});
-
-
-
-// ============= CHORD & SCALE NOTES ===============
-// 
-// ============= SCALES
-// Scale formulas in semitones (13 in total)
-// R = Root note
-// W = Whole step
-// H = Half step/Semitone
-// Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
-// Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
-// Distance between frets = 1 semitone
-// Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
-// Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
-
-// Scale notes in semitones
-
-// semiTonesSharp = [A, A♯, B, B♯, C, C♯, D, D♯, E, E♯, F, F♯, G, G♯]
-// semiTonesFlat = [G, G♭, F, F♭, E, E♭, D, D♭, C, C♭, B, B♭, A, A♭]
-
-
-// 12 Major Keys
-// 12 Minor Keys
-
-// 9 Chord Progressions
-
-// Each key has 4 chord diagrams - according to the scale degrees of
-// the relevant chord progression
-// 
-// ============= CHORD DIAGRAMS
-// Chord shapes:
-// Basic patterns for finger positions when playing chords
-
-// Barres:
-// Represent placing the index finger on the same fret across multiple strings
-// Open chords consist of chords containing one or more strings that aren't fingered
-
-// Fingers (Right Hand):
-// 1 - Index finger
-// 2 - Middle finger
-// 3 - Ring finger
-// 4 - Little finger
-
-// Strings (left to right):
-// 1 - Low E
-// 2 - A
-// 3 - D
-// 4 - G
-// 5 - B
-// 6 - High E
-
-// Frets (top to bottom)
-// The topmost fret is the first fret after the nut unless
-// a number next to the first fret indicates the "starting" fret
 
 
 // Scale for each major key in the Circle of Fifths
@@ -421,3 +336,57 @@ const chordProgressions = {
         chords: [0, 6, 5, 6]
     },
 };
+
+
+// ============= CHORD & SCALE NOTES ===============
+// 
+// ============= SCALES
+// Scale formulas in semitones (13 in total)
+// R = Root note
+// W = Whole step
+// H = Half step/Semitone
+// Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
+// Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
+// Distance between frets = 1 semitone
+// Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
+// Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
+
+// Scale notes in semitones
+
+// semiTonesSharp = [A, A♯, B, B♯, C, C♯, D, D♯, E, E♯, F, F♯, G, G♯]
+// semiTonesFlat = [G, G♭, F, F♭, E, E♭, D, D♭, C, C♭, B, B♭, A, A♭]
+
+
+// 12 Major Keys
+// 12 Minor Keys
+
+// 9 Chord Progressions
+
+// Each key has 4 chord diagrams - according to the scale degrees of
+// the relevant chord progression
+// 
+// ============= CHORD DIAGRAMS
+// Chord shapes:
+// Basic patterns for finger positions when playing chords
+
+// Barres:
+// Represent placing the index finger on the same fret across multiple strings
+// Open chords consist of chords containing one or more strings that aren't fingered
+
+// Fingers (Right Hand):
+// 1 - Index finger
+// 2 - Middle finger
+// 3 - Ring finger
+// 4 - Little finger
+
+// Strings (left to right):
+// 1 - Low E
+// 2 - A
+// 3 - D
+// 4 - G
+// 5 - B
+// 6 - High E
+
+// Frets (top to bottom)
+// The topmost fret is the first fret after the nut unless
+// a number next to the first fret indicates the "starting" fret

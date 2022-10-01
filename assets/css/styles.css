@@ -727,6 +727,28 @@ figure {
 
 /* -- Media Queries -- */
 
+/* Phone (Landscape) */
+@media (max-width: 812px)
+   and (orientation: landscape) {
+
+    main {
+        margin: 0;
+    }
+    
+    .chord-progression-container {
+        width: 410px;
+    }
+
+    .chord-progression-select button {
+        width: 33%;
+    }
+
+    .fret-number {
+        width: 70px;
+    }
+
+}
+
 /* Phone (Portrait) */
 @media (max-width: 414px) {
 
@@ -734,28 +756,61 @@ figure {
         width: 100%;
     }
     
-    #mobileHeader .site-title {
+    .site-title {
         font-size: 2.4rem;
+        line-height: 1.1;
+        padding-top: 1.6em;
     }
 
-    #mobileHeader .site-title span {
+    .site-title span {
         display: block;
     }
 
-    .mobile-phone #controls {
-        flex-direction: column;
+    .control-area,
+    .display-area {
+        padding: 1em 0;
     }
 
-    .mobile-phone .help-content {
-        top: 60px;
+    .control-area {
+        flex-direction: column;
     }
     
     .selection-container {
         flex-direction: column;
     }
 
+    .section-heading {
+        font-size: 1.5rem;
+    }
+
     .chord-progression-container {
         margin-top: 2em;
+        width: 360px;
+    }
+
+    .chord-progression-inner {
+        height: auto;
+    }
+
+    .chord-progression-select .button-container {
+        height: auto;
+    }
+
+    .chord-progression-select button {
+        font-size: 1.1rem;
+        height: 60px;
+        width: 33%;
+    }
+
+    .selected-chord-progression {
+        align-items: flex-end;
+        margin-top: 0.5em;
+    }
+
+    .selected-key span,
+    .selected-chord-progression span {
+        height: auto;
+        width: 50%;
     }
 
     .chord-box-container figure {

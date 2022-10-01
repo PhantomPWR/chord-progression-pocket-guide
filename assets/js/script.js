@@ -16,24 +16,24 @@ const mobileHeaderControlsBtn = document.getElementById("mobileHeaderControlsBtn
 const helpContent = document.getElementById("helpContent");
 
 // Detect mobile phone & handle element display
-window.addEventListener('load', function() {
-    for (let mediaQuery of mediaQueryList) {
-        if (mediaQuery.matches) {
+// window.addEventListener('load', function() {
+//     for (let mediaQuery of mediaQueryList) {
+//         if (mediaQuery.matches) {
 
-            let mobileButtons = document.getElementById("mobileButtons");
+//             let mobileButtons = document.getElementById("mobileButtons");
 
-            // add mobile-phone CSS body class
-            document.body.classList.add('mobile-phone');
+//             // add mobile-phone CSS body class
+//             document.body.classList.add('mobile-phone');
 
-            // Move site title into mobile header, above buttons
-            mobileButtons.before(siteTitle);
+//             // Move site title into mobile header, above buttons
+//             mobileButtons.before(siteTitle);
 
-            // Display mobile header
-            mobileHeader.style.display = 'flex';
+//             // Display mobile header
+//             mobileHeader.style.display = 'flex';
 
-        }
-    }
-});
+//         }
+//     }
+// });
 
 
 const keySelectButtons = document.querySelectorAll("[data-key-select]");

@@ -1,10 +1,7 @@
 // Set constant variables
-const siteTitle = document.getElementById("siteTitle");
-const controlArea = document.getElementById("controls");
 const keySelectButtons = document.querySelectorAll("[data-key-select]");
 const chordProgressionSelectButtons = document.querySelectorAll("[data-chord-progression-select]");
 const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
-const displayArea = document.getElementById("chordBoxContainer");
 
 
 // Scale for each major key in the Circle of Fifths
@@ -97,17 +94,14 @@ const chordProgressions = {
     },
 };
 
-
-// Wait for the DOM to finish loading
-// Get button elements and add event listeners
-
-
 /**
  * Listen for Key Select button click
  * Highlight selected key button
  * Update key selection display text
  * If chord progression already selected - display chord diagrams
  */
+let keyTonality;
+
 function handleKeySelection() {
  
     console.log(keySelectButtons);
@@ -203,7 +197,6 @@ function handleChordProgressionSelection() {
  * 
  * @param {*} status 
  */
-
 function disableChordProgressionButtons(status) {
 
     chordProgressionSelectButtons.forEach((chordProgressionSelectButton, i) => {
@@ -215,6 +208,12 @@ function disableChordProgressionButtons(status) {
     });
     
 }
+
+
+/*
+* Wait for the DOM to finish loading
+* Get button elements and add event listeners
+*/
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -324,6 +323,7 @@ function populateChords() {
 
         }
 
+
         // Chord Diagrams
         const chordDiagramList = document.querySelectorAll("[data-chord-diagram]");
         let urlBase = "./assets/images/chord-diagrams/";
@@ -333,7 +333,8 @@ function populateChords() {
         console.log("chordDiagramList: ");
         console.log(chordDiagramList);
 
-        // Build chord diagram image URLs
+
+        // Build chord diagram image file names & URLs
         chordDiagramList.forEach((chordDiagram, i) => {
 
             // Get chord labels & apply the necessary string replacements
@@ -366,12 +367,12 @@ function populateChords() {
 // Button Event Listeners
 
 // Modal button
-const modal = document.querySelectorAll(".modal-container");
+const modalWindow = document.getElementById("modalWindow");
 const modalButtons = document.querySelectorAll(".modal-button");
 
 modalButtons.forEach(modalButton => {
     modalButton.addEventListener("click", function() {
-        // startContent.classList.add("modal-show");
+        modalWindow.classList.add("modal-show");
      });
 });
 
@@ -382,62 +383,63 @@ closeButtons.forEach(closeBtn => {
 
     closeBtn.addEventListener("click", function() {
         console.log("Close button clicked");
-        console.log(modal);
-        modal.classList.remove("modal-show");
+        console.log(modalWindow);
+        modalWindow.classList.remove("modal-show");
     });
 
 });
 
 
-// ============= CHORD & SCALE NOTES ===============
-// 
-// ============= SCALES
-// Scale formulas in semitones (13 in total)
-// R = Root note
-// W = Whole step
-// H = Half step/Semitone
-// Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
-// Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
-// Distance between frets = 1 semitone
-// Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
-// Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
+/*
+============= CHORD & SCALE NOTES ===============
 
-// Scale notes in semitones
+=== SCALES
+    Scale formulas in semitones (13 in total)
+    R = Root note
+    W = Whole step
+    H = Half step/Semitone
+    Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
+    Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
+    Distance between frets = 1 semitone
+    Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
+    Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
 
-// semiTonesSharp = [A, A♯, B, B♯, C, C♯, D, D♯, E, E♯, F, F♯, G, G♯]
-// semiTonesFlat = [G, G♭, F, F♭, E, E♭, D, D♭, C, C♭, B, B♭, A, A♭]
+== Scale notes in semitones
+    semiTonesSharp = [A, A♯, B, B♯, C, C♯, D, D♯, E, E♯, F, F♯, G, G♯]
+    semiTonesFlat = [G, G♭, F, F♭, E, E♭, D, D♭, C, C♭, B, B♭, A, A♭]
 
+12 Major Keys
+12 Minor Keys
 
-// 12 Major Keys
-// 12 Minor Keys
+9 Chord Progressions
 
-// 9 Chord Progressions
+Each key has 4 chord diagrams - according to the scale degrees of
+the relevant chord progression
 
-// Each key has 4 chord diagrams - according to the scale degrees of
-// the relevant chord progression
-// 
-// ============= CHORD DIAGRAMS
-// Chord shapes:
-// Basic patterns for finger positions when playing chords
+=== CHORD DIAGRAMS
+    Chord shapes:
+    Basic patterns for finger positions when playing chords
 
-// Barres:
-// Represent placing the index finger on the same fret across multiple strings
-// Open chords consist of chords containing one or more strings that aren't fingered
+=== Barres:
+    Represent placing the index finger on the same fret across multiple strings
+    Open chords consist of chords containing one or more strings that aren't fingered
 
-// Fingers (Right Hand):
-// 1 - Index finger
-// 2 - Middle finger
-// 3 - Ring finger
-// 4 - Little finger
+=== Fingers (Right Hand):
+    1 - Index finger
+    2 - Middle finger
+    3 - Ring finger
+    4 - Little finger
 
-// Strings (left to right):
-// 1 - Low E
-// 2 - A
-// 3 - D
-// 4 - G
-// 5 - B
-// 6 - High E
+=== Strings (left to right):
+    1 - Low E
+    2 - A
+    3 - D
+    4 - G
+    5 - B
+    6 - High E
 
-// Frets (top to bottom)
-// The topmost fret is the first fret after the nut unless
-// a number next to the first fret indicates the "starting" fret
+== Frets (top to bottom) ==
+The topmost fret is the first fret after the nut unless
+a number next to the first fret indicates the "starting" fret
+
+*/

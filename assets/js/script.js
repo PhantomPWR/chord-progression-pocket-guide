@@ -104,7 +104,6 @@ let keyTonality;
 
 function handleKeySelection() {
 
-    console.log(keySelectButtons);
     for (let keySelectButton of keySelectButtons) {
 
         // Listen for Key Select button click
@@ -139,12 +138,6 @@ function handleKeySelection() {
             if (displaySelectedChordProgressionValue !== "") {
                 populateChords();
             }
-
-            // console checks
-            console.log("User-selected Key: " + userSelectedKey);
-            console.log(this.innerText);
-            console.log("keySelectButton: " + this.getAttribute("data-key-select"));
-            console.log("userSelectedKey: " + userSelectedKey);
 
         });
     }
@@ -200,11 +193,10 @@ function handleChordProgressionSelection() {
 function disableChordProgressionButtons(status) {
 
     chordProgressionSelectButtons.forEach((chordProgressionSelectButton, i) => {
-        chordProgressionSelectButton.disabled = status;
 
-        // console check
-        console.log("status: " + status);
+        chordProgressionSelectButton.disabled = status;
         return status;
+
     });
 
 }
@@ -216,10 +208,6 @@ function disableChordProgressionButtons(status) {
 */
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    // console check
-    console.log("displaySelectedKeyValue: ");
-    console.log(displaySelectedKeyValue.innerHTML);
 
     // Disable chord progression buttons
     disableChordProgressionButtons(true);
@@ -239,8 +227,6 @@ let userSelectedChordProgression = displaySelectedChordProgressionValue.getAttri
 
 function populateChords() {
 
-    console.log("User-selected Key: " + userSelectedKey);
-
     const chordBoxContainer = document.getElementById("chordBoxContainer");
     chordBoxContainer.classList.add("expanded");
 
@@ -254,7 +240,6 @@ function populateChords() {
         let chordTonality;
 
         let chordProgressionLookup = chordProgressions[userSelectedChordProgression];
-        console.log(chordProgressionLookup);
 
         // Degree Labels
         let labelDegreeList = document.querySelectorAll("[data-label-degree]");
@@ -278,18 +263,11 @@ function populateChords() {
 
                 // Get relevant scale
                 scale = majorScales[userSelectedKey];
-                console.log("Scale: ");
-                console.log(scale);
 
                 // Get relevant chord tonalities
                 chordTonalitiesLookup = chordTonalities.majorTonalities;
                 chordTonalityIndex = chordProgressionChordIndices[i];
                 chordTonality = chordTonalitiesLookup[chordTonalityIndex];
-
-                // console checks
-                console.log("Chord progression degree is " + chordProgressionDegrees[i]);
-                console.log("Key tonality is " + keyTonality);
-                console.log("Chord tonality is " + chordTonality);
 
                 // Is chord progression degree minor in a minor key?
             } else if (keyTonality == "min") {
@@ -302,24 +280,9 @@ function populateChords() {
                 chordTonalityIndex = chordProgressionChordIndices[i];
                 chordTonality = chordTonalitiesLookup[chordTonalityIndex];
 
-                // console checks
-                console.log("Chord progression degree is " + chordProgressionDegrees[i]);
-                console.log("Key tonality is " + keyTonality);
-                console.log("Chord tonality is " + chordTonality);
             }
 
-            // console checks
-            console.log("Chord tonalities: ");
-            console.log(chordTonalitiesLookup);
-            console.log("Key Tonality: ");
-            console.log(keyTonality);
-            console.log("Scale: ");
-            console.log(scale);
-
             labelChordList[i].textContent = scale[chordProgressionChordIndices[i]].replace("/", "\/") + " " + chordTonality;
-
-            // console check
-            console.log("Chord root: " + scale[chordProgressionChordIndices[i]]);
 
         }
 
@@ -328,11 +291,6 @@ function populateChords() {
         const chordDiagramList = document.querySelectorAll("[data-chord-diagram]");
         let urlBase = "./assets/images/chord-diagrams/";
         let chordDiagramUrl;
-
-        // console check
-        console.log("chordDiagramList: ");
-        console.log(chordDiagramList);
-
 
         // Build chord diagram image file names & URLs
         chordDiagramList.forEach((chordDiagram, i) => {
@@ -345,11 +303,6 @@ function populateChords() {
 
             // Build final image URL
             chordDiagramUrl = urlBase + chordDiagramFileName;
-
-            // console checks
-            console.log("chordDiagramFileName: " + chordDiagramFileName);
-            console.log("Chord diagram URL is " + chordDiagramUrl);
-            console.log("Chord tonality is " + chordTonality);
 
             // Populate chord diagram image src attribute
             chordDiagram.setAttribute("src", chordDiagramUrl);
@@ -368,78 +321,20 @@ function populateChords() {
 
 // Modal button
 const modalWindow = document.getElementById("modalWindow");
-const modalButtons = document.querySelectorAll(".modal-button");
+const modalButton = document.getElementById("modalButton");
 
-modalButtons.forEach(modalButton => {
-    modalButton.addEventListener("click", function () {
+modalButton.addEventListener("click", function () {
+        modalButton.classList.add("active");
         modalWindow.classList.add("modal-show");
     });
-});
 
 
 // Modal close button
-const closeButtons = document.querySelectorAll(".close-btn");
-closeButtons.forEach(closeBtn => {
+const modalCloseButton = document.getElementById("modalCloseButton");
 
-    closeBtn.addEventListener("click", function () {
-        console.log("Close button clicked");
-        console.log(modalWindow);
-        modalWindow.classList.remove("modal-show");
-    });
+modalCloseButton.addEventListener("click", function () {
 
+    modalButton.classList.remove("active");
+    modalWindow.classList.remove("modal-show");
+    
 });
-
-
-/*
-============= CHORD & SCALE NOTES ===============
-
-=== SCALES
-    Scale formulas in semitones (13 in total)
-    R = Root note
-    W = Whole step
-    H = Half step/Semitone
-    Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
-    Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
-    Distance between frets = 1 semitone
-    Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
-    Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
-
-== Scale notes in semitones
-    semiTonesSharp = [A, A♯, B, B♯, C, C♯, D, D♯, E, E♯, F, F♯, G, G♯]
-    semiTonesFlat = [G, G♭, F, F♭, E, E♭, D, D♭, C, C♭, B, B♭, A, A♭]
-
-12 Major Keys
-12 Minor Keys
-
-9 Chord Progressions
-
-Each key has 4 chord diagrams - according to the scale degrees of
-the relevant chord progression
-
-=== CHORD DIAGRAMS
-    Chord shapes:
-    Basic patterns for finger positions when playing chords
-
-=== Barres:
-    Represent placing the index finger on the same fret across multiple strings
-    Open chords consist of chords containing one or more strings that aren't fingered
-
-=== Fingers (Right Hand):
-    1 - Index finger
-    2 - Middle finger
-    3 - Ring finger
-    4 - Little finger
-
-=== Strings (left to right):
-    1 - Low E
-    2 - A
-    3 - D
-    4 - G
-    5 - B
-    6 - High E
-
-== Frets (top to bottom) ==
-The topmost fret is the first fret after the nut unless
-a number next to the first fret indicates the "starting" fret
-
-*/

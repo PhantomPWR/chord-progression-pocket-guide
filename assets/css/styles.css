@@ -153,10 +153,13 @@ button {
     text-transform: uppercase;
 }
 
-.site-title {
+.site-header {
     background-color: #2c3e50;
     border-bottom: 2px solid #2c3e50;
     color: #ecf0f1;
+}
+
+.site-title {
     font-style: italic;
     line-height: 2rem;
     letter-spacing: 0.1em;
@@ -313,6 +316,10 @@ main {
     overflow-x: hidden;
     position: relative;
     width: 960px;
+}
+
+.site-header {
+    justify-content: space-between;
 }
 
 .control-area,

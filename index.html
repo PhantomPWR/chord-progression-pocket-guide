@@ -23,8 +23,9 @@
     <main>
 
         <!-- Site Header -->
-        <header>
+        <header class="site-header flex-container">
             <h1 id="siteTitle" class="site-title uppercase">Chord Progressions <span>Pocket Guide For Guitar</span></h1>
+            <button id="modalButton"><i class="fas fa-info-circle"></i>Info</button>
         </header>
 
         <!-- Control Area -->
@@ -267,8 +268,6 @@
         </section>
         <!-- Display Area - End -->
 
-    </main>
-
     <!-- Modal Window -->
     <div id="modalWindow" class="modal-container">
         <div class="modal-content">
@@ -276,9 +275,65 @@
                 <i class="fa-solid fa-circle-xmark"></i>
                 <span class="uppercase">Close</span>
             </button>
-            Start Here
+            <div class="app-info">
+
+============= CHORD & SCALE NOTES ===============
+
+=== SCALES
+    Scale formulas in semitones (13 in total)
+    R = Root note
+    W = Whole step
+    H = Half step/Semitone
+    Major: R-W-W-H-W-W-W-H = R-2-2-1-2-2-2-1
+    Minor: R-W-H-W-W-H-W-W = R-2-1-2-2-1-2-2
+    Distance between frets = 1 semitone
+    Sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯
+    Flats:  B♭ E♭ A♭ D♭ G♭ C♭ F♭
+
+== Scale notes in semitones
+    semiTonesSharp = [A, A♯, B, B♯, C, C♯, D, D♯, E, E♯, F, F♯, G, G♯]
+    semiTonesFlat = [G, G♭, F, F♭, E, E♭, D, D♭, C, C♭, B, B♭, A, A♭]
+
+12 Major Keys
+12 Minor Keys
+
+9 Chord Progressions
+
+Each key has 4 chord diagrams - according to the scale degrees of
+the relevant chord progression
+
+=== CHORD DIAGRAMS
+    Chord shapes:
+    Basic patterns for finger positions when playing chords
+
+=== Barres:
+    Represent placing the index finger on the same fret across multiple strings
+    Open chords consist of chords containing one or more strings that aren't fingered
+
+=== Fingers (Right Hand):
+    1 - Index finger
+    2 - Middle finger
+    3 - Ring finger
+    4 - Little finger
+
+=== Strings (left to right):
+    1 - Low E
+    2 - A
+    3 - D
+    4 - G
+    5 - B
+    6 - High E
+
+== Frets (top to bottom) ==
+The topmost fret is the first fret after the nut unless
+a number next to the first fret indicates the "starting" fret
+
+            </div>
         </div>
     </div>
+
+    </main>
+
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">  

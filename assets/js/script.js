@@ -52,7 +52,7 @@ const chordProgressions = {
         degrees: ['I', 'V', 'IV', 'I'],
         chords: [0, 4, 3, 0]
     },
-    
+
     oneFiveMinorSixFive: {
         degrees: ['I', 'V', 'vi', 'I'],
         chords: [0, 4, 5, 0]
@@ -103,12 +103,12 @@ const chordProgressions = {
 let keyTonality;
 
 function handleKeySelection() {
- 
+
     console.log(keySelectButtons);
     for (let keySelectButton of keySelectButtons) {
 
         // Listen for Key Select button click
-        keySelectButton.addEventListener("click", function() {
+        keySelectButton.addEventListener("click", function () {
 
             // Remove active CSS class from all Key Select buttons
             let activeKeys = document.getElementsByClassName("key-select active");
@@ -162,7 +162,7 @@ function handleChordProgressionSelection() {
     for (let chordProgressionSelectButton of chordProgressionSelectButtons) {
 
         // Listen for Chord Progression button click
-        chordProgressionSelectButton.addEventListener("click", function() {
+        chordProgressionSelectButton.addEventListener("click", function () {
 
             // Remove active CSS class from all Chord Progression Select buttons
             let activeChordProgressions = document.getElementsByClassName("chord-progression active");
@@ -206,7 +206,7 @@ function disableChordProgressionButtons(status) {
         console.log("status: " + status);
         return status;
     });
-    
+
 }
 
 
@@ -215,12 +215,12 @@ function disableChordProgressionButtons(status) {
 * Get button elements and add event listeners
 */
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     // console check
     console.log("displaySelectedKeyValue: ");
     console.log(displaySelectedKeyValue.innerHTML);
-    
+
     // Disable chord progression buttons
     disableChordProgressionButtons(true);
 
@@ -253,7 +253,7 @@ function populateChords() {
         let chordTonalityIndex;
         let chordTonality;
 
-        let chordProgressionLookup = chordProgressions [userSelectedChordProgression];
+        let chordProgressionLookup = chordProgressions[userSelectedChordProgression];
         console.log(chordProgressionLookup);
 
         // Degree Labels
@@ -263,8 +263,8 @@ function populateChords() {
 
         for (let i = 0; i < numberOfDegreeLabels; i++) {
             labelDegreeList[i].textContent = chordProgressionDegrees[i];
-        } 
-        
+        }
+
         // Chord Labels
         let labelChordList = document.querySelectorAll("[data-label-chord]");
         let numberOfChordLabels = labelChordList.length;
@@ -291,7 +291,7 @@ function populateChords() {
                 console.log("Key tonality is " + keyTonality);
                 console.log("Chord tonality is " + chordTonality);
 
-              // Is chord progression degree minor in a minor key?
+                // Is chord progression degree minor in a minor key?
             } else if (keyTonality == "min") {
 
                 // Get relevant scale
@@ -314,7 +314,7 @@ function populateChords() {
             console.log("Key Tonality: ");
             console.log(keyTonality);
             console.log("Scale: ");
-            console.log(scale);            
+            console.log(scale);
 
             labelChordList[i].textContent = scale[chordProgressionChordIndices[i]].replace("/", "\/") + " " + chordTonality;
 
@@ -341,7 +341,7 @@ function populateChords() {
             let chordLabel = labelChordList[i].textContent.toLowerCase().replace(" ", "").replace("♯", "sharp").replace("♭", "flat").replace("/", "");
 
             // Add file extension to file name
-            let chordDiagramFileName = chordLabel + ".png";
+            let chordDiagramFileName = chordLabel + ".webp";
 
             // Build final image URL
             chordDiagramUrl = urlBase + chordDiagramFileName;
@@ -371,17 +371,17 @@ const modalWindow = document.getElementById("modalWindow");
 const modalButtons = document.querySelectorAll(".modal-button");
 
 modalButtons.forEach(modalButton => {
-    modalButton.addEventListener("click", function() {
+    modalButton.addEventListener("click", function () {
         modalWindow.classList.add("modal-show");
-     });
+    });
 });
 
 
- // Modal close button
+// Modal close button
 const closeButtons = document.querySelectorAll(".close-btn");
 closeButtons.forEach(closeBtn => {
 
-    closeBtn.addEventListener("click", function() {
+    closeBtn.addEventListener("click", function () {
         console.log("Close button clicked");
         console.log(modalWindow);
         modalWindow.classList.remove("modal-show");

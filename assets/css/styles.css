@@ -5,7 +5,6 @@ RESET
 
 UTILITIES
    - Hover & Active States
-   - Modals
 
 TYPOGRAPHY & COLOURS
 
@@ -49,14 +48,9 @@ body {
 
 /* Hover & Active States */
 button:hover,
-button.active,
-.finger.active {
+button.active {
     border-color: #e67e22;
     color: initial;
-}
-
-.finger.active {
-    background-color: rgba(230, 126, 34, 0.3);
 }
 
 button:hover,
@@ -78,40 +72,11 @@ button:disabled:hover {
 }
 
 /* FX */
-#controls,
-#controls.show,
-.modal-container,
-.modal-container.popup-show {
+button,
+button:hover,
+.chord-box-container,
+.chord-box-container.expanded {
     transition: 300ms all ease-in-out;
-}
-
-/* Modals */
-.modal-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    background-color: rgb(0 0 0 / 50%);
-}
-
-.modal-content {
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    width: 100%;
-    margin: 1em;
-    display: flex;
-    padding: 1em;
-}
-
-.modal-show {
-    opacity: 1;
-    z-index: 100;
 }
 
 
@@ -187,18 +152,6 @@ main {
 .key-select {
     background-color: transparent;
     color: transparent;
-}
-
-.help-btn,
-.close-btn,
-.controls-btn {
-    font-size: 0.8rem;
-}
-
-.help-btn i,
-.close-btn i,
-.controls-btn i {
-    font-size: 2rem;
 }
 
 .control-area {
@@ -277,10 +230,8 @@ main {
     border-bottom: 1px solid #95a5a6;
 }
 
+
 /* Buttons */
-button, button:hover {
-    transition: 300ms all ease-in-out;
-}
 
 button {
     appearance: none;
@@ -362,6 +313,7 @@ main {
 
 
 /* Circle of Fifths - Key Selection Buttons */
+
 .circle-of-fifths-container,
 .key-select-inner {
     height: 320px;
@@ -470,38 +422,6 @@ main {
 .adjust-alignment {
     position: relative;
     top: 10px;
-}
-
-.help-btn,
-.close-btn,
-.controls-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem;
-    position: absolute;
-    top: 1em;
-    height: 50px;
-    width: 50px;
-    z-index: 1;
-}
-
-.help-btn {
-    left: 1em;
-}
-
-.close-btn {
-    right: 1em;
-    z-index: 11;
-}
-
-.help-content {
-    position: absolute;
-    align-items: flex-start;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
 }
 
 .site-title {

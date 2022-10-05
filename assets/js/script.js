@@ -315,26 +315,3 @@ function populateChords() {
     }
 
 }
-
-
-// Button Event Listeners
-
-// Modal button
-const modalWindow = document.getElementById("modalWindow");
-const modalButton = document.getElementById("modalButton");
-
-modalButton.addEventListener("click", function () {
-        modalButton.classList.add("active");
-        modalWindow.classList.add("modal-show");
-    });
-
-
-// Modal close button
-const modalCloseButton = document.getElementById("modalCloseButton");
-
-modalCloseButton.addEventListener("click", function () {
-
-    modalButton.classList.remove("active");
-    modalWindow.classList.remove("modal-show");
-    
-});

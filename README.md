@@ -114,13 +114,13 @@ The following features can be added, to aid generating additional traffic and in
 # Testing 
 ## Testing against client stories from UX section of this document
 
-###Step 1
+### Step 1
 1. When the user lands on the page, Step 1: Select a Key and the Circle of Fifths has the main focus
 2. The chord progression buttons are disabled and faded out, to turn focus to the key selection
 3. The chord display area is also hidden at this stage
 4. The selected key is highlighted
 
-###Step 2
+### Step 2
 1. Once a key has been selected, the chord progression buttons become active and can be selected
 2. The display area becomes visible, with "blank" chord diagrams
 3. Once a chord progression has been selected, the display area is fully populated

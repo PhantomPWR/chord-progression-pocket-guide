@@ -6,92 +6,93 @@ const displaySelectedKeyValue = document.getElementById("selectedKeyDisplay");
 
 // Scale for each major key in the Circle of Fifths
 const majorScales = {
-    cMaj: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
-    gMaj: ['G', 'A', 'B', 'C', 'D', 'E', 'F♯'],
-    dMaj: ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯'],
-    aMaj: ['A', 'B', 'C♯', 'D', 'E', 'F♯', 'G♯'],
-    eMaj: ['E', 'F♯', 'G♯', 'A', 'B', 'C♯', 'D♯'],
-    bMaj: ['B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯'],
-    fSharpMaj: ['F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯', 'E♯'],
-    cSharpMaj: ['C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B♯'],
-    fMaj: ['F', 'G', 'A', 'B♭', 'C', 'D', 'E'],
-    bFlatMaj: ['B♭', 'C', 'D', 'E♭', 'F', 'G', 'A'],
-    eFlatMaj: ['E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D'],
-    aFlatMaj: ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G'],
-    dFlatMaj: ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C'],
-    gFlatMaj: ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F'],
+    aFlatMaj: ["A♭", "B♭", "C", "D♭", "E♭", "F", "G"],
+    aMaj: ["A", "B", "C♯", "D", "E", "F♯", "G♯"],
+    bFlatMaj: ["B♭", "C", "D", "E♭", "F", "G", "A"],
+    bMaj: ["B", "C♯", "D♯", "E", "F♯", "G♯", "A♯"],
+    cMaj: ["C", "D", "E", "F", "G", "A", "B"],
+    cSharpMaj: ["C♯", "D♯", "E♯", "F♯", "G♯", "A♯", "B♯"],
+    dFlatMaj: ["D♭", "E♭", "F", "G♭", "A♭", "B♭", "C"],
+    dMaj: ["D", "E", "F♯", "G", "A", "B", "C♯"],
+    eFlatMaj: ["E♭", "F", "G", "A♭", "B♭", "C", "D"],
+    eMaj: ["E", "F♯", "G♯", "A", "B", "C♯", "D♯"],
+    fMaj: ["F", "G", "A", "B♭", "C", "D", "E"],
+    fSharpMaj: ["F♯", "G♯", "A♯", "B", "C♯", "D♯", "E♯"],
+    gFlatMaj: ["G♭", "A♭", "B♭", "C♭", "D♭", "E♭", "F"],
+    gMaj: ["G", "A", "B", "C", "D", "E", "F♯"]
 };
 
 // Scale for each minor key in the Circle of Fifths
 const minorScales = {
-    aMin: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-    eMin: ['E', 'F♯', 'G', 'A', 'B', 'C', 'D'],
-    bMin: ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A'],
-    fSharpMin: ['F♯', 'G♯', 'A', 'B', 'C♯', 'D', 'E'],
-    cSharpMin: ['C♯', 'D♯', 'E', 'F♯', 'G♯', 'A', 'B'],
-    gSharpMin: ['G♯', 'A♯', 'B', 'C♯', 'D♯', 'E', 'F♯'],
-    dMin: ['D', 'E', 'F', 'G', 'A', 'B♭', 'C'],
-    gMin: ['G', 'A', 'B♭', 'C', 'D', 'E♭', 'F'],
-    cMin: ['C', 'D', 'E♭', 'F', 'G', 'A♭', 'B♭'],
-    fMin: ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭'],
-    bFlatMin: ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭'],
-    eFlatMin: ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭']
+    aMin: ["A", "B", "C", "D", "E", "F", "G"],
+    bFlatMin: ["B♭", "C", "D♭", "E♭", "F", "G♭", "A♭"],
+    bMin: ["B", "C♯", "D", "E", "F♯", "G", "A"],
+    cMin: ["C", "D", "E♭", "F", "G", "A♭", "B♭"],
+    cSharpMin: ["C♯", "D♯", "E", "F♯", "G♯", "A", "B"],
+    dMin: ["D", "E", "F", "G", "A", "B♭", "C"],
+    eFlatMin: ["E♭", "F", "G♭", "A♭", "B♭", "C♭", "D♭"],
+    eMin: ["E", "F♯", "G", "A", "B", "C", "D"],
+    fMin: ["F", "G", "A♭", "B♭", "C", "D♭", "E♭"],
+    fSharpMin: ["F♯", "G♯", "A", "B", "C♯", "D", "E"],
+    gMin: ["G", "A", "B♭", "C", "D", "E♭", "F"],
+    gSharpMin: ["G♯", "A♯", "B", "C♯", "D♯", "E", "F♯"]
 };
 
 // Tonality for Maj/Min Chords
 const chordTonalities = {
-    majorTonalities: ['maj', 'min', 'min', 'maj', 'maj', 'min', 'dim'],
-    minorTonalities: ['min', 'dim', 'maj', 'min', 'min', 'maj', 'maj']
+    majorTonalities: ["maj", "min", "min", "maj", "maj", "min", "dim"],
+    minorTonalities: ["min", "dim", "maj", "min", "min", "maj", "maj"]
 };
 
 
 // Scale degree labels along with corresponding indices for
 // the relevant scale degrees chords are built on
 const chordProgressions = {
-    oneFiveFourOne: {
-        degrees: ['I', 'V', 'IV', 'I'],
-        chords: [0, 4, 3, 0]
-    },
 
-    oneFiveMinorSixFive: {
-        degrees: ['I', 'V', 'vi', 'I'],
-        chords: [0, 4, 5, 0]
-    },
-
-    oneMinorSixFourFive: {
-        degrees: ['I', 'vi', 'IV', 'V'],
-        chords: [0, 5, 3, 4]
-    },
-
-    oneMinorSixMinorTwoFive: {
-        degrees: ['I', 'vi', 'ii', 'V'],
-        chords: [0, 5, 1, 4]
-    },
-
-    oneMinorThreeMinorSixFive: {
-        degrees: ['I', 'iii', 'vi', 'V'],
-        chords: [0, 2, 5, 4]
+    minorOneFlatSevenFlatSixFlatSeven: {
+        chords: [0, 6, 5, 6],
+        degrees: ["i", "♭VII", "♭VI", "♭VII"]
     },
 
     minorSixFourOneFive: {
-        degrees: ['vi', 'IV', 'I', 'V'],
-        chords: [5, 3, 0, 4]
+        chords: [5, 3, 0, 4],
+        degrees: ["vi", "IV", "I", "V"]
     },
 
-    oneFlatSevenFourOne: {
-        degrees: ['I', '♭VII', 'IV', 'I'],
-        chords: [0, 6, 3, 0]
+    oneFiveFourOne: {
+        chords: [0, 4, 3, 0],
+        degrees: ["I", "V", "IV", "I"]
+    },
+
+    oneFiveMinorSixFive: {
+        chords: [0, 4, 5, 0],
+        degrees: ["I", "V", "vi", "I"]
     },
 
     oneFlatSevenFlatSixFive: {
-        degrees: ['I', '♭VII', '♭VI', 'V'],
-        chords: [0, 6, 5, 4]
+        chords: [0, 6, 5, 4],
+        degrees: ["I", "♭VII", "♭VI", "V"]
     },
 
-    minorOneFlatSevenFlatSixFlatSeven: {
-        degrees: ['i', '♭VII', '♭VI', '♭VII'],
-        chords: [0, 6, 5, 6]
+    oneFlatSevenFourOne: {
+        chords: [0, 6, 3, 0],
+        degrees: ["I", "♭VII", "IV", "I"]
     },
+
+    oneMinorSixFourFive: {
+        chords: [0, 5, 3, 4],
+        degrees: ["I", "vi", "IV", "V"]
+    },
+
+    oneMinorSixMinorTwoFive: {
+        chords: [0, 5, 1, 4],
+        degrees: ["I", "vi", "ii", "V"]
+    },
+
+    oneMinorThreeMinorSixFive: {
+        chords: [0, 2, 5, 4],
+        degrees: ["I", "iii", "vi", "V"]
+    }
 };
 
 /**
@@ -104,14 +105,14 @@ let keyTonality;
 
 function handleKeySelection() {
 
-    for (let keySelectButton of keySelectButtons) {
+    keySelectButtons.forEach((keySelectButton) => {
 
         // Listen for Key Select button click
         keySelectButton.addEventListener("click", function () {
 
             // Remove active CSS class from all Key Select buttons
             let activeKeys = document.getElementsByClassName("key-select active");
-            Array.from(activeKeys).forEach(activeKey => {
+            Array.from(activeKeys).forEach((activeKey) => {
                 activeKey.classList.remove("active");
             });
 
@@ -125,7 +126,7 @@ function handleKeySelection() {
             // Get the selected Key
             userSelectedKey = this.getAttribute("data-key-select");
 
-            // Set Key display 
+            // Set Key display
             displaySelectedKeyValue.setAttribute("data-selected-key-display", userSelectedKey);
 
             // Get the selected Key tonality (Major or Minor)
@@ -140,7 +141,7 @@ function handleKeySelection() {
             }
 
         });
-    }
+    });
 
 }
 
@@ -152,14 +153,14 @@ function handleKeySelection() {
  */
 function handleChordProgressionSelection() {
 
-    for (let chordProgressionSelectButton of chordProgressionSelectButtons) {
+    chordProgressionSelectButtons.forEach((chordProgressionSelectButton) => {
 
         // Listen for Chord Progression button click
         chordProgressionSelectButton.addEventListener("click", function () {
 
             // Remove active CSS class from all Chord Progression Select buttons
             let activeChordProgressions = document.getElementsByClassName("chord-progression active");
-            Array.from(activeChordProgressions).forEach(activeChordProgression => {
+            Array.from(activeChordProgressions).forEach((activeChordProgression) => {
                 activeChordProgression.classList.remove("active");
             });
 
@@ -177,18 +178,18 @@ function handleChordProgressionSelection() {
             populateChords();
 
         });
-    }
+    });
 
 }
 
 
 /**
  * Disable/enable chord progression selection buttons, using the status parameter
- * 
+ *
  * true == disabled
  * false == enabled
- * 
- * @param {*} status 
+ *
+ * @param {*} status
  */
 function disableChordProgressionButtons(status) {
 
@@ -238,15 +239,15 @@ function populateChords() {
         let chordTonalitiesLookup;
         let chordTonalityIndex;
         let chordTonality;
-
         let chordProgressionLookup = chordProgressions[userSelectedChordProgression];
+        let i;
 
         // Degree Labels
         let labelDegreeList = document.querySelectorAll("[data-label-degree]");
         let numberOfDegreeLabels = labelDegreeList.length;
         chordProgressionDegrees = chordProgressionLookup.degrees;
 
-        for (let i = 0; i < numberOfDegreeLabels; i++) {
+        for (i = 0; i < numberOfDegreeLabels; i++) {
             labelDegreeList[i].textContent = chordProgressionDegrees[i];
         }
 
@@ -256,7 +257,7 @@ function populateChords() {
         chordProgressionChordIndices = chordProgressionLookup.chords;
 
 
-        for (let i = 0; i < numberOfChordLabels; i++) {
+        for (i = 0; i < numberOfChordLabels; i++) {
 
             // Is chord progression degree minor in a major key?
             if (keyTonality == "maj") {

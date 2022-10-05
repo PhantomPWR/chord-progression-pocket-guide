@@ -2,139 +2,68 @@
 
 ## Diploma in Full Stack Software Development - Portfolio Project 2
 
-![Mockup](/assets/readme/device-mockup.webp)
+![Mockup](assets/readme/device-mockup.webp)
 
 [The live project can be viewed here.](https://phantompwr.github.io/pp2-chord-progression-pocket-guide/) 
 
 
-This is a simple website allowing the user to calculate the component values for either a Passive Low Pass Filter or a Passive High Pass Filter.
+The website allows the user to choose keys and chord progressions, in order to determine which chords to play.
 
-The user enters 2 out of the 3 required values, and the calculator will calculate the value of the third component.
+The user select a key, and then a chord progression. The application will then load the relevant chord diagrams.
 
 As an example:
-From the Low Pass Filter Calculator:
-1 - Set the Resistance Value to 300 and the Resistance Scale to mΩ (mega-ohm).
-2 - Set the Cutt-off Frequency to 50 and the Frequency Scale to Hz (hertz).
-3 - Click `Calculate` and the result is displayed as 10.61pF (picoFarad). This determines the value in picoFarad of the required Capacitor for the desired Cut-Off Frequency, based on the output impedance of the Amplifier.
 
-The goals of this website are:
-* Generate traffic in order to generate AdSense revenue.
+1. Select the key of C Major
+2. Select the chord progression I V IV I
+3. Diagrams for the chords Cmaj, Gmaj, Fmaj and Cmaj are displayed
+4. Any combination of keys and chord progressions can be selected, which allows the user to play the same progression in different keys and vice versa
 
-The user visit this website to:
-* Calculate the component values for Passive Low Pass or Passive High Pass filters.
-* An example of this would be to limit the lowest frequencies being sent to a pair of hi-fi speakers.
+The goals of the website are:
+* To generate traffic, which in turn will generate AdSense revenue.
+
+The user visits this website to have a songwriting and practicing aid, without the need for pen and paper.
 
 # UX
-The design of the site is purposefully simple and single-use focussed. There are only two calculators at this stage, and the site makes it easy for the user to know which filter type they are calculating component values for.
+The design of the site is intentionally simple and to the point. In future, the aim is to add sound samples, so the user can hear what any selected combination will sound like.
 
-### Ideal client 
-The ideal client for this business is: 
-* Electronic hobbyist
-* Hi-Fi enthusiast
-* Hi-Fi circuit designer
-* Audiophile hobbyist
+### Ideal clients 
+The ideal clients for this business are: 
+* Guitarists
+* Songwriters
+* Music hobbyists
 
-The project help clients to: 
-* Determine the component values or cut-off frequency for a set of known components.
+
 
 ### User stories: 
-1.	As a visitor, I am designing a Passive High Pass Filter to limit the minimum freqency signal being passed to the amplifier inputs of a hi-fi system. I know what the amplifier's output impedance is (300 mOhm), and know the desired cut-off frequency (50Hz). I can use the Passive High Pass Filter calculator to determine the Capacitance required (10.61pF) for the capacitor in the circuit, to achieve the desired cut-off frequency.
-2.	As a visitor, I am designing a Passive Low Pass Filter to limit the maximum freqency signal being passed to the sub-woofer inputs of a hi-fi system. I know what the sub-woofer amplifier's output impedance is (300 mOhm), and know the desired cut-off frequency (50Hz). I can use the Passive Low Pass Filter calculator to determine the Capacitance required (10.61pF) for the capacitor in the circuit, to achieve the desired cut-off frequency.
-3.	As a visitor, I am designing a Sub-woofer amplifier input circuit. I've completed the design and in testing want to calculate the actual cut-off frequency of the input-circuit. Based on the Capacitance and Output Impedance in the design, I can use the Passive Low Pass Filter calculator to determine the actual cut-off frequency of the design.
-4.	As a visitor, I am designing a Sub-woofer amplifier input circuit, with a Variable Resistor. I've completed the design and in testing want to calculate the actual reange of cut-off frequencies of the input-circuit. Baed on the Capacitance and InOutputput Impedance, together with the range of the Variable Resistor in the design, I can use the Passive Low Pass Filter calculator to determine the actual cut-off frequency of the design.
+1.	As a visitor, I am in the process of writing a song. Using pen and paper to work out which chords to play in a particular chord progression and key, quickly becomes tedious when I want to try out my idea in a different key.
+2.	As a visitor, I want to practice chords in different keys, but struggle to keep track of where I am when having to page back and forth in a chord book.
+
 
 ### Scope
-To help the visitor achieve their circuit design goals, I included the following features in the website: 
-* Passive Low Pass Filter calculator.
-* Passive High Pass FIlter calculator.
-* Calculation Formula and Legend, showing the formula used in the calculations.
-* Simple High Pass and Low Pass Filter diagrams.
-* Basic High Pass and Low Pass Circuit Layout DIagrams, showing the difference in required circuit layout for each filter type.
-* Diagrams showing the different -3dB cut-off frequency graphs for the Low Pass and High Pass filters respectively.
+To help the visitor, the site includes: 
+* All 24 keys in the Circle of Fifths
+* 9 of the most popular chord progressions used in popular music
+* Scale degree, chord name and fingering for each chord in the chosen chord progression
 
 ## Skeleton 
-The website consists of only 3 pages. An initial landing page, with the options between the two calculator pages. A page for Passive High Pass FIlter and a third for the Passive Low Pass FIlter.
+The website consists of a single page containing all the required elements in the interface.
 
-### Wireframe Mock-ups: 
-* [Desktop Mock-up](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/desktop-mock-up.webp)
-* [Responsive Mock-up](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/responsive-mock-up.webp)
-* [Site Sketch](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/site-sketch.webp)
-* [FIlter Sketches](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/filter-sketches.webp)
-* [FC Equation](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/fc-equation.webp)
-
-### Build and Design Process:
-# Stage 1:
-
-Initially, everything was left unstyled, with focus on getting the JavaScript calculation functionality working correctly. 
-
-![Landing Page Unstyled](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/landing-page-unstyled.webp)
-
-![LPF Page Unstyled](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/lpf-unstyled.webp)
-
-![HPF Page Unstyled](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/hpf-unstyled.webp)
-
-# Stage 2:
-
-Basic styling was used, simply to get the elements and placeholder images into the right locations on the screen. 
-
-![stage-2-1](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/stage-2-1.webp)
-
-![stage-2-2](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/stage-2-2.webp)
-
-![stage-2-3](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/stage-2-3.webp)
-
-![stage-2-4](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/stage-2-4.webp)
-
-![stage-2-5](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/stage-2-5.webp)
-
-![stage-2-6](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/stage-2-6.webp)
-
-![stage-2-7](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/stage-2-7.webp)
-
-![stage-2-8](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/stage-2-8.webp)
-
-# Stage 3:
-
-Hand-drawn diagrams and images were added, together with the calculated result shown on-screen. 
-
-![Placeholder Diagrams](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/placeholder-diagrams.webp)
-
-![Console Results Checking](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/console-result-checking.webp)
-
-# Stage 4:
-
-Colour scheme and final layout completed, now using CSS Flex to make responsiveness easier. 
-
-![Home Screen with Temp Diagrams](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/home-screen.webp)
-
-![High Pass Filter Screen with Temp Diagrams](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/hpf-temp-diagrams.webp)
-
-![Low Pass Filter Screen with Temp Diagrams](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/full-temp-diagrams.webp)
-
-# Stage 5:
-
-Final version, with all placeholder images replaced and styling completed. 
-
-![Final Home Page](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/home-page.webp)
-
-![Final High Pass Filter Page](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/hpf-page.webp)
-
-![Final Low Pass Filter Page](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/lpf-page.webp)
+### Original Wireframe Concepts: 
+* ![Desktop Mock-up](assets/readme/Desktop.webp)
+* ![Tablet Mock-up](assets/readme/Tablet.webp)
+* ![Phone Mock-up](assets/readme/Phone.webp)
 
 # Features 
 
-# Existing Features 
-### Passive Low Pass Filter Calculator
-This allows the user to enter 2 of the 3 values required, including their unti scales. This then calculates the result and displays it on the screen. As an example, if the user enters a Resistance value of 300 with a unit scale of mega-ohm, and a Cut-off Frequency of 50 with a unit scale of Hertz, the rult is provided as 10,61pF (pico-Farad) as the required Capacitance.
+## Existing Features 
+1. Select any key in the Circle of Fifths
+2. Select any of the nine chord progressions
 
-### Passive High Pass Filter Calculator
-As with the Low Pass Filter, this allows the user to enter 2 of the 3 values required, including their unti scales. This then calculates the result and displays it on the screen. As an example, if the user enters a Resistance value of 8 with a unit scale of ohm, and a Cut-off Frequency of 8 with a unit scale of kHz, the rult is provided as 2.49μF (micro-Farad) as the required Capacitance.
-
-# Features to Implement in future
-The following features can be added in the future, to help generate additional traffic and increase the opportunities for AdSense revenue
-* Make the filter calculators available on the domains: lowpassfiltercalculator.com and highpassfiltercalculator.com
-* Add AdSense configuration to the existing sites
-* Build additional electrical / circuit based calculators
+## Features to Implement in future
+The following features can be added, to aid generating additional traffic and increase the opportunities for AdSense revenue
+* Add the ability to hear what the selections sound like
+* Add the ability to choose between guitar and keyboard
+* Create additional songwriting/practice tools
 
 # Technologies Used
 
@@ -183,50 +112,53 @@ The following features can be added in the future, to help generate additional t
 <br>
 
 # Testing 
-## Testing against client stories from UX section of README.md
-- If the user lands on the home page, there is clear and direct links to the respective High Pass or Low Pass calculators, with a brief description of what to expect.
-![Home Page](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/home-page.webp)
+## Testing against client stories from UX section of this document
 
-- The **High Pass Filter Page** allows the user to calculate any of the required 3 values for creating a Passive High Pass Filter. 
-![High Pass Filter Page](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/hpf-page.webp)
+###Step 1
+1. When the user lands on the page, Step 1: Select a Key and the Circle of Fifths has the main focus
+2. The chord progression buttons are disabled and faded out, to turn focus to the key selection
+3. The chord display area is also hidden at this stage
+4. The selected key is highlighted
 
-- The **Low Pass Filter Page** allows the user to calculate any of the required 3 values for creating a Passive Low Pass Filter. 
-![Low Pass Filter Page](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/lpf-page.webp)
-
+###Step 2
+1. Once a key has been selected, the chord progression buttons become active and can be selected
+2. The display area becomes visible, with "blank" chord diagrams
+3. Once a chord progression has been selected, the display area is fully populated
+4. From here on, the visitor can mix and match as they please
     
 ## Code validation 
 I used the [W3C CSS validation](https://jigsaw.w3.org/css-validator/#validate_by_uri), [W3C Markup Validation](https://validator.w3.org/#validate_by_uri) and [JSHint](https://jshint.com/) validators to check the web application code.
 
 **W3C Markup Validation**
 
-![HTML Validation](/assets/readme/html-validator-pass.webp)
+![HTML Validation](assets/readme/html-validator-pass.webp)
 
 **W3C CSS Validation**
 
-![CSS Validation](/assets/readme/css-validator-pass.webp)
+![CSS Validation](assets/readme/css-validator-pass.webp)
 
 **JSHint Validation**
 
-![JSHint Results](/assets/readme/js-hint-pass.webp)
+![JSHint Results](assets/readme/js-hint-pass.webp)
 
 
 ## Colour Contrast 
 I used the [Wave Color Contrast Accessibility Validator](https://wave.webaim.org/) for testing the colour contrasts.
 
 ### Index Page
-![Index Colour Contrast Pass](/assets/readme/index-wave-color-contrast-pass.webp)
+![Index Colour Contrast Pass](assets/readme/index-wave-color-contrast-pass.webp)
 
 ### 404 Page
-![404 Colour Contrast Pass](/assets/readme/404-wave-color-contrast-pass.webp) 
+![404 Colour Contrast Pass](assets/readme/404-wave-color-contrast-pass.webp) 
 
 ## Lighthouse Testing
 - Lighthouse testing in Chrome returned 100% scores.
 
 ### Index Page
-![Index Page Lighthouse Score](/assets/readme/index-lighthouse-pass.webp)
+![Index Page Lighthouse Score](assets/readme/index-lighthouse-pass.webp)
 
 ### 404 Page
-![404 Page Lighthouse Score](/assets/readme/index-lighthouse-pass.webp)
+![404 Page Lighthouse Score](assets/readme/index-lighthouse-pass.webp)
 
 ## COMPATIBILITY
 I tested the web application in desktop and mobile configurations on the following browsers:
@@ -277,10 +209,10 @@ this repository ([pp2-chord-progression-pocket-guide](https://github.com/Phantom
 ## Content References
 For the music theory, chords and chord progressions, I used the following references:
 
-*[Chord Progression Wiki](https://en.wikipedia.org/wiki/Chord_progression)
-*[Music Industry How To](https://www.musicindustryhowto.com/piano-chord-progressions/)
-*[Miguitarra Electrica](https://miguitarraelectrica.com/)
-*[Theory and Sound](https://theoryandsound.com/)
+* [Chord Progression Wiki](https://en.wikipedia.org/wiki/Chord_progression)
+* [Music Industry How To](https://www.musicindustryhowto.com/piano-chord-progressions/)
+* [Miguitarra Electrica](https://miguitarraelectrica.com/)
+* [Theory and Sound](https://theoryandsound.com/)
 
 ## Images & Diagrams 
 * 404 Page Background - [Pexels - Daniel Jensen](https://unsplash.com/@dallehj)

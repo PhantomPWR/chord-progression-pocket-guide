@@ -24,6 +24,7 @@ MEDIA QUERIES
     - Phone Large (Landscape)
     - Phone Small (Landscape)
     - Phone (Portrait)
+    - Phone X-Small (Portrait)
     - Phone X-Small (Landscape)
    -----------------
  */
@@ -151,6 +152,7 @@ main {
 
 .key-select {
     background-color: transparent;
+    color: #ecf0f1;
     text-indent: -9999em;
 }
 
@@ -220,7 +222,7 @@ main {
 .fretboard::before,
 .fret-number {
     color: #34495e;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 
@@ -674,6 +676,39 @@ figure {
     
 }
 
+
+/* Phone X-Small (Portrait) */
+@media (max-width: 915px)
+   and (orientation: portrait) {
+
+    .site-header {
+        text-align: center;
+    }
+    
+    .circle-of-fifths-container,
+    .key-select-inner {
+        height: 300px;
+        width: 300px;
+    }
+
+    .button-group {
+        left: 10px;
+        max-width: 290px;
+    }
+
+    .minor-keys {
+        width: 200px;
+    }
+
+    .minor-keys .button-group {
+        left: 0;
+    }
+
+    .chord-progression-container {
+        width: 300px;
+    }
+
+}
 
 /* Phone X-Small (Landscape) */
 @media (max-width: 915px)

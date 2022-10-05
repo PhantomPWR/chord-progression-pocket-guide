@@ -137,20 +137,50 @@ The following features can be added in the future, to help generate additional t
 * Build additional electrical / circuit based calculators
 
 # Technologies Used
-This project uses HTML, CSS and JavaScript programming languages.
--	[Balsamiq](https://balsamiq.cloud) I used Balsamiq to generate the Desktop and Responsive Mock-ups.
--	[Gitpod](https://gitpod.io/workspaces)- I used Gitpod to write the code to build the site.
--	[GitHub](https://github.com/) - I used GitHub to host my code that was created and pushed from GitPod.
--   [xDiagram](https://apps.apple.com/gb/app/xdiagram/id517581636?mt=12) - I used xDiagram to generate the equation, filter, circuit and cut-off frequency images for the site. 
--	[Google Fonts](https://fonts.google.com/) The project uses Google fonts to style the website fonts.
--   [Tiny-PNG](https://tinypng.com/) I used tinypng to compress images in order to improve the website's loading time. 
--   [cloudconvert](https://cloudconvert.com/) I used cloudconvert to convert png files into WEBP files.
--	[Webaim.org](https://webaim.org/) The Webaim was used to test colour contrast on the project.
--	[W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) The W3C Markup Validation Service checked the markup validity of Web documents in HTML.
--	[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input) W3C CSS Validation Service was used to check the validity of my CSS in the project.
--	[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)I used WAVE to make my site more accessible to individuals with disabilities by detecting any potential issues.
 
--	[PlaceIMG](https://placeimg.com/)I used PlaceIMG to serve some temp images in the development process.
+### **HTML5**
+* For page markup.
+
+### **CSS3**
+* For visual presentation and interactive feedback.
+
+### **JavaScript**
+* For DOM manipulation and functional logic.
+
+### **Font Awesome**
+* An icon library.
+
+### **Google Fonts**
+* For serving custom fonts.
+
+### **GitHub**
+* Hosting the site repository.
+
+### **GitHub Pages**
+* Hosting the live site.
+
+### **Git**
+* For version control.
+
+### **Gitpod**
+* Online, cross-device IDE.
+
+### **Balsamiq**
+* Wireframing application.
+
+### **Affinity Designer**
+* Graphic editor for creating the various images & diagrams.
+
+### **Affinity Photo**
+* Photo editor for manipulating the 404 page background image.
+
+### **Cloudconvert.com**
+* Converting images to .webp format
+
+### **Tinypng.com**
+* Image compression & optimisation
+
+<br>
 
 # Testing 
 ## Testing against client stories from UX section of README.md
@@ -165,54 +195,50 @@ This project uses HTML, CSS and JavaScript programming languages.
 
     
 ## Code validation 
-I used [W3C CSS validation](https://jigsaw.w3.org/css-validator/#validate_by_uri) and [W3C Markup Validation](https://validator.w3.org/#validate_by_uri) and [JSLint](https://www.jslint.com/) to check the validity of the website code.
+I used the [W3C CSS validation](https://jigsaw.w3.org/css-validator/#validate_by_uri), [W3C Markup Validation](https://validator.w3.org/#validate_by_uri) and [JSHint](https://jshint.com/) validators to check the web application code.
 
-Several issues were identified on **W3C Markup Validation**. 
+**W3C Markup Validation**
 
-![HTML Validation with Errors](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/html-validation-errors.webp)
+![HTML Validation](/assets/readme/html-validator-pass.webp)
 
-After I rectified the issue, no further errors were picked up. 
+**W3C CSS Validation**
 
-![HTML Validation with No Errors](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/html-validation-no-errors.webp)
+![CSS Validation](/assets/readme/css-validator-pass.webp)
 
-No errors were identified in the CSS code by **W3C CSS validation**. 
+**JSHint Validation**
 
-![CSS Validation with No Errors](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/css-validation-no-errors.webp)
+![JSHint Results](/assets/readme/js-hint-pass.webp)
 
-Several warnings were generated in the JavaScript code by **JSLint validation**. 
 
-![JSLint with Warnings](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/jslint-validation.webp)
+## Colour Contrast 
+I used the [Wave Color Contrast Accessibility Validator](https://wave.webaim.org/) for testing the colour contrasts.
 
-These warnings were reduced from 138 to 24 with in further code updates and refoactoring.
+### Index Page
+![Index Colour Contrast Pass](/assets/readme/index-wave-color-contrast-pass.webp)
 
-![JSLint with No Warnings](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/jslint-validation-warnings-only.webp)
-
-## Color Contrast 
-The initial `color: #43bea9;` had Contrast Ratio of 2.28:1 with the white text. This was changed for the darker `color: #226357;` The [Color Contrast Accessibility Validator](https://webaim.org/) was used to test for colour contrast on the project.
-
-![Colour Contrast Fail](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/colour-contrast-fail.webp) 
-
-![Colour Contrast Pass](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/colour-contrast-pass.webp) 
+### 404 Page
+![404 Colour Contrast Pass](/assets/readme/404-wave-color-contrast-pass.webp) 
 
 ## Lighthouse Testing
-- Lighthouse testing in Chrome Browser shows full 100% scores.
+- Lighthouse testing in Chrome returned 100% scores.
 
-![Landing Page Lighthouse Score](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/landing-page-lighthouse.webp)
+### Index Page
+![Index Page Lighthouse Score](/assets/readme/index-lighthouse-pass.webp)
 
-![HPF Page Lighthouse Score](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/hpf-lighthouse.webp)
-
-![LPF Page Lighthouse Score](https://raw.githubusercontent.com/pieterkdevilliers/audio-filters/main/docs/images/readme-images/lpf-lighthouse.webp)
+### 404 Page
+![404 Page Lighthouse Score](/assets/readme/index-lighthouse-pass.webp)
 
 ## COMPATIBILITY
-I tested this in desktop and mobile configurations on the following browsers:
+I tested the web application in desktop and mobile configurations on the following browsers:
 
 * Chrome
 * Firefox
 * Safari
+* Edge
 
 # Deployment
 
-The project has been deployed on GitHub Pages. As my development environment I used Gitpod, from where I commited all changes to the Git version control system.
+The project has been deployed on GitHub Pages. As my development environment I used Gitpod, from where I committed all changes to the Git version control system.
 
 **To save changes, used the following commands:**
 1. [cmd]+s to save changes
